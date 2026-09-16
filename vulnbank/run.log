@@ -1,0 +1,1160 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< com.vulnbank:vulnbank >------------------------
+[INFO] Building VulnBank 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:2.7.5:run (default-cli) > test-compile @ vulnbank >>>
+[INFO] 
+[INFO] --- resources:3.2.0:resources (default-resources) @ vulnbank ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ vulnbank ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.2.0:testResources (default-testResources) @ vulnbank ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory C:\Users\gmoun\OneDrive\Documents\vulnbank-owasp-lab\vulnbank\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ vulnbank ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] <<< spring-boot:2.7.5:run (default-cli) < test-compile @ vulnbank <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:2.7.5:run (default-cli) @ vulnbank ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.7.5)
+
+2026-09-10 16:38:42.834  INFO 16264 --- [           main] com.vulnbank.VulnBankApplication         : Starting VulnBankApplication using Java 21.0.6 on DESKTOP-PT84T55 with PID 16264 (C:\Users\gmoun\OneDrive\Documents\vulnbank-owasp-lab\vulnbank\target\classes started by gmoun in C:\Users\gmoun\OneDrive\Documents\vulnbank-owasp-lab\vulnbank)
+2026-09-10 16:38:42.838  INFO 16264 --- [           main] com.vulnbank.VulnBankApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-09-10 16:38:44.124  INFO 16264 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-09-10 16:38:44.189  INFO 16264 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 3 JPA repository interfaces.
+2026-09-10 16:38:44.995  INFO 16264 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-09-10 16:38:45.011  INFO 16264 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-10 16:38:45.011  INFO 16264 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2026-09-10 16:38:45.202  INFO 16264 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-09-10 16:38:45.203  INFO 16264 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2298 ms
+2026-09-10 16:38:45.374  INFO 16264 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-09-10 16:38:45.699  INFO 16264 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-09-10 16:38:45.712  INFO 16264 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:vulnbank'
+2026-09-10 16:38:45.934  INFO 16264 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-09-10 16:38:46.024  INFO 16264 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.12.Final
+2026-09-10 16:38:46.243  INFO 16264 --- [           main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2026-09-10 16:38:46.388  INFO 16264 --- [           main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2026-09-10 16:38:47.100  INFO 16264 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2026-09-10 16:38:47.109  INFO 16264 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-09-10 16:38:47.546  WARN 16264 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 947d61b1-3049-4731-9674-301ebbdf3853
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-09-10 16:38:47.673  INFO 16264 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3c538e62, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@ca0a21f, org.springframework.security.web.context.SecurityContextPersistenceFilter@5a24390b, org.springframework.security.web.header.HeaderWriterFilter@8dedec8, org.springframework.web.filter.CorsFilter@768d27e8, org.springframework.security.web.authentication.logout.LogoutFilter@3713bedc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@66d6e50b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@60d32006, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3dc39412, org.springframework.security.web.session.SessionManagementFilter@28ceb25e, org.springframework.security.web.access.ExceptionTranslationFilter@1e836aed, org.springframework.security.web.access.intercept.AuthorizationFilter@cc7909f]
+2026-09-10 16:38:47.708  WARN 16264 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-09-10 16:38:48.327  INFO 16264 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 13 endpoint(s) beneath base path '/actuator'
+2026-09-10 16:38:48.412  INFO 16264 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2026-09-10 16:38:48.423  INFO 16264 --- [           main] com.vulnbank.VulnBankApplication         : Started VulnBankApplication in 6.154 seconds (JVM running for 6.708)
+2026-09-10 16:38:58.607  INFO 16264 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-09-10 16:38:58.607  INFO 16264 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-09-10 16:38:58.607  INFO 16264 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-09-10 16:38:58.617 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /login
+2026-09-10 16:38:58.622 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 16:38:58.626 DEBUG 16264 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 16:38:58.626 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /login
+2026-09-10 16:38:58.856 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:38:58.860 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:38:58.860 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 16:38:58.947 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /accounts
+2026-09-10 16:38:58.947 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 16:38:58.947 DEBUG 16264 --- [nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 16:38:58.947 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /accounts
+2026-09-10 16:38:59.178 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:38:59.180 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:38:59.180 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 16:39:28.023 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /login/debug
+2026-09-10 16:39:28.023 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 16:39:28.023 DEBUG 16264 --- [nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 16:39:28.023 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /login/debug
+2026-09-10 16:39:28.067 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:39:28.068 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:39:28.068 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 16:39:28.146 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 16:39:28.146 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 16:39:28.146 DEBUG 16264 --- [nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 16:39:28.146 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 16:39:28.206 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:39:28.207 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:39:28.207 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 16:39:56.565 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /login/debug
+2026-09-10 16:39:56.565 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 16:39:56.566 DEBUG 16264 --- [nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 16:39:56.566 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /login/debug
+2026-09-10 16:39:56.571 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:39:56.573 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:39:56.573 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 16:39:56.651 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /account/3
+2026-09-10 16:39:56.651 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 16:39:56.651 DEBUG 16264 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 16:39:56.651 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /account/3
+2026-09-10 16:39:56.664 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:39:56.665 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:39:56.665 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 16:39:56.743 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /account/1/balance?amount=9999999
+2026-09-10 16:39:56.744 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 16:39:56.744 DEBUG 16264 --- [nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 16:39:56.744 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /account/1/balance?amount=9999999
+2026-09-10 16:39:56.769 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:39:56.770 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:39:56.770 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 16:39:56.845 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /actuator/env
+2026-09-10 16:39:56.845 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 16:39:56.845 DEBUG 16264 --- [nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 16:39:56.845 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /actuator/env
+2026-09-10 16:39:56.868 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:39:56.871 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:39:56.871 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 16:39:56.958 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /actuator/env
+2026-09-10 16:39:56.958 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 16:39:56.958 DEBUG 16264 --- [nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 16:39:56.958 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /actuator/env
+2026-09-10 16:39:56.964 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:39:56.966 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:39:56.967 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 16:40:10.033 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /admin/users
+2026-09-10 16:40:10.033 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 16:40:10.033 DEBUG 16264 --- [nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 16:40:10.034 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /admin/users
+2026-09-10 16:40:10.037 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:40:10.037 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:40:10.037 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 16:40:10.127 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /admin/users?key=Sup3rAdmin!2023
+2026-09-10 16:40:10.127 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 16:40:10.127 DEBUG 16264 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 16:40:10.127 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /admin/users?key=Sup3rAdmin!2023
+2026-09-10 16:40:10.130 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:40:10.132 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:40:10.132 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 16:40:10.208 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /admin/debug/all-data
+2026-09-10 16:40:10.208 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 16:40:10.208 DEBUG 16264 --- [nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 16:40:10.209 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /admin/debug/all-data
+2026-09-10 16:40:10.212 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:40:10.213 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:40:10.213 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 16:40:10.295 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /statements/download?filename=../pom.xml
+2026-09-10 16:40:10.297 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 16:40:10.297 DEBUG 16264 --- [nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 16:40:10.297 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /statements/download?filename=../pom.xml
+2026-09-10 16:40:10.311 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:40:10.312 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:40:10.312 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 16:40:10.419 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /search?q=%3Cscript%3Ealert(document.cookie)%3C/script%3E
+2026-09-10 16:40:10.419 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 16:40:10.419 DEBUG 16264 --- [nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 16:40:10.421 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /search?q=%3Cscript%3Ealert(document.cookie)%3C/script%3E
+2026-09-10 16:40:10.486 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:40:10.487 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:40:10.487 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 16:49:28.342 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /
+2026-09-10 16:49:28.343 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 16:49:28.343 DEBUG 16264 --- [nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 16:49:28.343 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /
+2026-09-10 16:49:28.351 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:49:28.352 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:49:28.352 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 16:49:28.361 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-09-10 16:49:28.362 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 16:49:28.362 DEBUG 16264 --- [nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 16:49:28.362 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /error
+2026-09-10 16:49:28.411 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:49:28.412 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 16:49:28.653 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-09-10 16:49:28.653 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 16:49:28.653 DEBUG 16264 --- [nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 16:49:28.653 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /favicon.ico
+2026-09-10 16:49:28.665 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:49:28.667 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:49:28.667 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 16:49:28.667 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-09-10 16:49:28.668 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 16:49:28.668 DEBUG 16264 --- [nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 16:49:28.668 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /error
+2026-09-10 16:49:28.712 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:49:28.713 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:49:28.713 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 16:49:36.036 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /login
+2026-09-10 16:49:36.037 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 16:49:36.038 DEBUG 16264 --- [io-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 16:49:36.039 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /login
+2026-09-10 16:49:36.050 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:49:36.053 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:49:36.053 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 16:49:46.199 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 16:49:46.200 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 16:49:46.210 DEBUG 16264 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 16:49:46.211 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 16:49:46.222 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:49:46.223 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:49:46.223 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 16:49:46.232 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /dashboard?user=admin
+2026-09-10 16:49:46.232 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 16:49:46.233 DEBUG 16264 --- [nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 16:49:46.233 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /dashboard?user=admin
+2026-09-10 16:49:46.244 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:49:46.246 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 16:49:46.246 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 17:15:50.549 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /login
+2026-09-10 17:15:50.550 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 17:15:50.551 DEBUG 16264 --- [nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 17:15:50.551 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /login
+2026-09-10 17:15:50.565 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 17:15:50.566 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 17:15:50.567 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 17:15:51.747 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /favicon.ico
+2026-09-10 17:15:51.747 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 17:15:51.747 DEBUG 16264 --- [nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 17:15:51.747 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /favicon.ico
+2026-09-10 17:15:51.757 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 17:15:51.758 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 17:15:51.758 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 17:15:51.760 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /error
+2026-09-10 17:15:51.760 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 17:15:51.761 DEBUG 16264 --- [nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 17:15:51.761 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /error
+2026-09-10 17:15:51.767 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 17:15:51.770 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 17:15:51.770 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 21:45:05.943  WARN 16264 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h58m19s977ms89µs800ns).
+2026-09-10 21:50:25.204 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 21:50:25.204 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 21:50:25.206 DEBUG 16264 --- [nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 21:50:25.206 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 21:50:25.254 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 21:50:25.255 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 21:50:25.255 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 21:50:25.360 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /dashboard?user=admin
+2026-09-10 21:50:25.361 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 21:50:25.362 DEBUG 16264 --- [nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 21:50:25.362 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /dashboard?user=admin
+2026-09-10 21:50:25.377 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 21:50:25.379 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 21:50:25.379 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 21:51:24.749 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 21:51:24.750 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 21:51:24.750 DEBUG 16264 --- [nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 21:51:24.751 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 21:51:24.762 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 21:51:24.762 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 21:51:24.762 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 21:52:00.098 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 21:52:00.099 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 21:52:00.099 DEBUG 16264 --- [io-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 21:52:00.099 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 21:52:00.120 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 21:52:00.122 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 21:52:00.122 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 21:52:32.415 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /login
+2026-09-10 21:52:32.416 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 21:52:32.417 DEBUG 16264 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 21:52:32.417 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /login
+2026-09-10 21:52:32.425 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 21:52:32.426 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 21:52:32.426 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 21:52:42.965 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 21:52:42.966 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 21:52:42.966 DEBUG 16264 --- [nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 21:52:42.967 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 21:52:42.977 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 21:52:42.979 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 21:52:42.979 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 21:52:59.308 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 21:52:59.308 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 21:52:59.309 DEBUG 16264 --- [nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 21:52:59.309 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 21:52:59.323 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 21:52:59.324 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 21:52:59.325 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 21:56:47.773 DEBUG 16264 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 21:56:47.774 DEBUG 16264 --- [nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 21:56:47.775 DEBUG 16264 --- [nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 21:56:47.775 DEBUG 16264 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 21:56:47.791 DEBUG 16264 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 21:56:47.793 DEBUG 16264 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 21:56:47.793 DEBUG 16264 --- [nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 21:57:02.491 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 21:57:02.492 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 21:57:02.493 DEBUG 16264 --- [nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 21:57:02.498 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 21:57:02.625 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 21:57:02.628 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 21:57:02.628 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 21:57:13.991 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 21:57:13.991 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 21:57:13.993 DEBUG 16264 --- [nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 21:57:13.993 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 21:57:14.066 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 21:57:14.069 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 21:57:14.070 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:09:49.151 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /dashboard?user=admin
+2026-09-10 22:09:49.151 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:09:49.152 DEBUG 16264 --- [nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:09:49.152 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /dashboard?user=admin
+2026-09-10 22:09:49.160 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:09:49.162 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:09:49.162 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:11:15.329 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:11:15.329 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:11:15.329 DEBUG 16264 --- [nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:11:15.330 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:11:15.343 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:11:15.343 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:11:15.343 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:11:15.380 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /dashboard?user=admin
+2026-09-10 22:11:15.380 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:11:15.380 DEBUG 16264 --- [nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:11:15.381 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /dashboard?user=admin
+2026-09-10 22:11:15.393 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:11:15.395 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:11:15.395 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:11:51.685 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:11:51.685 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:11:51.685 DEBUG 16264 --- [io-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:11:51.685 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:11:51.696 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:11:51.696 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:11:51.696 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:12:06.739 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:12:06.739 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:12:06.740 DEBUG 16264 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:12:06.740 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:12:06.757 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:12:06.758 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:12:06.760 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:12:19.885 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:12:19.885 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:12:19.886 DEBUG 16264 --- [nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:12:19.886 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:12:19.897 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:12:19.897 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:12:19.897 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:12:27.155 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:12:27.158 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:12:27.161 DEBUG 16264 --- [nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:12:27.162 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:12:27.174 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:12:27.176 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:12:27.176 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:12:33.365 DEBUG 16264 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:12:33.365 DEBUG 16264 --- [nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:12:33.365 DEBUG 16264 --- [nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:12:33.367 DEBUG 16264 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:12:33.380 DEBUG 16264 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:12:33.380 DEBUG 16264 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:12:33.382 DEBUG 16264 --- [nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:12:41.224 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:12:41.224 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:12:41.225 DEBUG 16264 --- [nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:12:41.225 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:12:41.237 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:12:41.238 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:12:41.238 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.577 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.577 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.578 DEBUG 16264 --- [nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.578 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.585 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.589 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.589 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.597 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.597 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.598 DEBUG 16264 --- [nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.598 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.604 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.604 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.609 DEBUG 16264 --- [nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.611 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.611 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.612 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.612 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.612 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.612 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.612 DEBUG 16264 --- [nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.612 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.622 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.622 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.623 DEBUG 16264 --- [io-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.623 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.629 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.629 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.629 DEBUG 16264 --- [nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.629 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.631 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.632 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.634 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.634 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.634 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.634 DEBUG 16264 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.635 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.635 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.635 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.635 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.635 DEBUG 16264 --- [nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.636 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.636 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.637 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.642 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.642 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.643 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.643 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.643 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.643 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.646 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.647 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.647 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.647 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.648 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.648 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.674 DEBUG 16264 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.675 DEBUG 16264 --- [nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.675 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.675 DEBUG 16264 --- [nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.675 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.675 DEBUG 16264 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.675 DEBUG 16264 --- [nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.675 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.682 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.683 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.683 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.688 DEBUG 16264 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.689 DEBUG 16264 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.689 DEBUG 16264 --- [nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.707 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.708 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.708 DEBUG 16264 --- [nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.708 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.713 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.714 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.714 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.714 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.714 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.715 DEBUG 16264 --- [nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.715 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.718 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.718 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.719 DEBUG 16264 --- [nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.719 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.720 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.720 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.720 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.723 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.723 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.723 DEBUG 16264 --- [nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.723 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.726 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.727 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.727 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.732 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.732 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.732 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.737 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.737 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.737 DEBUG 16264 --- [nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.737 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.740 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.741 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.741 DEBUG 16264 --- [io-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.742 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.744 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.744 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.744 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.748 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.749 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.750 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.811 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.812 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.812 DEBUG 16264 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.812 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.813 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.813 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.814 DEBUG 16264 --- [nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.814 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.818 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.819 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.819 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.822 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.822 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.822 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.822 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.824 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.824 DEBUG 16264 --- [nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.824 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.832 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.833 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.833 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.837 DEBUG 16264 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.837 DEBUG 16264 --- [nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.839 DEBUG 16264 --- [nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.839 DEBUG 16264 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.840 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.841 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.841 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.841 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.841 DEBUG 16264 --- [nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.841 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.841 DEBUG 16264 --- [nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.841 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.847 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.847 DEBUG 16264 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.848 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.848 DEBUG 16264 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.848 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.848 DEBUG 16264 --- [nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.855 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.855 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.855 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.862 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.862 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.862 DEBUG 16264 --- [nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.863 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.867 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.867 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.868 DEBUG 16264 --- [nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.868 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.871 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.872 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.872 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.872 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.872 DEBUG 16264 --- [nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.872 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.872 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.875 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.876 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.876 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.879 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.879 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.880 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.882 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.882 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.882 DEBUG 16264 --- [io-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.882 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.888 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.889 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.889 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.889 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.889 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.889 DEBUG 16264 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.889 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.896 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.896 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.897 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.898 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.898 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.898 DEBUG 16264 --- [nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.898 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.906 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.906 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.906 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.906 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.906 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.907 DEBUG 16264 --- [nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.907 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.911 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.911 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.912 DEBUG 16264 --- [nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.912 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.913 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.914 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.914 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.916 DEBUG 16264 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.917 DEBUG 16264 --- [nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.917 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.917 DEBUG 16264 --- [nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.917 DEBUG 16264 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.917 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.917 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.924  INFO 16264 --- [nio-8080-exec-8] org.apache.tomcat.util.http.Parameters   : Character decoding failed. Parameter [username] with value [%%20%20wildcard%20attribute%20indicator] has been ignored. Note that the name and value quoted here may be corrupted due to the failed decoding. Use debug level logging to see the original, non-corrupted values.
+ Note: further occurrences of Parameter errors will be logged at DEBUG level.
+2026-09-10 22:23:44.929 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.929 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.929 DEBUG 16264 --- [nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.929 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.934 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.935 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.935 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.938 DEBUG 16264 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.939  WARN 16264 --- [nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'username' for method parameter type String is not present]
+2026-09-10 22:23:44.939 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.939 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.939 DEBUG 16264 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.939 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.939 DEBUG 16264 --- [nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.939 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.939 DEBUG 16264 --- [nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.939 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.940 DEBUG 16264 --- [nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.940 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.940 DEBUG 16264 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /error
+2026-09-10 22:23:44.940 DEBUG 16264 --- [nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.940 DEBUG 16264 --- [nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.940 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:23:44.940 DEBUG 16264 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /error
+2026-09-10 22:23:44.940 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:23:44.941 DEBUG 16264 --- [nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:23:44.941 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:23:44.945 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.945 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.945 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.945 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.945 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.945 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.945 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.945 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.946 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:23:44.964 DEBUG 16264 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.964 DEBUG 16264 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:23:44.964 DEBUG 16264 --- [nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.003 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.003 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.004 DEBUG 16264 --- [io-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.004 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.010 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.010 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.010 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.014 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.014 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.014 DEBUG 16264 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.014 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.020 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.021 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.021 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.023 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.023 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.023 DEBUG 16264 --- [nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.023 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.032 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.032 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.032 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.034 DEBUG 16264 --- [nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.034 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.034 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.034 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.037 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.037 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.038 DEBUG 16264 --- [nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.038 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.039 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.039 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.039 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.045 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.045 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.045 DEBUG 16264 --- [nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.045 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.045 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.046 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.046 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.048 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.049 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.049 DEBUG 16264 --- [nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.049 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.050 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.050 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.050 DEBUG 16264 --- [nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.050 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.051 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.051 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.051 DEBUG 16264 --- [nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.051 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.051 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.052 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.052 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.055 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.055 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.055 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.055 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.055 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.055 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.055 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.056 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.056 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.066 DEBUG 16264 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.067 DEBUG 16264 --- [nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.067 DEBUG 16264 --- [nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.067 DEBUG 16264 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.069 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.069 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.069 DEBUG 16264 --- [io-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.069 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.075 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.075 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.076 DEBUG 16264 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.076 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.077 DEBUG 16264 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.077 DEBUG 16264 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.077 DEBUG 16264 --- [nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.078 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.079 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.079 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.084 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.084 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.084 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.094 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.095 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.095 DEBUG 16264 --- [nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.095 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.102 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.102 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.102 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.131 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.131 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.132 DEBUG 16264 --- [nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.132 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.136 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.136 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.136 DEBUG 16264 --- [nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.136 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.139 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.140 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.140 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.142 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.142 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.142 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.142 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.142 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.143 DEBUG 16264 --- [nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.143 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.146 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.147 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.147 DEBUG 16264 --- [nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.147 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.151 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.152 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.152 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.153 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.154 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.154 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.183 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.183 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.183 DEBUG 16264 --- [nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.183 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.190 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.190 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.190 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.191 DEBUG 16264 --- [nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.191 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.191 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.191 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.197 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.197 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.197 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.202 DEBUG 16264 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.202 DEBUG 16264 --- [nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.202 DEBUG 16264 --- [nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.202 DEBUG 16264 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.206 DEBUG 16264 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.206 DEBUG 16264 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.207 DEBUG 16264 --- [nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.213 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.213 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.214 DEBUG 16264 --- [io-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.214 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.215 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.215 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.216 DEBUG 16264 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.216 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.220 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.221 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.221 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.221 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.221 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.221 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.235 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.235 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.235 DEBUG 16264 --- [nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.235 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.242 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.242 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.242 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.253 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.254 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.254 DEBUG 16264 --- [nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.254 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.262 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.263 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.263 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.270 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.271 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.271 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.271 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.271 DEBUG 16264 --- [nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.271 DEBUG 16264 --- [nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.271 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.272 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.278 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.278 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.278 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.278 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.279 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.279 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.283 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.283 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.284 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.284 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.284 DEBUG 16264 --- [nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.284 DEBUG 16264 --- [nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.284 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.284 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.289 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.289 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.289 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.289 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.289 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.289 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.298 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.299 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.299 DEBUG 16264 --- [nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.299 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.305 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.306 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.306 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.311 DEBUG 16264 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.311 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.311 DEBUG 16264 --- [nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.311 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.311 DEBUG 16264 --- [nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.311 DEBUG 16264 --- [io-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.311 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.311 DEBUG 16264 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.315 DEBUG 16264 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.315 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.316 DEBUG 16264 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.316 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.316 DEBUG 16264 --- [nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.316 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.326 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.326 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.326 DEBUG 16264 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.326 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.328 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.328 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.328 DEBUG 16264 --- [nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.328 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.328 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.328  WARN 16264 --- [nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'username' for method parameter type String is not present]
+2026-09-10 22:26:51.330 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.330 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.330 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /error
+2026-09-10 22:26:51.330 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.330 DEBUG 16264 --- [nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.330 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /error
+2026-09-10 22:26:51.333 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.333 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.333 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.334 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.334 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.334 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.353 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.353 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.354 DEBUG 16264 --- [nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.354 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.354 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:26:51.354 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:26:51.354 DEBUG 16264 --- [nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:26:51.354 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:26:51.359 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.359 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.360 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.360 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:26:51.360 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:26:51.360 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.583 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.583 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.583 DEBUG 16264 --- [nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.583 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.587 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.587 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.588 DEBUG 16264 --- [nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.588 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.588 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.589 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.589 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.589 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.589 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.589 DEBUG 16264 --- [nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.590 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.615 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.615 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.615 DEBUG 16264 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.616 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.616 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.616 DEBUG 16264 --- [nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.616 DEBUG 16264 --- [io-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.616 DEBUG 16264 --- [nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.616 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.616 DEBUG 16264 --- [nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.616 DEBUG 16264 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.616 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.619 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.619 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.619 DEBUG 16264 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.620 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.629 DEBUG 16264 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.630 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.630 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.631 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.631 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.631 DEBUG 16264 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.631 DEBUG 16264 --- [nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.632 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.632 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.632 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.632 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.633 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.633 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.633 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.634 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.634 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.634 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.634 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.640 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.640 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.641 DEBUG 16264 --- [nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.641 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.646 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.648 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.648 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.651 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.651 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.652 DEBUG 16264 --- [nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.652 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.659 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.734 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.734 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.735 DEBUG 16264 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.735 DEBUG 16264 --- [nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.735 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.735 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.735 DEBUG 16264 --- [nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.735 DEBUG 16264 --- [nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.735 DEBUG 16264 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.735 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.735 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.735 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.736 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.736 DEBUG 16264 --- [nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.736 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.736 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.737 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.737 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.738 DEBUG 16264 --- [nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.738 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.738 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.738 DEBUG 16264 --- [nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.738 DEBUG 16264 --- [nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.739 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.739 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.739 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.739 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.739 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.739 DEBUG 16264 --- [nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.739 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.741 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.741 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.741 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.741 DEBUG 16264 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.741 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.742 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.743 DEBUG 16264 --- [nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.748 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.750 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.750 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.750 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.750 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.750 DEBUG 16264 --- [io-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.750 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.754 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.754 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.755 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.755 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.756 DEBUG 16264 --- [io-8080-exec-11] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.757 DEBUG 16264 --- [io-8080-exec-11] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.758 DEBUG 16264 --- [io-8080-exec-11] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.758 DEBUG 16264 --- [io-8080-exec-11] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.760 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.760 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.760 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.762 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.762 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.763 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.763 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.764 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.764 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.765 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.765 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.766 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.766 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.767 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.767 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.767 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.767 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.767 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.767 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.768 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.768 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.768 DEBUG 16264 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.768 DEBUG 16264 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.768 DEBUG 16264 --- [nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.770 DEBUG 16264 --- [io-8080-exec-11] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.770 DEBUG 16264 --- [io-8080-exec-11] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.770 DEBUG 16264 --- [io-8080-exec-11] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.781 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.781 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.781 DEBUG 16264 --- [nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.781 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.787 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.788 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.788 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.846 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.846 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.848 DEBUG 16264 --- [nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.848 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.853 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.853 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.853 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.855 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.855 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.855 DEBUG 16264 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.855 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.861 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.861 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.861 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.861 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.861 DEBUG 16264 --- [nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.861 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.861 DEBUG 16264 --- [nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.861 DEBUG 16264 --- [nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.861 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.861 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.861 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.867 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.867 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.868 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.868 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.868 DEBUG 16264 --- [nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.868 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.868 DEBUG 16264 --- [nio-8080-exec-3] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.868 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.868 DEBUG 16264 --- [io-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.868 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.874 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.874 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.874 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.879 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.879 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.880 DEBUG 16264 --- [nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.880 DEBUG 16264 --- [nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.884 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.884 DEBUG 16264 --- [nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.884 DEBUG 16264 --- [nio-8080-exec-7] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.889 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.889 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.889 DEBUG 16264 --- [nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.889 DEBUG 16264 --- [nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.890 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.890 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.890 DEBUG 16264 --- [nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.890 DEBUG 16264 --- [nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.894 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.894 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.894 DEBUG 16264 --- [nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.894 DEBUG 16264 --- [nio-8080-exec-4] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.894 DEBUG 16264 --- [nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.894 DEBUG 16264 --- [nio-8080-exec-6] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.896 DEBUG 16264 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.896 DEBUG 16264 --- [nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.897 DEBUG 16264 --- [nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.897 DEBUG 16264 --- [nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.901 DEBUG 16264 --- [io-8080-exec-11] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.901 DEBUG 16264 --- [io-8080-exec-11] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.902 DEBUG 16264 --- [io-8080-exec-11] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.902 DEBUG 16264 --- [io-8080-exec-11] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.902 DEBUG 16264 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.902 DEBUG 16264 --- [nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.902 DEBUG 16264 --- [nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.905 DEBUG 16264 --- [io-8080-exec-11] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.906 DEBUG 16264 --- [io-8080-exec-11] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.906 DEBUG 16264 --- [io-8080-exec-11] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.912 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.912 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.913 DEBUG 16264 --- [nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.913 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.913 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.913 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.913 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.913  WARN 16264 --- [nio-8080-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'username' for method parameter type String is not present]
+2026-09-10 22:28:32.914 DEBUG 16264 --- [nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.914 DEBUG 16264 --- [nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.914 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.914 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.914 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /error
+2026-09-10 22:28:32.914 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.914 DEBUG 16264 --- [nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.914 DEBUG 16264 --- [nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured POST /error
+2026-09-10 22:28:32.916 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.916 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.916 DEBUG 16264 --- [nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.916 DEBUG 16264 --- [nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.919 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.919 DEBUG 16264 --- [nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.919 DEBUG 16264 --- [nio-8080-exec-5] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.921 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.921 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.922 DEBUG 16264 --- [nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.922 DEBUG 16264 --- [nio-8080-exec-9] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.922 DEBUG 16264 --- [nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.922 DEBUG 16264 --- [nio-8080-exec-1] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:28:32.922 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:28:32.922 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:28:32.922 DEBUG 16264 --- [nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:28:32.922 DEBUG 16264 --- [nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:28:32.927 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.928 DEBUG 16264 --- [nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:28:32.928 DEBUG 16264 --- [nio-8080-exec-2] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-10 22:30:50.316 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing POST /login
+2026-09-10 22:30:50.317 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Set SecurityContextHolder to empty SecurityContext
+2026-09-10 22:30:50.317 DEBUG 16264 --- [io-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2026-09-10 22:30:50.317 DEBUG 16264 --- [io-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured POST /login
+2026-09-10 22:30:50.324 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:30:50.329 DEBUG 16264 --- [io-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Did not store anonymous SecurityContext
+2026-09-10 22:30:50.329 DEBUG 16264 --- [io-8080-exec-10] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2026-09-11 12:26:07.795  WARN 16264 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=13h36m49s469ms353µs600ns).
+2026-09-11 16:45:14.887  WARN 16264 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3h47m6s578ms850µs400ns).
+2026-09-11 18:37:18.979  WARN 16264 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=35m33s818ms430µs100ns).
+2026-09-12 07:38:04.036  WARN 16264 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11h55m27s188ms249µs800ns).
+2026-09-12 09:30:11.531  WARN 16264 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=39m38s496ms716µs500ns).
+2026-09-12 10:30:48.016  WARN 16264 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=28m6s408ms991µs500ns).
+2026-09-12 11:00:40.991  WARN 16264 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=29m52s974ms654µs400ns).
+2026-09-12 12:52:20.987  WARN 16264 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=21m53s17ms947µs900ns).
+2026-09-12 14:32:11.315  WARN 16264 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=49m20s219ms766µs100ns).
+2026-09-14 17:59:38.011  WARN 16264 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2d3h27m34s730ms60µs400ns).
+2026-09-14 20:58:04.507  WARN 16264 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h48m57s209ms280µs700ns).
+2026-09-15 14:31:23.955  WARN 16264 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17h33m31s552ms764µs300ns).
+2026-09-15 17:23:14.487  WARN 16264 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h16m20s464ms94µs900ns).
+2026-09-15 18:26:03.955  WARN 16264 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m48s510ms457µs800ns).
+2026-09-15 20:18:57.823  WARN 16264 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=56m53s9ms61µs800ns).
+2026-09-16 11:35:56.043  WARN 16264 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15h17m10s910ms176µs900ns).
+2026-09-16 13:34:03.596  WARN 16264 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=25m36s556ms390µs400ns).
+2026-09-16 15:12:29.665  WARN 16264 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=32m25s89ms496µs900ns).
+2026-09-16 16:59:32.155  WARN 16264 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h47m2s489ms363µs300ns).

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>VulnBank - Support Messages</title></head>
+<body>
+<h1>Support Messages</h1>
+<form method="post" action="/messages">
+    <input type="text" name="sender" placeholder="your name"/>
+    <input type="text" name="content" placeholder="message"/>
+    <button type="submit">Send</button>
+</form>
+<ul>
+    <li th:each="m : ${messages}">
+        <b th:text="${m.sender}"></b>:
+        <!-- VULNERABLE: unescaped output -> stored XSS -->
+        <span th:utext="${m.content}"></span>
+    </li>
+</ul>
+</body>
+</html>
