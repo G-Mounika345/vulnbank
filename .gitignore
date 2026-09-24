@@ -1,0 +1,20 @@
+# Build output
+target/
+*.class
+
+# Runtime logs (regenerated locally, not source)
+vulnbank/run.log
+*.log
+
+# Python
+__pycache__/
+*.pyc
+
+# Env files (secrets)
+.env
+.env.local
+
+# IDE
+.idea/
+.vscode/
+*.iml
