@@ -42,18 +42,23 @@ pipeline {
         stage('SCA - Snyk') {
             steps {
                 dir('vulnbank') {
-                    withCredentials([string(credentialsId: 'snyk-token', variable: 'SNYK_TOKEN')]) {
-                        bat "mkdir ${REPORT_DIR}\\snyk 2>nul & exit 0"
-                        script {
-                            bat "snyk auth %SNYK_TOKEN%"
-                            def status = bat(
-                                returnStatus: true,
-                                script: "snyk test --json-file-output=${REPORT_DIR}\\snyk\\snyk-report.json"
-                            )
-                            bat "snyk-to-html -i ${REPORT_DIR}\\snyk\\snyk-report.json -o ${REPORT_DIR}\\snyk\\snyk-report.html"
-                            if (status != 0) {
-                                unstable("Snyk found vulnerabilities (exit ${status})")
+                    script {
+                        try {
+                            withCredentials([string(credentialsId: 'snyk-token', variable: 'SNYK_TOKEN')]) {
+                                bat "mkdir ${REPORT_DIR}\\snyk 2>nul & exit 0"
+                                bat "snyk auth %SNYK_TOKEN%"
+                                def status = bat(
+                                    returnStatus: true,
+                                    script: "snyk test --json-file-output=${REPORT_DIR}\\snyk\\snyk-report.json"
+                                )
+                                bat "snyk-to-html -i ${REPORT_DIR}\\snyk\\snyk-report.json -o ${REPORT_DIR}\\snyk\\snyk-report.html"
+                                if (status != 0) {
+                                    unstable("Snyk found vulnerabilities (exit ${status})")
+                                }
                             }
+                        } catch (org.jenkinsci.plugins.credentialsbinding.impl.CredentialNotFoundException e) {
+                            echo "Skipping Snyk stage: 'snyk-token' credential not configured yet."
+                            unstable("Snyk stage skipped - no token configured")
                         }
                     }
                 }
