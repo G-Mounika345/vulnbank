@@ -65,6 +65,11 @@ pipeline {
                                 if (status != 0) {
                                     unstable("Snyk found vulnerabilities (exit ${status})")
                                 }
+                                // Publishes a snapshot to the Snyk web dashboard (snyk test alone
+                                // is a one-off CLI scan and never creates a dashboard project).
+                                // Prints the dashboard URL to console for the SCA email/report.
+                                bat "snyk monitor --project-name=VulnBank > ${REPORT_DIR}\\snyk\\snyk-monitor.log 2>&1"
+                                archiveArtifacts artifacts: "${REPORT_DIR}/snyk/snyk-monitor.log", allowEmptyArchive: true
                             }
                         } catch (org.jenkinsci.plugins.credentialsbinding.impl.CredentialNotFoundException e) {
                             echo "Skipping Snyk stage: 'snyk-token' credential not configured yet."
