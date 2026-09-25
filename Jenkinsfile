@@ -70,20 +70,30 @@ pipeline {
     post {
         always {
             archiveArtifacts artifacts: 'vulnbank/sca-reports/**', fingerprint: true, allowEmptyArchive: true
-            publishHTML(target: [
-                reportDir: 'vulnbank/sca-reports/dependency-check',
-                reportFiles: 'dependency-check-report.html',
-                reportName: 'Dependency-Check Report',
-                alwaysLinkToLastBuild: true,
-                keepAll: true
-            ])
-            publishHTML(target: [
-                reportDir: 'vulnbank/sca-reports/snyk',
-                reportFiles: 'snyk-report.html',
-                reportName: 'Snyk Report',
-                alwaysLinkToLastBuild: true,
-                keepAll: true
-            ])
+            script {
+                if (fileExists('vulnbank/sca-reports/dependency-check/dependency-check-report.html')) {
+                    publishHTML(target: [
+                        reportDir: 'vulnbank/sca-reports/dependency-check',
+                        reportFiles: 'dependency-check-report.html',
+                        reportName: 'Dependency-Check Report',
+                        alwaysLinkToLastBuild: true,
+                        keepAll: true
+                    ])
+                } else {
+                    echo 'No Dependency-Check report found - skipping publishHTML.'
+                }
+                if (fileExists('vulnbank/sca-reports/snyk/snyk-report.html')) {
+                    publishHTML(target: [
+                        reportDir: 'vulnbank/sca-reports/snyk',
+                        reportFiles: 'snyk-report.html',
+                        reportName: 'Snyk Report',
+                        alwaysLinkToLastBuild: true,
+                        keepAll: true
+                    ])
+                } else {
+                    echo 'No Snyk report found - skipping publishHTML.'
+                }
+            }
         }
     }
 }
