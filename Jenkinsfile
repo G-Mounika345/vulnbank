@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        DEPENDENCY_CHECK = 'C:/Tools/dependency-check-12.1.0-release/dependency-check/bin/dependency-check.bat'
-        REPORT_DIR        = 'sca-reports'
+        DC_DATA_DIR = 'C:/Tools/dependency-check-12.1.0-release/dependency-check/data'
+        REPORT_DIR  = 'sca-reports'
     }
 
     stages {
@@ -27,9 +27,12 @@ pipeline {
                     withCredentials([string(credentialsId: 'nvd-api-key', variable: 'NVD_API_KEY')]) {
                         script {
                             bat "if not exist ${REPORT_DIR}\\dependency-check mkdir ${REPORT_DIR}\\dependency-check"
+                            // Uses the Maven plugin (not the standalone CLI) so it reads the
+                            // dependency graph Maven already resolved in the Build stage,
+                            // instead of fingerprinting whatever jars happen to sit on disk.
                             def status = bat(
                                 returnStatus: true,
-                                script: "\"${DEPENDENCY_CHECK}\" --project VulnBank --scan . --format HTML --format JSON --out ${REPORT_DIR}\\dependency-check --nvdApiKey %NVD_API_KEY% --failOnCVSS 999"
+                                script: "mvn org.owasp:dependency-check-maven:12.1.0:check -DprojectName=VulnBank -Dformat=ALL -DoutputDirectory=${REPORT_DIR}\\dependency-check -DdataDirectory=\"%DC_DATA_DIR%\" -DnvdApiKey=%NVD_API_KEY% -DfailBuildOnCVSS=11"
                             )
                             if (status != 0) {
                                 unstable("Dependency-Check exited with status ${status}")
