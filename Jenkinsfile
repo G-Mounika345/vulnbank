@@ -28,12 +28,18 @@ pipeline {
                         script {
                             bat "if not exist ${REPORT_DIR}\\dependency-check mkdir ${REPORT_DIR}\\dependency-check"
                             // Uses the Maven plugin (not the standalone CLI) so it reads the
-                            // dependency graph Maven already resolved in the Build stage,
-                            // instead of fingerprinting whatever jars happen to sit on disk.
+                            // dependency graph Maven already resolved, instead of fingerprinting
+                            // whatever jars happen to sit on disk.
+                            //
+                            // NOTE: -DoutputDirectory does not relocate the plugin's output in
+                            // practice (confirmed on build #5 - it still wrote to target/ despite
+                            // the flag), so we let it write to its real default (target/) and copy
+                            // the reports out afterwards instead of fighting that.
                             def status = bat(
                                 returnStatus: true,
-                                script: "mvn org.owasp:dependency-check-maven:12.1.0:check -DprojectName=VulnBank -Dformat=ALL -DoutputDirectory=${REPORT_DIR}\\dependency-check -DdataDirectory=\"%DC_DATA_DIR%\" -DnvdApiKey=%NVD_API_KEY% -DfailBuildOnCVSS=11 -DossindexAnalyzerEnabled=false"
+                                script: "mvn org.owasp:dependency-check-maven:12.1.0:check -DprojectName=VulnBank -Dformat=ALL -DdataDirectory=\"%DC_DATA_DIR%\" -DnvdApiKey=%NVD_API_KEY% -DfailBuildOnCVSS=11 -DossindexAnalyzerEnabled=false"
                             )
+                            bat "copy /Y target\\dependency-check-report.* ${REPORT_DIR}\\dependency-check\\ >nul"
                             if (status != 0) {
                                 unstable("Dependency-Check exited with status ${status}")
                             }
