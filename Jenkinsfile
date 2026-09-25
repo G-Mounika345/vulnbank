@@ -110,12 +110,13 @@ pipeline {
 
                 bat "node scripts\\build-email-report.js vulnbank\\sca-reports\\dependency-check\\dependency-check-report.json vulnbank\\sca-reports\\snyk\\snyk-report.json email-body.html \"${env.BUILD_URL}\" \"${env.BUILD_NUMBER}\" \"${currentBuild.currentResult}\""
                 if (fileExists('email-body.html')) {
-                    emailext(
-                        to: 'alohawork811@gmail.com',
-                        subject: "VulnBank SCA Report - Build #${env.BUILD_NUMBER} - ${currentBuild.currentResult}",
-                        body: readFile('email-body.html'),
-                        mimeType: 'text/html'
-                    )
+                    // emailext (plugin) reliably failed here with "Not sent to
+                    // the following valid addresses" across multiple builds even
+                    // though identical raw SMTP sends always succeeded - bypassing
+                    // it and sending directly via PowerShell's Send-MailMessage.
+                    withCredentials([usernamePassword(credentialsId: 'gmail-smtp', usernameVariable: 'GMAIL_USER', passwordVariable: 'GMAIL_PASS')]) {
+                        powershell "& scripts\\send-email.ps1 -Username \$env:GMAIL_USER -Password \$env:GMAIL_PASS -To 'alohawork811@gmail.com' -Subject 'VulnBank SCA Report - Build #${env.BUILD_NUMBER} - ${currentBuild.currentResult}' -BodyPath 'email-body.html'"
+                    }
                 } else {
                     echo 'email-body.html not generated - skipping email.'
                 }
