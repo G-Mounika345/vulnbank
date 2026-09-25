@@ -107,6 +107,18 @@ pipeline {
                 } else {
                     echo 'No Snyk report found - skipping publishHTML.'
                 }
+
+                bat "node scripts\\build-email-report.js vulnbank\\sca-reports\\dependency-check\\dependency-check-report.json vulnbank\\sca-reports\\snyk\\snyk-report.json email-body.html \"${env.BUILD_URL}\" \"${env.BUILD_NUMBER}\" \"${currentBuild.currentResult}\""
+                if (fileExists('email-body.html')) {
+                    emailext(
+                        to: 'alohawork811@gmail.com',
+                        subject: "VulnBank SCA Report - Build #${env.BUILD_NUMBER} - ${currentBuild.currentResult}",
+                        body: readFile('email-body.html'),
+                        mimeType: 'text/html'
+                    )
+                } else {
+                    echo 'email-body.html not generated - skipping email.'
+                }
             }
         }
     }
