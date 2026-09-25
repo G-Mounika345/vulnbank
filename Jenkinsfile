@@ -26,6 +26,7 @@ pipeline {
                 dir('vulnbank') {
                     withCredentials([string(credentialsId: 'nvd-api-key', variable: 'NVD_API_KEY')]) {
                         script {
+                            bat "if not exist ${REPORT_DIR}\\dependency-check mkdir ${REPORT_DIR}\\dependency-check"
                             def status = bat(
                                 returnStatus: true,
                                 script: "\"${DEPENDENCY_CHECK}\" --project VulnBank --scan . --format HTML --format JSON --out ${REPORT_DIR}\\dependency-check --nvdApiKey %NVD_API_KEY% --failOnCVSS 999"
