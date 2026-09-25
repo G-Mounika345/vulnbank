@@ -32,7 +32,7 @@ pipeline {
                             // instead of fingerprinting whatever jars happen to sit on disk.
                             def status = bat(
                                 returnStatus: true,
-                                script: "mvn org.owasp:dependency-check-maven:12.1.0:check -DprojectName=VulnBank -Dformat=ALL -DoutputDirectory=${REPORT_DIR}\\dependency-check -DdataDirectory=\"%DC_DATA_DIR%\" -DnvdApiKey=%NVD_API_KEY% -DfailBuildOnCVSS=11"
+                                script: "mvn org.owasp:dependency-check-maven:12.1.0:check -DprojectName=VulnBank -Dformat=ALL -DoutputDirectory=${REPORT_DIR}\\dependency-check -DdataDirectory=\"%DC_DATA_DIR%\" -DnvdApiKey=%NVD_API_KEY% -DfailBuildOnCVSS=11 -DossindexAnalyzerEnabled=false"
                             )
                             if (status != 0) {
                                 unstable("Dependency-Check exited with status ${status}")
