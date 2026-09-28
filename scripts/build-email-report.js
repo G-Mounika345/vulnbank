@@ -4,7 +4,7 @@
 // (no flexbox/grid - Outlook and friends don't render those reliably).
 const fs = require('fs');
 
-const [, , dcPath, snykPath, outPath, buildUrl, buildNumber, buildResult] = process.argv;
+const [, , dcPath, snykPath, outPath, buildUrl, buildNumber, buildResult, semgrepPath, sonarIssuesPath, sonarDashboardUrl] = process.argv;
 
 function readJsonSafe(path) {
   try {
@@ -51,6 +51,28 @@ function snykFindings(snyk) {
   return out;
 }
 
+function semgrepFindings(sg) {
+  if (!sg || !sg.results) return [];
+  const map = { ERROR: 'high', WARNING: 'medium', INFO: 'low' };
+  return sg.results.map(r => ({
+    pkg: r.path.split(/[\\/]/).pop(),
+    id: (r.extra.metadata && r.extra.metadata.vulnerability_class && r.extra.metadata.vulnerability_class[0]) || r.check_id,
+    score: null,
+    sev: map[r.extra.severity] || 'low'
+  }));
+}
+
+function sonarFindings(sonar) {
+  if (!sonar || !sonar.issues) return [];
+  const map = { BLOCKER: 'critical', CRITICAL: 'critical', MAJOR: 'high', MINOR: 'medium', INFO: 'low' };
+  return sonar.issues.map(i => ({
+    pkg: i.component.split(':').pop(),
+    id: i.rule,
+    score: null,
+    sev: map[i.severity] || 'low'
+  }));
+}
+
 function countBySeverity(list) {
   const c = { critical: 0, high: 0, medium: 0, low: 0 };
   list.forEach(v => { if (c[v.sev] !== undefined) c[v.sev]++; });
@@ -59,15 +81,21 @@ function countBySeverity(list) {
 
 const dc = readJsonSafe(dcPath);
 const snyk = readJsonSafe(snykPath);
+const semgrep = semgrepPath ? readJsonSafe(semgrepPath) : null;
+const sonar = sonarIssuesPath ? readJsonSafe(sonarIssuesPath) : null;
 const dcAll = dcFindings(dc);
 const snykAll = snykFindings(snyk);
+const semgrepAll = semgrepFindings(semgrep);
+const sonarAll = sonarFindings(sonar);
 const dcCounts = countBySeverity(dcAll);
 const snykCounts = countBySeverity(snykAll);
+const semgrepCounts = countBySeverity(semgrepAll);
+const sonarCounts = countBySeverity(sonarAll);
 const totals = {
-  critical: dcCounts.critical + snykCounts.critical,
-  high: dcCounts.high + snykCounts.high,
-  medium: dcCounts.medium + snykCounts.medium,
-  low: dcCounts.low + snykCounts.low
+  critical: dcCounts.critical + snykCounts.critical + semgrepCounts.critical + sonarCounts.critical,
+  high: dcCounts.high + snykCounts.high + semgrepCounts.high + sonarCounts.high,
+  medium: dcCounts.medium + snykCounts.medium + semgrepCounts.medium + sonarCounts.medium,
+  low: dcCounts.low + snykCounts.low + semgrepCounts.low + sonarCounts.low
 };
 const grandTotal = totals.critical + totals.high + totals.medium + totals.low;
 const dcCritList = dcAll.filter(v => v.sev === 'critical');
@@ -162,7 +190,7 @@ const html = `
               <tr>
                 <td>
                   <div style="font-size:12px;letter-spacing:.12em;color:#7fa8ff;text-transform:uppercase;font-weight:700;">Application Security</div>
-                  <div style="font-size:22px;color:#ffffff;font-weight:700;margin-top:4px;">VulnBank &mdash; SCA Risk Report</div>
+                  <div style="font-size:22px;color:#ffffff;font-weight:700;margin-top:4px;">VulnBank &mdash; Security Scan Report</div>
                 </td>
                 <td align="right" style="vertical-align:top;">
                   <span style="display:inline-block;padding:6px 14px;border-radius:20px;background:${resultBg};color:${resultColor};font-size:12px;font-weight:700;">${buildResult}</span>
@@ -193,8 +221,10 @@ const html = `
 
           <!-- Per-source breakdown -->
           <div style="font-size:13px;font-weight:700;color:#111827;text-transform:uppercase;letter-spacing:.04em;margin-bottom:10px;">Findings by source</div>
-          ${sourceCard('OWASP Dependency-Check', dcCounts, dcAll.length, '&#128737;')}
-          ${sourceCard('Snyk', snykCounts, snykAll.length, '&#9889;')}
+          ${sourceCard('OWASP Dependency-Check (SCA)', dcCounts, dcAll.length, '&#128737;')}
+          ${sourceCard('Snyk (SCA)', snykCounts, snykAll.length, '&#9889;')}
+          ${semgrep ? sourceCard('Semgrep (SAST)', semgrepCounts, semgrepAll.length, '&#128269;') : ''}
+          ${sonar ? sourceCard('SonarQube (SAST)', sonarCounts, sonarAll.length, '&#128202;') : ''}
 
           <!-- Critical tables -->
           <div style="font-size:13px;font-weight:700;color:#111827;text-transform:uppercase;letter-spacing:.04em;margin:20px 0 10px;">Critical &mdash; Dependency-Check</div>
@@ -206,12 +236,13 @@ const html = `
           <!-- CTAs -->
           <table cellpadding="0" cellspacing="0" style="margin-top:24px;">
             <tr>
-              <td style="padding-right:10px;">
+              <td style="padding-right:10px;padding-bottom:10px;">
                 <a href="${buildUrl}" style="display:inline-block;background:#13294b;color:#ffffff;text-decoration:none;padding:11px 18px;border-radius:6px;font-size:13px;font-weight:600;">View Jenkins Build &rarr;</a>
               </td>
-              <td>
+              <td style="padding-bottom:10px;">
                 <a href="https://app.snyk.io" style="display:inline-block;background:#4c4cff;color:#ffffff;text-decoration:none;padding:11px 18px;border-radius:6px;font-size:13px;font-weight:600;">Open Snyk Dashboard &rarr;</a>
               </td>
+              ${sonarDashboardUrl ? `<td style="padding-bottom:10px;"><a href="${sonarDashboardUrl}" style="display:inline-block;background:#4e9bcd;color:#ffffff;text-decoration:none;padding:11px 18px;border-radius:6px;font-size:13px;font-weight:600;">Open SonarQube Dashboard &rarr;</a></td>` : ''}
             </tr>
           </table>
 
@@ -219,7 +250,7 @@ const html = `
       </table>
 
       <div style="text-align:center;color:#9ca3af;font-size:11px;margin-top:16px;">
-        Automated SCA scan &middot; VulnBank Jenkins Pipeline &middot; Dependency-Check + Snyk
+        Automated security scan &middot; VulnBank Jenkins Pipeline &middot; SCA: Dependency-Check + Snyk &middot; SAST: Semgrep + SonarQube
       </div>
 
     </td></tr>

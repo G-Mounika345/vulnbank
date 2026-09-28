@@ -2,8 +2,10 @@ pipeline {
     agent any
 
     environment {
-        DC_DATA_DIR = 'C:/Tools/dependency-check-12.1.0-release/dependency-check/data'
-        REPORT_DIR  = 'sca-reports'
+        DC_DATA_DIR    = 'C:/Tools/dependency-check-12.1.0-release/dependency-check/data'
+        REPORT_DIR     = 'sca-reports'
+        SAST_DIR       = 'sast-reports'
+        SONAR_HOST_URL = 'http://localhost:9000'
     }
 
     stages {
@@ -79,12 +81,80 @@ pipeline {
                 }
             }
         }
+
+        stage('SAST - Semgrep') {
+            steps {
+                dir('vulnbank') {
+                    script {
+                        bat "if not exist ${SAST_DIR}\\semgrep mkdir ${SAST_DIR}\\semgrep"
+                        // Semgrep only exists as a per-user pip install on this host, which the
+                        // Jenkins service (running as SYSTEM) can't see - Python's user
+                        // site-packages resolution is tied to the calling account's profile.
+                        // Running it via the official Docker image sidesteps that entirely.
+                        def status = bat(
+                            returnStatus: true,
+                            script: "docker run --rm -v \"%WORKSPACE%\\vulnbank:/src\" semgrep/semgrep semgrep scan --config=p/owasp-top-ten --config=p/security-audit --config=p/java --json --output=/src/${SAST_DIR}/semgrep/semgrep-results.json /src/src"
+                        )
+                        if (fileExists("${SAST_DIR}/semgrep/semgrep-results.json")) {
+                            bat "node ..\\scripts\\build-semgrep-report.js ${SAST_DIR}\\semgrep\\semgrep-results.json . ${SAST_DIR}\\semgrep\\semgrep-report.html"
+                        }
+                        if (status != 0) {
+                            unstable("Semgrep exited with status ${status}")
+                        }
+                    }
+                }
+            }
+        }
+
+        stage('SAST - SonarQube') {
+            steps {
+                dir('vulnbank') {
+                    withCredentials([string(credentialsId: 'sonarqube-token', variable: 'SONAR_TOKEN')]) {
+                        script {
+                            def status = bat(
+                                returnStatus: true,
+                                script: "mvn -q org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.host.url=%SONAR_HOST_URL% -Dsonar.token=%SONAR_TOKEN% -Dsonar.projectKey=vulnbank -Dsonar.projectName=VulnBank"
+                            )
+                            bat "node ..\\scripts\\fetch-sonarqube-data.js %SONAR_HOST_URL% %SONAR_TOKEN% vulnbank ${SAST_DIR}\\sonarqube"
+                            if (fileExists("${SAST_DIR}/sonarqube/sonarqube-issues-raw.json")) {
+                                bat "node ..\\scripts\\build-sonarqube-report.js ${SAST_DIR}\\sonarqube\\sonarqube-issues-raw.json ${SAST_DIR}\\sonarqube\\sonarqube-rules-raw.json ${SAST_DIR}\\sonarqube\\sonarqube-measures-raw.json vulnbank %SONAR_HOST_URL% ${SAST_DIR}\\sonarqube\\sonarqube-report.html"
+                            }
+                            if (status != 0) {
+                                unstable("SonarQube scan exited with status ${status}")
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     post {
         always {
-            archiveArtifacts artifacts: 'vulnbank/sca-reports/**', fingerprint: true, allowEmptyArchive: true
+            archiveArtifacts artifacts: 'vulnbank/sca-reports/**,vulnbank/sast-reports/**', fingerprint: true, allowEmptyArchive: true
             script {
+                if (fileExists('vulnbank/sast-reports/semgrep/semgrep-report.html')) {
+                    publishHTML(target: [
+                        reportDir: 'vulnbank/sast-reports/semgrep',
+                        reportFiles: 'semgrep-report.html',
+                        reportName: 'Semgrep Report',
+                        alwaysLinkToLastBuild: true,
+                        keepAll: true
+                    ])
+                } else {
+                    echo 'No Semgrep report found - skipping publishHTML.'
+                }
+                if (fileExists('vulnbank/sast-reports/sonarqube/sonarqube-report.html')) {
+                    publishHTML(target: [
+                        reportDir: 'vulnbank/sast-reports/sonarqube',
+                        reportFiles: 'sonarqube-report.html',
+                        reportName: 'SonarQube Report',
+                        alwaysLinkToLastBuild: true,
+                        keepAll: true
+                    ])
+                } else {
+                    echo 'No SonarQube report found - skipping publishHTML.'
+                }
                 if (fileExists('vulnbank/sca-reports/dependency-check/dependency-check-report.html')) {
                     publishHTML(target: [
                         reportDir: 'vulnbank/sca-reports/dependency-check',
@@ -108,14 +178,14 @@ pipeline {
                     echo 'No Snyk report found - skipping publishHTML.'
                 }
 
-                bat "node scripts\\build-email-report.js vulnbank\\sca-reports\\dependency-check\\dependency-check-report.json vulnbank\\sca-reports\\snyk\\snyk-report.json email-body.html \"${env.BUILD_URL}\" \"${env.BUILD_NUMBER}\" \"${currentBuild.currentResult}\""
+                bat "node scripts\\build-email-report.js vulnbank\\sca-reports\\dependency-check\\dependency-check-report.json vulnbank\\sca-reports\\snyk\\snyk-report.json email-body.html \"${env.BUILD_URL}\" \"${env.BUILD_NUMBER}\" \"${currentBuild.currentResult}\" vulnbank\\sast-reports\\semgrep\\semgrep-results.json vulnbank\\sast-reports\\sonarqube\\sonarqube-issues-raw.json \"${env.SONAR_HOST_URL}/dashboard?id=vulnbank\""
                 if (fileExists('email-body.html')) {
                     // emailext (plugin) reliably failed here with "Not sent to
                     // the following valid addresses" across multiple builds even
                     // though identical raw SMTP sends always succeeded - bypassing
                     // it and sending directly via PowerShell's Send-MailMessage.
                     withCredentials([usernamePassword(credentialsId: 'gmail-smtp', usernameVariable: 'GMAIL_USER', passwordVariable: 'GMAIL_PASS')]) {
-                        powershell "& scripts\\send-email.ps1 -Username \$env:GMAIL_USER -Password \$env:GMAIL_PASS -To 'alohawork811@gmail.com' -Subject 'VulnBank SCA Report - Build #${env.BUILD_NUMBER} - ${currentBuild.currentResult}' -BodyPath 'email-body.html'"
+                        powershell "& scripts\\send-email.ps1 -Username \$env:GMAIL_USER -Password \$env:GMAIL_PASS -To 'alohawork811@gmail.com' -Subject 'VulnBank Security Scan Report - Build #${env.BUILD_NUMBER} - ${currentBuild.currentResult}' -BodyPath 'email-body.html'"
                     }
                 } else {
                     echo 'email-body.html not generated - skipping email.'
