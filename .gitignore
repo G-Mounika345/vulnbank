@@ -14,6 +14,9 @@ __pycache__/
 .env
 .env.local
 
+# Scratch/debug output
+vulnbank/dep-tree.txt
+
 # IDE
 .idea/
 .vscode/

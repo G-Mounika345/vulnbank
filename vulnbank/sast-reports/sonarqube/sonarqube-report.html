@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VulnBank - SAST Report (SonarQube)</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system,Segoe UI,Roboto,Arial,sans-serif; background:#f5f6f8; color:#1f2937; margin:0; padding:0; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+  .header { background:linear-gradient(135deg,#0b1f3a,#13294b); color:#fff; padding:28px 32px; border-radius:12px 12px 0 0; }
+  .header .kicker { font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:#7fa8ff; font-weight:700; }
+  .header h1 { margin:6px 0 0; font-size:24px; }
+  .header .sub { color:#9fb3d1; font-size:13px; margin-top:8px; }
+  .header a { color:#7fa8ff; }
+  .panel { background:#fff; border:1px solid #e6e9ee; border-top:none; border-radius:0 0 12px 12px; padding:28px 32px; }
+  .stats { display:flex; gap:12px; margin-bottom:16px; }
+  .stat { flex:1; border:1px solid #e6e9ee; border-radius:8px; padding:18px; text-align:center; }
+  .stat-num { font-size:32px; font-weight:700; line-height:1; }
+  .stat-label { font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:#6b7280; margin-top:6px; }
+  .metrics { display:flex; gap:12px; margin-bottom:24px; font-size:12px; color:#374151; }
+  .metrics span { background:#f1f3f6; padding:6px 12px; border-radius:6px; }
+  h2.section { font-size:13px; text-transform:uppercase; letter-spacing:.05em; color:#111827; border-bottom:2px solid #13294b; padding-bottom:6px; margin:28px 0 14px; }
+  .summary-table { width:100%; border-collapse:collapse; font-size:13px; margin-bottom:8px; }
+  .summary-table th { text-align:left; background:#f1f3f6; padding:8px 10px; font-size:11px; text-transform:uppercase; color:#6b7280; }
+  .summary-table td { padding:8px 10px; border-bottom:1px solid #eef0f3; }
+  .summary-table a { color:#13294b; text-decoration:none; font-weight:600; }
+  .finding { border:1px solid #e6e9ee; border-radius:8px; margin-bottom:14px; overflow:hidden; }
+  .finding-head { display:flex; align-items:center; gap:8px; padding:12px 16px; background:#f8f9fb; border-bottom:1px solid #eef0f3; flex-wrap:wrap; }
+  .badge, .type-badge { padding:3px 10px; border-radius:10px; font-size:11px; font-weight:700; text-transform:uppercase; }
+  .finding-title { font-weight:700; font-size:14px; }
+  .finding-loc { margin-left:auto; font-family:Consolas,monospace; font-size:12px; color:#6b7280; }
+  .finding-body { padding:14px 16px; }
+  .msg { font-size:13px; margin:0 0 10px; color:#374151; }
+  .tag { display:inline-block; background:#eef2ff; color:#3730a3; font-size:11px; padding:3px 8px; border-radius:4px; margin:0 6px 6px 0; }
+  .tag.muted { background:#f3f4f6; color:#6b7280; }
+  .footer { text-align:center; color:#9ca3af; font-size:11px; margin-top:20px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="kicker">Static Application Security Testing</div>
+    <h1>VulnBank &mdash; SAST Report (SonarQube)</h1>
+    <div class="sub">Generated Mon, 28 Sep 2026 08:30:08 GMT &middot; Project: vulnbank &middot; <a href="http://localhost:9000/dashboard?id=vulnbank">View live dashboard &rarr;</a></div>
+  </div>
+  <div class="panel">
+    <div class="stats">
+      <div class="stat"><div class="stat-num" style="color:#7c1d1d">3</div><div class="stat-label">Critical</div></div>
+      <div class="stat"><div class="stat-num" style="color:#c0392b">14</div><div class="stat-label">High</div></div>
+      <div class="stat"><div class="stat-num" style="color:#d97706">9</div><div class="stat-label">Medium</div></div>
+      <div class="stat"><div class="stat-num" style="color:#6b7280">1</div><div class="stat-label">Low</div></div>
+      <div class="stat"><div class="stat-num">27</div><div class="stat-label">Total Issues</div></div>
+    </div>
+    <div class="metrics">
+      <span>Lines of code: <b>476</b></span>
+      <span>Vulnerabilities: <b>6</b></span>
+      <span>Bugs: <b>0</b></span>
+      <span>Code Smells: <b>21</b></span>
+      <span>Security Hotspots: <b>0</b></span>
+    </div>
+
+    <h2 class="section">Executive Summary</h2>
+    <table class="summary-table">
+      <tr><th>Severity</th><th>Type</th><th>Rule</th><th>Location</th></tr>
+      <tr><td><span style="color:#7c1d1d;font-weight:700;">Critical</span></td><td>VULNERABILITY</td><td><a href="#f0">CSRF protections should not be disabled</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/config/SecurityConfig.java:32</td></tr><tr><td><span style="color:#7c1d1d;font-weight:700;">Critical</span></td><td>VULNERABILITY</td><td><a href="#f1">Weak hashing algorithms should not be used</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/controller/AuthController.java:92</td></tr><tr><td><span style="color:#7c1d1d;font-weight:700;">Critical</span></td><td>VULNERABILITY</td><td><a href="#f2">XML parsers should not be vulnerable to XXE attacks</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/controller/ProfileController.java:37</td></tr><tr><td><span style="color:#c0392b;font-weight:700;">High</span></td><td>CODE SMELL</td><td><a href="#f3">Field dependency injection should be avoided</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/controller/AccountController.java:19</td></tr><tr><td><span style="color:#c0392b;font-weight:700;">High</span></td><td>CODE SMELL</td><td><a href="#f4">Field dependency injection should be avoided</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/controller/AdminController.java:26</td></tr><tr><td><span style="color:#c0392b;font-weight:700;">High</span></td><td>CODE SMELL</td><td><a href="#f5">Field dependency injection should be avoided</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/controller/AuthController.java:22</td></tr><tr><td><span style="color:#c0392b;font-weight:700;">High</span></td><td>CODE SMELL</td><td><a href="#f6">Unused assignments should be removed</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/controller/AuthController.java:48</td></tr><tr><td><span style="color:#c0392b;font-weight:700;">High</span></td><td>CODE SMELL</td><td><a href="#f7">Unused assignments should be removed</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/controller/AuthController.java:49</td></tr><tr><td><span style="color:#c0392b;font-weight:700;">High</span></td><td>CODE SMELL</td><td><a href="#f8">Unused assignments should be removed</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/controller/AuthController.java:77</td></tr><tr><td><span style="color:#c0392b;font-weight:700;">High</span></td><td>CODE SMELL</td><td><a href="#f9">Generic exceptions should never be thrown</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/controller/AuthController.java:91</td></tr><tr><td><span style="color:#c0392b;font-weight:700;">High</span></td><td>CODE SMELL</td><td><a href="#f10">Generic exceptions should never be thrown</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/controller/CurrencyController.java:26</td></tr><tr><td><span style="color:#c0392b;font-weight:700;">High</span></td><td>CODE SMELL</td><td><a href="#f11">Field dependency injection should be avoided</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/controller/MessageController.java:19</td></tr><tr><td><span style="color:#c0392b;font-weight:700;">High</span></td><td>CODE SMELL</td><td><a href="#f12">Generic exceptions should never be thrown</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/controller/ProfileController.java:36</td></tr><tr><td><span style="color:#c0392b;font-weight:700;">High</span></td><td>CODE SMELL</td><td><a href="#f13">Sections of code should not be commented out</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/controller/ProfileController.java:39</td></tr><tr><td><span style="color:#c0392b;font-weight:700;">High</span></td><td>CODE SMELL</td><td><a href="#f14">"@Controller" should be replaced with "@RestController"</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/controller/TransferController.java:17</td></tr><tr><td><span style="color:#c0392b;font-weight:700;">High</span></td><td>CODE SMELL</td><td><a href="#f15">Field dependency injection should be avoided</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/controller/TransferController.java:20</td></tr><tr><td><span style="color:#c0392b;font-weight:700;">High</span></td><td>CODE SMELL</td><td><a href="#f16">Utility classes should not have public constructors</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/util/JwtUtil.java:26</td></tr><tr><td><span style="color:#d97706;font-weight:700;">Medium</span></td><td>CODE SMELL</td><td><a href="#f17">Unused local variables should be removed</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/controller/AuthController.java:48</td></tr><tr><td><span style="color:#d97706;font-weight:700;">Medium</span></td><td>CODE SMELL</td><td><a href="#f18">Unused local variables should be removed</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/controller/AuthController.java:49</td></tr><tr><td><span style="color:#d97706;font-weight:700;">Medium</span></td><td>VULNERABILITY</td><td><a href="#f19">Cookies should have the "secure" flag</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/controller/AuthController.java:58</td></tr><tr><td><span style="color:#d97706;font-weight:700;">Medium</span></td><td>VULNERABILITY</td><td><a href="#f20">Cookies should have the "HttpOnly" flag</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/controller/AuthController.java:58</td></tr><tr><td><span style="color:#d97706;font-weight:700;">Medium</span></td><td>CODE SMELL</td><td><a href="#f21">Unused local variables should be removed</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/controller/AuthController.java:77</td></tr><tr><td><span style="color:#d97706;font-weight:700;">Medium</span></td><td>VULNERABILITY</td><td><a href="#f22">Cookies should have the "HttpOnly" flag</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/controller/AuthController.java:84</td></tr><tr><td><span style="color:#d97706;font-weight:700;">Medium</span></td><td>CODE SMELL</td><td><a href="#f23">Unnecessary imports should be removed</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/controller/FileController.java:12</td></tr><tr><td><span style="color:#d97706;font-weight:700;">Medium</span></td><td>CODE SMELL</td><td><a href="#f24">Unnecessary imports should be removed</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/controller/MessageController.java:10</td></tr><tr><td><span style="color:#d97706;font-weight:700;">Medium</span></td><td>CODE SMELL</td><td><a href="#f25">Unnecessary imports should be removed</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/repository/UserRepository.java:6</td></tr><tr><td><span style="color:#6b7280;font-weight:700;">Low</span></td><td>CODE SMELL</td><td><a href="#f26">"java.time" classes should be used for dates and times</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src/main/java/com/vulnbank/util/JwtUtil.java:-</td></tr>
+    </table>
+
+    <h2 class="section">Detailed Findings</h2>
+    
+  <div class="finding" id="f0">
+    <div class="finding-head">
+      <span class="badge" style="background:#7c1d1d1a;color:#7c1d1d">Critical</span>
+      <span class="type-badge" style="background:#7c1d1d1a;color:#7c1d1d">VULNERABILITY</span>
+      <span class="finding-title">CSRF protections should not be disabled</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/config/SecurityConfig.java:32</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Make sure disabling Spring Security's CSRF protection is safe here.</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S4502</span>
+        <span class="tag muted">Estimated effort: 5min</span>
+        <span class="tag">cwe</span><span class="tag">spring</span><span class="tag">former-hotspot</span>
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f1">
+    <div class="finding-head">
+      <span class="badge" style="background:#7c1d1d1a;color:#7c1d1d">Critical</span>
+      <span class="type-badge" style="background:#7c1d1d1a;color:#7c1d1d">VULNERABILITY</span>
+      <span class="finding-title">Weak hashing algorithms should not be used</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/controller/AuthController.java:92</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Make sure this weak hash algorithm is not used in a sensitive context here.</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S4790</span>
+        <span class="tag muted">Estimated effort: 30min</span>
+        <span class="tag">cwe</span><span class="tag">former-hotspot</span>
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f2">
+    <div class="finding-head">
+      <span class="badge" style="background:#7c1d1d1a;color:#7c1d1d">Critical</span>
+      <span class="type-badge" style="background:#7c1d1d1a;color:#7c1d1d">VULNERABILITY</span>
+      <span class="finding-title">XML parsers should not be vulnerable to XXE attacks</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/controller/ProfileController.java:37</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Disable access to external entities in XML parsing.</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S2755</span>
+        <span class="tag muted">Estimated effort: 15min</span>
+        <span class="tag">cwe</span><span class="tag">symbolic-execution</span>
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f3">
+    <div class="finding-head">
+      <span class="badge" style="background:#c0392b1a;color:#c0392b">High</span>
+      <span class="type-badge" style="background:#6b72801a;color:#6b7280">CODE SMELL</span>
+      <span class="finding-title">Field dependency injection should be avoided</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/controller/AccountController.java:19</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Remove this field injection and use constructor injection instead.</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S6813</span>
+        <span class="tag muted">Estimated effort: 5min</span>
+        
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f4">
+    <div class="finding-head">
+      <span class="badge" style="background:#c0392b1a;color:#c0392b">High</span>
+      <span class="type-badge" style="background:#6b72801a;color:#6b7280">CODE SMELL</span>
+      <span class="finding-title">Field dependency injection should be avoided</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/controller/AdminController.java:26</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Remove this field injection and use constructor injection instead.</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S6813</span>
+        <span class="tag muted">Estimated effort: 5min</span>
+        
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f5">
+    <div class="finding-head">
+      <span class="badge" style="background:#c0392b1a;color:#c0392b">High</span>
+      <span class="type-badge" style="background:#6b72801a;color:#6b7280">CODE SMELL</span>
+      <span class="finding-title">Field dependency injection should be avoided</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/controller/AuthController.java:22</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Remove this field injection and use constructor injection instead.</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S6813</span>
+        <span class="tag muted">Estimated effort: 5min</span>
+        
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f6">
+    <div class="finding-head">
+      <span class="badge" style="background:#c0392b1a;color:#c0392b">High</span>
+      <span class="type-badge" style="background:#6b72801a;color:#6b7280">CODE SMELL</span>
+      <span class="finding-title">Unused assignments should be removed</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/controller/AuthController.java:48</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Remove this useless assignment to local variable "injectableClause".</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S1854</span>
+        <span class="tag muted">Estimated effort: 1min</span>
+        <span class="tag">cwe</span><span class="tag">cert</span><span class="tag">unused</span>
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f7">
+    <div class="finding-head">
+      <span class="badge" style="background:#c0392b1a;color:#c0392b">High</span>
+      <span class="type-badge" style="background:#6b72801a;color:#6b7280">CODE SMELL</span>
+      <span class="finding-title">Unused assignments should be removed</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/controller/AuthController.java:49</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Remove this useless assignment to local variable "results".</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S1854</span>
+        <span class="tag muted">Estimated effort: 1min</span>
+        <span class="tag">cwe</span><span class="tag">cert</span><span class="tag">unused</span>
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f8">
+    <div class="finding-head">
+      <span class="badge" style="background:#c0392b1a;color:#c0392b">High</span>
+      <span class="type-badge" style="background:#6b72801a;color:#6b7280">CODE SMELL</span>
+      <span class="finding-title">Unused assignments should be removed</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/controller/AuthController.java:77</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Remove this useless assignment to local variable "sql".</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S1854</span>
+        <span class="tag muted">Estimated effort: 1min</span>
+        <span class="tag">cwe</span><span class="tag">cert</span><span class="tag">unused</span>
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f9">
+    <div class="finding-head">
+      <span class="badge" style="background:#c0392b1a;color:#c0392b">High</span>
+      <span class="type-badge" style="background:#6b72801a;color:#6b7280">CODE SMELL</span>
+      <span class="finding-title">Generic exceptions should never be thrown</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/controller/AuthController.java:91</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Replace generic exceptions with specific library exceptions or a custom exception.</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S112</span>
+        <span class="tag muted">Estimated effort: 20min</span>
+        <span class="tag">cwe</span><span class="tag">error-handling</span><span class="tag">cert</span>
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f10">
+    <div class="finding-head">
+      <span class="badge" style="background:#c0392b1a;color:#c0392b">High</span>
+      <span class="type-badge" style="background:#6b72801a;color:#6b7280">CODE SMELL</span>
+      <span class="finding-title">Generic exceptions should never be thrown</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/controller/CurrencyController.java:26</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Replace generic exceptions with specific library exceptions or a custom exception.</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S112</span>
+        <span class="tag muted">Estimated effort: 20min</span>
+        <span class="tag">cwe</span><span class="tag">error-handling</span><span class="tag">cert</span>
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f11">
+    <div class="finding-head">
+      <span class="badge" style="background:#c0392b1a;color:#c0392b">High</span>
+      <span class="type-badge" style="background:#6b72801a;color:#6b7280">CODE SMELL</span>
+      <span class="finding-title">Field dependency injection should be avoided</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/controller/MessageController.java:19</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Remove this field injection and use constructor injection instead.</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S6813</span>
+        <span class="tag muted">Estimated effort: 5min</span>
+        
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f12">
+    <div class="finding-head">
+      <span class="badge" style="background:#c0392b1a;color:#c0392b">High</span>
+      <span class="type-badge" style="background:#6b72801a;color:#6b7280">CODE SMELL</span>
+      <span class="finding-title">Generic exceptions should never be thrown</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/controller/ProfileController.java:36</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Replace generic exceptions with specific library exceptions or a custom exception.</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S112</span>
+        <span class="tag muted">Estimated effort: 20min</span>
+        <span class="tag">cwe</span><span class="tag">error-handling</span><span class="tag">cert</span>
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f13">
+    <div class="finding-head">
+      <span class="badge" style="background:#c0392b1a;color:#c0392b">High</span>
+      <span class="type-badge" style="background:#6b72801a;color:#6b7280">CODE SMELL</span>
+      <span class="finding-title">Sections of code should not be commented out</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/controller/ProfileController.java:39</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">This block of commented-out lines of code should be removed.</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S125</span>
+        <span class="tag muted">Estimated effort: 5min</span>
+        <span class="tag">unused</span>
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f14">
+    <div class="finding-head">
+      <span class="badge" style="background:#c0392b1a;color:#c0392b">High</span>
+      <span class="type-badge" style="background:#6b72801a;color:#6b7280">CODE SMELL</span>
+      <span class="finding-title">"@Controller" should be replaced with "@RestController"</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/controller/TransferController.java:17</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Replace the "@Controller" annotation by "@RestController" and remove all "@ResponseBody" annotations.</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S6833</span>
+        <span class="tag muted">Estimated effort: 5min</span>
+        <span class="tag">spring</span>
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f15">
+    <div class="finding-head">
+      <span class="badge" style="background:#c0392b1a;color:#c0392b">High</span>
+      <span class="type-badge" style="background:#6b72801a;color:#6b7280">CODE SMELL</span>
+      <span class="finding-title">Field dependency injection should be avoided</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/controller/TransferController.java:20</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Remove this field injection and use constructor injection instead.</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S6813</span>
+        <span class="tag muted">Estimated effort: 5min</span>
+        
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f16">
+    <div class="finding-head">
+      <span class="badge" style="background:#c0392b1a;color:#c0392b">High</span>
+      <span class="type-badge" style="background:#6b72801a;color:#6b7280">CODE SMELL</span>
+      <span class="finding-title">Utility classes should not have public constructors</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/util/JwtUtil.java:26</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Add a private constructor to hide the implicit public one.</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S1118</span>
+        <span class="tag muted">Estimated effort: 5min</span>
+        <span class="tag">design</span>
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f17">
+    <div class="finding-head">
+      <span class="badge" style="background:#d977061a;color:#d97706">Medium</span>
+      <span class="type-badge" style="background:#6b72801a;color:#6b7280">CODE SMELL</span>
+      <span class="finding-title">Unused local variables should be removed</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/controller/AuthController.java:48</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Remove this unused "injectableClause" local variable.</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S1481</span>
+        <span class="tag muted">Estimated effort: 5min</span>
+        <span class="tag">unused</span><span class="tag">java22</span>
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f18">
+    <div class="finding-head">
+      <span class="badge" style="background:#d977061a;color:#d97706">Medium</span>
+      <span class="type-badge" style="background:#6b72801a;color:#6b7280">CODE SMELL</span>
+      <span class="finding-title">Unused local variables should be removed</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/controller/AuthController.java:49</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Remove this unused "results" local variable.</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S1481</span>
+        <span class="tag muted">Estimated effort: 5min</span>
+        <span class="tag">unused</span><span class="tag">java22</span>
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f19">
+    <div class="finding-head">
+      <span class="badge" style="background:#d977061a;color:#d97706">Medium</span>
+      <span class="type-badge" style="background:#7c1d1d1a;color:#7c1d1d">VULNERABILITY</span>
+      <span class="finding-title">Cookies should have the "secure" flag</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/controller/AuthController.java:58</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Make sure creating this cookie without the "secure" flag is safe here.</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S2092</span>
+        <span class="tag muted">Estimated effort: 5min</span>
+        <span class="tag">cwe</span><span class="tag">spring</span><span class="tag">privacy</span><span class="tag">former-hotspot</span>
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f20">
+    <div class="finding-head">
+      <span class="badge" style="background:#d977061a;color:#d97706">Medium</span>
+      <span class="type-badge" style="background:#7c1d1d1a;color:#7c1d1d">VULNERABILITY</span>
+      <span class="finding-title">Cookies should have the "HttpOnly" flag</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/controller/AuthController.java:58</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Make sure creating this cookie without the "HttpOnly" flag is safe.</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S3330</span>
+        <span class="tag muted">Estimated effort: 10min</span>
+        <span class="tag">cwe</span><span class="tag">privacy</span><span class="tag">former-hotspot</span>
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f21">
+    <div class="finding-head">
+      <span class="badge" style="background:#d977061a;color:#d97706">Medium</span>
+      <span class="type-badge" style="background:#6b72801a;color:#6b7280">CODE SMELL</span>
+      <span class="finding-title">Unused local variables should be removed</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/controller/AuthController.java:77</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Remove this unused "sql" local variable.</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S1481</span>
+        <span class="tag muted">Estimated effort: 5min</span>
+        <span class="tag">unused</span><span class="tag">java22</span>
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f22">
+    <div class="finding-head">
+      <span class="badge" style="background:#d977061a;color:#d97706">Medium</span>
+      <span class="type-badge" style="background:#7c1d1d1a;color:#7c1d1d">VULNERABILITY</span>
+      <span class="finding-title">Cookies should have the "HttpOnly" flag</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/controller/AuthController.java:84</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Make sure creating this cookie without the "HttpOnly" flag is safe.</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S3330</span>
+        <span class="tag muted">Estimated effort: 10min</span>
+        <span class="tag">cwe</span><span class="tag">privacy</span><span class="tag">former-hotspot</span>
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f23">
+    <div class="finding-head">
+      <span class="badge" style="background:#d977061a;color:#d97706">Medium</span>
+      <span class="type-badge" style="background:#6b72801a;color:#6b7280">CODE SMELL</span>
+      <span class="finding-title">Unnecessary imports should be removed</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/controller/FileController.java:12</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Remove this unused import 'java.nio.file.Paths'.</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S1128</span>
+        <span class="tag muted">Estimated effort: 1min</span>
+        <span class="tag">unused</span>
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f24">
+    <div class="finding-head">
+      <span class="badge" style="background:#d977061a;color:#d97706">Medium</span>
+      <span class="type-badge" style="background:#6b72801a;color:#6b7280">CODE SMELL</span>
+      <span class="finding-title">Unnecessary imports should be removed</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/controller/MessageController.java:10</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Remove this unused import 'java.util.List'.</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S1128</span>
+        <span class="tag muted">Estimated effort: 1min</span>
+        <span class="tag">unused</span>
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f25">
+    <div class="finding-head">
+      <span class="badge" style="background:#d977061a;color:#d97706">Medium</span>
+      <span class="type-badge" style="background:#6b72801a;color:#6b7280">CODE SMELL</span>
+      <span class="finding-title">Unnecessary imports should be removed</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/repository/UserRepository.java:6</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Remove this unused import 'org.springframework.data.repository.query.Param'.</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S1128</span>
+        <span class="tag muted">Estimated effort: 1min</span>
+        <span class="tag">unused</span>
+      </div>
+    </div>
+  </div>
+  <div class="finding" id="f26">
+    <div class="finding-head">
+      <span class="badge" style="background:#6b72801a;color:#6b7280">Low</span>
+      <span class="type-badge" style="background:#6b72801a;color:#6b7280">CODE SMELL</span>
+      <span class="finding-title">"java.time" classes should be used for dates and times</span>
+      <span class="finding-loc">src/main/java/com/vulnbank/util/JwtUtil.java:-</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Use the "java.time" API for date and time.</p>
+      <div class="meta-row">
+        <span class="tag muted">Rule: java:S2143</span>
+        <span class="tag muted">Estimated effort: 15min</span>
+        <span class="tag">java8</span><span class="tag">pitfall</span>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="footer">Automated SAST scan &middot; SonarQube Community Edition &middot; VulnBank</div>
+</div>
+</body>
+</html>

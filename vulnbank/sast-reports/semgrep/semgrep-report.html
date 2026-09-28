@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VulnBank - SAST Report (Semgrep)</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system,Segoe UI,Roboto,Arial,sans-serif; background:#f5f6f8; color:#1f2937; margin:0; padding:0; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+  .header { background:linear-gradient(135deg,#0b1f3a,#13294b); color:#fff; padding:28px 32px; border-radius:12px 12px 0 0; }
+  .header .kicker { font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:#7fa8ff; font-weight:700; }
+  .header h1 { margin:6px 0 0; font-size:24px; }
+  .header .sub { color:#9fb3d1; font-size:13px; margin-top:8px; }
+  .panel { background:#fff; border:1px solid #e6e9ee; border-top:none; border-radius:0 0 12px 12px; padding:28px 32px; }
+  .stats { display:flex; gap:12px; margin-bottom:24px; }
+  .stat { flex:1; border:1px solid #e6e9ee; border-radius:8px; padding:18px; text-align:center; }
+  .stat-num { font-size:32px; font-weight:700; line-height:1; }
+  .stat-label { font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:#6b7280; margin-top:6px; }
+  h2.section { font-size:13px; text-transform:uppercase; letter-spacing:.05em; color:#111827; border-bottom:2px solid #13294b; padding-bottom:6px; margin:28px 0 14px; }
+  .summary-table { width:100%; border-collapse:collapse; font-size:13px; margin-bottom:8px; }
+  .summary-table th { text-align:left; background:#f1f3f6; padding:8px 10px; font-size:11px; text-transform:uppercase; color:#6b7280; }
+  .summary-table td { padding:8px 10px; border-bottom:1px solid #eef0f3; }
+  .summary-table a { color:#13294b; text-decoration:none; font-weight:600; }
+  .finding { border:1px solid #e6e9ee; border-radius:8px; margin-bottom:16px; overflow:hidden; }
+  .finding-head { display:flex; align-items:center; gap:10px; padding:12px 16px; background:#f8f9fb; border-bottom:1px solid #eef0f3; flex-wrap:wrap; }
+  .badge { padding:3px 10px; border-radius:10px; font-size:11px; font-weight:700; text-transform:uppercase; }
+  .finding-title { font-weight:700; font-size:14px; }
+  .finding-loc { margin-left:auto; font-family:Consolas,monospace; font-size:12px; color:#6b7280; }
+  .finding-body { padding:16px; }
+  .msg { font-size:13px; margin:0 0 12px; color:#374151; }
+  .meta-row { margin-bottom:12px; }
+  .tag { display:inline-block; background:#eef2ff; color:#3730a3; font-size:11px; padding:3px 8px; border-radius:4px; margin:0 6px 6px 0; }
+  .tag.muted { background:#f3f4f6; color:#6b7280; }
+  .code { background:#0d1117; color:#c9d1d9; font-family:Consolas,monospace; font-size:12px; padding:12px; border-radius:6px; overflow-x:auto; white-space:pre; }
+  .rule-id { font-size:11px; color:#6b7280; margin-top:10px; }
+  .rule-id code { background:#f3f4f6; padding:1px 6px; border-radius:4px; }
+  .refs { font-size:11px; margin-top:6px; }
+  .refs a { color:#4c4cff; }
+  .footer { text-align:center; color:#9ca3af; font-size:11px; margin-top:20px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="kicker">Static Application Security Testing</div>
+    <h1>VulnBank &mdash; SAST Report (Semgrep)</h1>
+    <div class="sub">Generated Mon, 28 Sep 2026 08:26:26 GMT &middot; Rulesets: owasp-top-ten, security-audit, java</div>
+  </div>
+  <div class="panel">
+    <div class="stats">
+      <div class="stat"><div class="stat-num" style="color:#c0392b">6</div><div class="stat-label">High</div></div>
+      <div class="stat"><div class="stat-num" style="color:#d97706">6</div><div class="stat-label">Medium</div></div>
+      <div class="stat"><div class="stat-num" style="color:#6b7280">0</div><div class="stat-label">Low</div></div>
+      <div class="stat"><div class="stat-num">12</div><div class="stat-label">Total Findings</div></div>
+    </div>
+
+    <h2 class="section">Executive Summary</h2>
+    <table class="summary-table">
+      <tr><th>Severity</th><th>Vulnerability Class</th><th>Location</th></tr>
+      <tr><td><span style="color:#c0392b;font-weight:700;">High</span></td><td><a href="#f0">SQL Injection</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src\main\java\com\vulnbank\controller\AuthController.java:77</td></tr><tr><td><span style="color:#c0392b;font-weight:700;">High</span></td><td><a href="#f1">Server-Side Request Forgery (SSRF)</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src\main\java\com\vulnbank\controller\CurrencyController.java:27</td></tr><tr><td><span style="color:#c0392b;font-weight:700;">High</span></td><td><a href="#f2">Path Traversal</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src\main\java\com\vulnbank\controller\FileController.java:37</td></tr><tr><td><span style="color:#c0392b;font-weight:700;">High</span></td><td><a href="#f3">Path Traversal</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src\main\java\com\vulnbank\controller\FileController.java:54</td></tr><tr><td><span style="color:#c0392b;font-weight:700;">High</span></td><td><a href="#f4">XML Injection</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src\main\java\com\vulnbank\controller\ProfileController.java:42</td></tr><tr><td><span style="color:#c0392b;font-weight:700;">High</span></td><td><a href="#f5">Mishandled Sensitive Information</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src\main\resources\application.properties:6</td></tr><tr><td><span style="color:#d97706;font-weight:700;">Medium</span></td><td><a href="#f6">Cross-Site Request Forgery (CSRF)</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src\main\java\com\vulnbank\config\SecurityConfig.java:31</td></tr><tr><td><span style="color:#d97706;font-weight:700;">Medium</span></td><td><a href="#f7">Cookie Security</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src\main\java\com\vulnbank\controller\AuthController.java:62</td></tr><tr><td><span style="color:#d97706;font-weight:700;">Medium</span></td><td><a href="#f8">Cookie Security</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src\main\java\com\vulnbank\controller\AuthController.java:62</td></tr><tr><td><span style="color:#d97706;font-weight:700;">Medium</span></td><td><a href="#f9">Cookie Security</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src\main\java\com\vulnbank\controller\AuthController.java:87</td></tr><tr><td><span style="color:#d97706;font-weight:700;">Medium</span></td><td><a href="#f10">Cookie Security</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src\main\java\com\vulnbank\controller\AuthController.java:87</td></tr><tr><td><span style="color:#d97706;font-weight:700;">Medium</span></td><td><a href="#f11">Insecure Hashing Algorithm</a></td><td style="font-family:Consolas,monospace;font-size:12px;">src\main\java\com\vulnbank\controller\AuthController.java:92</td></tr>
+    </table>
+
+    <h2 class="section">Detailed Findings</h2>
+    
+  <div class="finding" id="f0">
+    <div class="finding-head">
+      <span class="badge" style="background:#c0392b1a;color:#c0392b">High</span>
+      <span class="finding-title">SQL Injection</span>
+      <span class="finding-loc">src\main\java\com\vulnbank\controller\AuthController.java:77</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate data from the database. Instead, use prepared statements (`connection.PreparedStatement`) or a safe library.</p>
+      <div class="meta-row">
+        <span class="tag">CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')</span>
+        <span class="tag">A01:2017 - Injection, A03:2021 - Injection, A05:2025 - Injection</span>
+        <span class="tag muted">Confidence: MEDIUM</span>
+        <span class="tag muted">Likelihood: HIGH</span>
+        <span class="tag muted">Impact: MEDIUM</span>
+      </div>
+      <pre class="code">    75 |     @ResponseBody
+    76 |     public Object loginDebug(@RequestParam String username, @RequestParam String password) throws Exception {
+&gt;   77 |         String sql = "SELECT * FROM users WHERE username = '" + username + "'";
+    78 |         // Executed via JPA's native query facility using the raw string.
+    79 |         return userRepository.rawLogin(username, md5(password));</pre>
+      <div class="rule-id">Rule: <code>java.spring.security.injection.tainted-sql-string.tainted-sql-string</code></div>
+      <div class="refs">Ref: <a href="https://docs.oracle.com/javase/7/docs/api/java/sql/PreparedStatement.html">https://docs.oracle.com/javase/7/docs/api/java/sql/PreparedStatement.html</a></div>
+    </div>
+  </div>
+  <div class="finding" id="f1">
+    <div class="finding-head">
+      <span class="badge" style="background:#c0392b1a;color:#c0392b">High</span>
+      <span class="finding-title">Server-Side Request Forgery (SSRF)</span>
+      <span class="finding-loc">src\main\java\com\vulnbank\controller\CurrencyController.java:27</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">User data flows into the host portion of this manually-constructed URL. This could allow an attacker to send data to their own server, potentially exposing sensitive data such as cookies or authorization information sent with this request. They could also probe internal servers or other resources that the server running this code can access. (This is called server-side request forgery, or SSRF.) Do not allow arbitrary hosts. Instead, create an allowlist for approved hosts, hardcode the correct host, or ensure that the user data can only affect the path or parameters.</p>
+      <div class="meta-row">
+        <span class="tag">CWE-918: Server-Side Request Forgery (SSRF)</span>
+        <span class="tag">A10:2021 - Server-Side Request Forgery (SSRF), A01:2025 - Broken Access Control</span>
+        <span class="tag muted">Confidence: MEDIUM</span>
+        <span class="tag muted">Likelihood: MEDIUM</span>
+        <span class="tag muted">Impact: MEDIUM</span>
+      </div>
+      <pre class="code">    25 |     @GetMapping("/currency/rate")
+    26 |     public String fetchRate(@RequestParam String source) throws Exception {
+&gt;   27 |         URL url = new URL(source); // no scheme/host allow-list at all
+    28 |         URLConnection conn = url.openConnection();
+    29 |         conn.setConnectTimeout(3000);</pre>
+      <div class="rule-id">Rule: <code>java.spring.security.injection.tainted-url-host.tainted-url-host</code></div>
+      <div class="refs">Ref: <a href="https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html</a></div>
+    </div>
+  </div>
+  <div class="finding" id="f2">
+    <div class="finding-head">
+      <span class="badge" style="background:#c0392b1a;color:#c0392b">High</span>
+      <span class="finding-title">Path Traversal</span>
+      <span class="finding-loc">src\main\java\com\vulnbank\controller\FileController.java:37</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Detected user input controlling a file path. An attacker could control the location of this file, to include going backwards in the directory with '../'. To address this, ensure that user-controlled variables in file paths are sanitized. You may also consider using a utility method such as org.apache.commons.io.FilenameUtils.getName(...) to only retrieve the file name from the path.</p>
+      <div class="meta-row">
+        <span class="tag">CWE-23: Relative Path Traversal</span>
+        <span class="tag">A01:2021 - Broken Access Control, A01:2025 - Broken Access Control</span>
+        <span class="tag muted">Confidence: HIGH</span>
+        <span class="tag muted">Likelihood: MEDIUM</span>
+        <span class="tag muted">Impact: HIGH</span>
+      </div>
+      <pre class="code">    35 |         if (!sample.exists()) Files.write(sample.toPath(), "Statement: no transactions.".getBytes());
+    36 | 
+&gt;   37 |         File target = new File(STATEMENT_DIR + filename); // &lt;-- path traversal
+    38 |         Resource resource = new FileSystemResource(target);
+    39 |         return ResponseEntity.ok(resource);</pre>
+      <div class="rule-id">Rule: <code>java.spring.security.injection.tainted-file-path.tainted-file-path</code></div>
+      <div class="refs">Ref: <a href="https://owasp.org/www-community/attacks/Path_Traversal">https://owasp.org/www-community/attacks/Path_Traversal</a></div>
+    </div>
+  </div>
+  <div class="finding" id="f3">
+    <div class="finding-head">
+      <span class="badge" style="background:#c0392b1a;color:#c0392b">High</span>
+      <span class="finding-title">Path Traversal</span>
+      <span class="finding-loc">src\main\java\com\vulnbank\controller\FileController.java:54</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Detected user input controlling a file path. An attacker could control the location of this file, to include going backwards in the directory with '../'. To address this, ensure that user-controlled variables in file paths are sanitized. You may also consider using a utility method such as org.apache.commons.io.FilenameUtils.getName(...) to only retrieve the file name from the path.</p>
+      <div class="meta-row">
+        <span class="tag">CWE-23: Relative Path Traversal</span>
+        <span class="tag">A01:2021 - Broken Access Control, A01:2025 - Broken Access Control</span>
+        <span class="tag muted">Confidence: HIGH</span>
+        <span class="tag muted">Likelihood: MEDIUM</span>
+        <span class="tag muted">Impact: HIGH</span>
+      </div>
+      <pre class="code">    52 |         // Filename taken verbatim from the client, including its path
+    53 |         // separators - another traversal angle, this time on write.
+&gt;   54 |         File dest = new File(UPLOAD_DIR + file.getOriginalFilename());
+    55 |         file.transferTo(dest);
+    56 |         return "Uploaded to " + dest.getPath();</pre>
+      <div class="rule-id">Rule: <code>java.spring.security.injection.tainted-file-path.tainted-file-path</code></div>
+      <div class="refs">Ref: <a href="https://owasp.org/www-community/attacks/Path_Traversal">https://owasp.org/www-community/attacks/Path_Traversal</a></div>
+    </div>
+  </div>
+  <div class="finding" id="f4">
+    <div class="finding-head">
+      <span class="badge" style="background:#c0392b1a;color:#c0392b">High</span>
+      <span class="finding-title">XML Injection</span>
+      <span class="finding-loc">src\main\java\com\vulnbank\controller\ProfileController.java:42</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">DOCTYPE declarations are enabled for this DocumentBuilderFactory. This is vulnerable to XML external entity attacks. Disable this by setting the feature "http://apache.org/xml/features/disallow-doctype-decl" to true. Alternatively, allow DOCTYPE declarations and only prohibit external entities declarations. This can be done by setting the features "http://xml.org/sax/features/external-general-entities" and "http://xml.org/sax/features/external-parameter-entities" to false.</p>
+      <div class="meta-row">
+        <span class="tag">CWE-611: Improper Restriction of XML External Entity Reference</span>
+        <span class="tag">A04:2017 - XML External Entities (XXE), A05:2021 - Security Misconfiguration, A02:2025 - Security Misconfiguration</span>
+        <span class="tag muted">Confidence: HIGH</span>
+        <span class="tag muted">Likelihood: LOW</span>
+        <span class="tag muted">Impact: HIGH</span>
+      </div>
+      <pre class="code">    40 |         //   factory.setExpandEntityReferences(false);
+    41 |         // which is what a fix would add.
+&gt;   42 |         DocumentBuilder builder = factory.newDocumentBuilder();
+    43 |         Document doc = builder.parse(new ByteArrayInputStream(xml.getBytes()));
+    44 |         Element root = doc.getDocumentElement();</pre>
+      <div class="rule-id">Rule: <code>java.lang.security.audit.xxe.documentbuilderfactory-disallow-doctype-decl-missing.documentbuilderfactory-disallow-doctype-decl-missing</code></div>
+      <div class="refs">Ref: <a href="https://semgrep.dev/blog/2022/xml-security-in-java">https://semgrep.dev/blog/2022/xml-security-in-java</a>, <a href="https://semgrep.dev/docs/cheat-sheets/java-xxe/">https://semgrep.dev/docs/cheat-sheets/java-xxe/</a>, <a href="https://blog.sonarsource.com/secure-xml-processor">https://blog.sonarsource.com/secure-xml-processor</a>, <a href="https://xerces.apache.org/xerces2-j/features.html">https://xerces.apache.org/xerces2-j/features.html</a></div>
+    </div>
+  </div>
+  <div class="finding" id="f5">
+    <div class="finding-head">
+      <span class="badge" style="background:#c0392b1a;color:#c0392b">High</span>
+      <span class="finding-title">Mishandled Sensitive Information</span>
+      <span class="finding-loc">src\main\resources\application.properties:6</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Spring Boot Actuator is fully enabled. This exposes sensitive endpoints such as /actuator/env, /actuator/logfile, /actuator/heapdump and others. Unless you have Spring Security enabled or another means to protect these endpoints, this functionality is available without authentication, causing a significant security risk.</p>
+      <div class="meta-row">
+        <span class="tag">CWE-200: Exposure of Sensitive Information to an Unauthorized Actor</span>
+        <span class="tag">A01:2021 - Broken Access Control, A01:2025 - Broken Access Control</span>
+        <span class="tag muted">Confidence: MEDIUM</span>
+        <span class="tag muted">Likelihood: MEDIUM</span>
+        <span class="tag muted">Impact: HIGH</span>
+      </div>
+      <pre class="code">     4 | # All actuator endpoints exposed, including /env and /heapdump which can leak
+     5 | # secrets and memory contents. Try: http://localhost:8080/actuator
+&gt;    6 | management.endpoints.web.exposure.include=*
+     7 | management.endpoint.env.show-values=ALWAYS
+     8 | </pre>
+      <div class="rule-id">Rule: <code>java.spring.security.audit.spring-actuator-fully-enabled.spring-actuator-fully-enabled</code></div>
+      <div class="refs">Ref: <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#production-ready-endpoints-exposing-endpoints">https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#production-ready-endpoints-exposing-endpoints</a>, <a href="https://medium.com/walmartglobaltech/perils-of-spring-boot-actuators-misconfiguration-185c43a0f785">https://medium.com/walmartglobaltech/perils-of-spring-boot-actuators-misconfiguration-185c43a0f785</a>, <a href="https://blog.maass.xyz/spring-actuator-security-part-1-stealing-secrets-using-spring-actuators">https://blog.maass.xyz/spring-actuator-security-part-1-stealing-secrets-using-spring-actuators</a></div>
+    </div>
+  </div>
+  <div class="finding" id="f6">
+    <div class="finding-head">
+      <span class="badge" style="background:#d977061a;color:#d97706">Medium</span>
+      <span class="finding-title">Cross-Site Request Forgery (CSRF)</span>
+      <span class="finding-loc">src\main\java\com\vulnbank\config\SecurityConfig.java:31</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">CSRF protection is disabled for this configuration. This is a security risk.</p>
+      <div class="meta-row">
+        <span class="tag">CWE-352: Cross-Site Request Forgery (CSRF)</span>
+        <span class="tag">A01:2021 - Broken Access Control, A01:2025 - Broken Access Control</span>
+        <span class="tag muted">Confidence: LOW</span>
+        <span class="tag muted">Likelihood: LOW</span>
+        <span class="tag muted">Impact: MEDIUM</span>
+      </div>
+      <pre class="code">    29 |     @Bean
+    30 |     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+&gt;   31 |         http
+&gt;   32 |             .csrf().disable()
+    33 |             .cors().configurationSource(corsConfigurationSource())
+    34 |             .and()</pre>
+      <div class="rule-id">Rule: <code>java.spring.security.audit.spring-csrf-disabled.spring-csrf-disabled</code></div>
+      <div class="refs">Ref: <a href="https://owasp.org/Top10/A01_2021-Broken_Access_Control">https://owasp.org/Top10/A01_2021-Broken_Access_Control</a></div>
+    </div>
+  </div>
+  <div class="finding" id="f7">
+    <div class="finding-head">
+      <span class="badge" style="background:#d977061a;color:#d97706">Medium</span>
+      <span class="finding-title">Cookie Security</span>
+      <span class="finding-loc">src\main\java\com\vulnbank\controller\AuthController.java:62</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">A cookie was detected without setting the 'HttpOnly' flag. The 'HttpOnly' flag for cookies instructs the browser to forbid client-side scripts from reading the cookie. Set the 'HttpOnly' flag by calling 'cookie.setHttpOnly(true);'</p>
+      <div class="meta-row">
+        <span class="tag">CWE-1004: Sensitive Cookie Without 'HttpOnly' Flag</span>
+        <span class="tag">A05:2021 - Security Misconfiguration, A02:2025 - Security Misconfiguration</span>
+        <span class="tag muted">Confidence: LOW</span>
+        <span class="tag muted">Likelihood: LOW</span>
+        <span class="tag muted">Impact: LOW</span>
+      </div>
+      <pre class="code">    60 |             // VULNERABLE: no HttpOnly, no Secure, no SameSite -&gt; readable by
+    61 |             // JS (session theft via XSS) and sendable cross-site.
+&gt;   62 |             response.addCookie(cookie);
+    63 |             return "redirect:/dashboard?user=" + user.getUsername();
+    64 |         }</pre>
+      <div class="rule-id">Rule: <code>java.lang.security.audit.cookie-missing-httponly.cookie-missing-httponly</code></div>
+      <div class="refs">Ref: <a href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration">https://owasp.org/Top10/A05_2021-Security_Misconfiguration</a></div>
+    </div>
+  </div>
+  <div class="finding" id="f8">
+    <div class="finding-head">
+      <span class="badge" style="background:#d977061a;color:#d97706">Medium</span>
+      <span class="finding-title">Cookie Security</span>
+      <span class="finding-loc">src\main\java\com\vulnbank\controller\AuthController.java:62</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">A cookie was detected without setting the 'secure' flag. The 'secure' flag for cookies prevents the client from transmitting the cookie over insecure channels such as HTTP. Set the 'secure' flag by calling 'cookie.setSecure(true);'</p>
+      <div class="meta-row">
+        <span class="tag">CWE-614: Sensitive Cookie in HTTPS Session Without 'Secure' Attribute</span>
+        <span class="tag">A05:2021 - Security Misconfiguration, A02:2025 - Security Misconfiguration</span>
+        <span class="tag muted">Confidence: LOW</span>
+        <span class="tag muted">Likelihood: LOW</span>
+        <span class="tag muted">Impact: LOW</span>
+      </div>
+      <pre class="code">    60 |             // VULNERABLE: no HttpOnly, no Secure, no SameSite -&gt; readable by
+    61 |             // JS (session theft via XSS) and sendable cross-site.
+&gt;   62 |             response.addCookie(cookie);
+    63 |             return "redirect:/dashboard?user=" + user.getUsername();
+    64 |         }</pre>
+      <div class="rule-id">Rule: <code>java.lang.security.audit.cookie-missing-secure-flag.cookie-missing-secure-flag</code></div>
+      <div class="refs">Ref: <a href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration">https://owasp.org/Top10/A05_2021-Security_Misconfiguration</a></div>
+    </div>
+  </div>
+  <div class="finding" id="f9">
+    <div class="finding-head">
+      <span class="badge" style="background:#d977061a;color:#d97706">Medium</span>
+      <span class="finding-title">Cookie Security</span>
+      <span class="finding-loc">src\main\java\com\vulnbank\controller\AuthController.java:87</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">A cookie was detected without setting the 'HttpOnly' flag. The 'HttpOnly' flag for cookies instructs the browser to forbid client-side scripts from reading the cookie. Set the 'HttpOnly' flag by calling 'cookie.setHttpOnly(true);'</p>
+      <div class="meta-row">
+        <span class="tag">CWE-1004: Sensitive Cookie Without 'HttpOnly' Flag</span>
+        <span class="tag">A05:2021 - Security Misconfiguration, A02:2025 - Security Misconfiguration</span>
+        <span class="tag muted">Confidence: LOW</span>
+        <span class="tag muted">Likelihood: LOW</span>
+        <span class="tag muted">Impact: LOW</span>
+      </div>
+      <pre class="code">    85 |         cookie.setPath("/");
+    86 |         cookie.setMaxAge(0);
+&gt;   87 |         response.addCookie(cookie);
+    88 |         return "redirect:/login";
+    89 |     }</pre>
+      <div class="rule-id">Rule: <code>java.lang.security.audit.cookie-missing-httponly.cookie-missing-httponly</code></div>
+      <div class="refs">Ref: <a href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration">https://owasp.org/Top10/A05_2021-Security_Misconfiguration</a></div>
+    </div>
+  </div>
+  <div class="finding" id="f10">
+    <div class="finding-head">
+      <span class="badge" style="background:#d977061a;color:#d97706">Medium</span>
+      <span class="finding-title">Cookie Security</span>
+      <span class="finding-loc">src\main\java\com\vulnbank\controller\AuthController.java:87</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">A cookie was detected without setting the 'secure' flag. The 'secure' flag for cookies prevents the client from transmitting the cookie over insecure channels such as HTTP. Set the 'secure' flag by calling 'cookie.setSecure(true);'</p>
+      <div class="meta-row">
+        <span class="tag">CWE-614: Sensitive Cookie in HTTPS Session Without 'Secure' Attribute</span>
+        <span class="tag">A05:2021 - Security Misconfiguration, A02:2025 - Security Misconfiguration</span>
+        <span class="tag muted">Confidence: LOW</span>
+        <span class="tag muted">Likelihood: LOW</span>
+        <span class="tag muted">Impact: LOW</span>
+      </div>
+      <pre class="code">    85 |         cookie.setPath("/");
+    86 |         cookie.setMaxAge(0);
+&gt;   87 |         response.addCookie(cookie);
+    88 |         return "redirect:/login";
+    89 |     }</pre>
+      <div class="rule-id">Rule: <code>java.lang.security.audit.cookie-missing-secure-flag.cookie-missing-secure-flag</code></div>
+      <div class="refs">Ref: <a href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration">https://owasp.org/Top10/A05_2021-Security_Misconfiguration</a></div>
+    </div>
+  </div>
+  <div class="finding" id="f11">
+    <div class="finding-head">
+      <span class="badge" style="background:#d977061a;color:#d97706">Medium</span>
+      <span class="finding-title">Insecure Hashing Algorithm</span>
+      <span class="finding-loc">src\main\java\com\vulnbank\controller\AuthController.java:92</span>
+    </div>
+    <div class="finding-body">
+      <p class="msg">Detected MD5 hash algorithm which is considered insecure. MD5 is not collision resistant and is therefore not suitable as a cryptographic signature. Use HMAC instead.</p>
+      <div class="meta-row">
+        <span class="tag">CWE-328: Use of Weak Hash</span>
+        <span class="tag">A03:2017 - Sensitive Data Exposure, A02:2021 - Cryptographic Failures, A04:2025 - Cryptographic Failures</span>
+        <span class="tag muted">Confidence: HIGH</span>
+        <span class="tag muted">Likelihood: MEDIUM</span>
+        <span class="tag muted">Impact: MEDIUM</span>
+      </div>
+      <pre class="code">    90 | 
+    91 |     private String md5(String input) throws Exception {
+&gt;   92 |         MessageDigest md = MessageDigest.getInstance("MD5"); // A02: weak/broken hash algorithm
+    93 |         byte[] digest = md.digest(input.getBytes());
+    94 |         StringBuilder sb = new StringBuilder();</pre>
+      <div class="rule-id">Rule: <code>java.lang.security.audit.crypto.use-of-md5.use-of-md5</code></div>
+      <div class="refs">Ref: <a href="https://owasp.org/Top10/A02_2021-Cryptographic_Failures">https://owasp.org/Top10/A02_2021-Cryptographic_Failures</a></div>
+    </div>
+  </div>
+  </div>
+  <div class="footer">Automated SAST scan &middot; Semgrep OSS &middot; VulnBank</div>
+</div>
+</body>
+</html>
