@@ -1,0 +1,72 @@
+[
+  {
+    "Summary": "[SAST] Cross-Site Request Forgery (CSRF) — SecurityConfig.java",
+    "Issue Type": "Bug",
+    "Priority": "Highest",
+    "Component": "SecurityConfig.java",
+    "Labels": "sast,vulnerability,owasp-a01,semgrep,sonarqube,securityconfig",
+    "Finding Count": 2,
+    "Severity": "Critical",
+    "Description": "h2. Summary\nCSRF protection is globally disabled in the Spring Security filter chain (SecurityConfig.java, line 31-32). CWE-352: Cross-Site Request Forgery. OWASP 2021 category: A01 Broken Access Control. Detected by both Semgrep and SonarQube.\n\nh2. Findings\n||Tool||Rule / Check ID||Line||Severity||\n|Semgrep|java.spring.security.audit.spring-csrf-disabled|31|Medium (confidence: low, likelihood: low, impact: medium)|\n|SonarQube|java:S4502 - CSRF protections should not be disabled|32|Critical|\n\nh2. Notes\n* Re-enable Spring Security's CSRF protection by removing `.csrf().disable()`.\n* If specific endpoints genuinely need to stay stateless/exempt (e.g. a public API consumed by non-browser clients), scope the exemption narrowly with `.csrf(csrf -> csrf.ignoringRequestMatchers(\"/api/**\"))` instead of disabling it globally.\n* If migrating to fully stateless JWT auth, ensure an equivalent CSRF-class mitigation is in place (SameSite=Strict/Lax cookies, custom header requirement) since disabling CSRF outright removes browser-based protection with no replacement."
+  },
+  {
+    "Summary": "[SAST] SQL Injection — AuthController.java",
+    "Issue Type": "Bug",
+    "Priority": "High",
+    "Component": "AuthController.java",
+    "Labels": "sast,vulnerability,owasp-a03,semgrep,authcontroller",
+    "Finding Count": 1,
+    "Severity": "High",
+    "Description": "h2. Summary\nUser-controlled input flows into a manually-constructed SQL string (AuthController.java, line 77). CWE-89: SQL Injection. OWASP 2021 category: A03 Injection. Detected by Semgrep (interfile taint analysis).\n\nh2. Findings\n||Tool||Rule / Check ID||Line||Severity||\n|Semgrep|java.spring.security.injection.tainted-sql-string|77|High (confidence: medium, likelihood: high, impact: medium)|\n\nh2. Notes\n* Replace the manually-built SQL string with a parameterized query / JPA `@Query` using bind parameters (`?1`, `:paramName`), or a `PreparedStatement`.\n* Never concatenate user input directly into a SQL string, including for 'debug' or internal-only endpoints - these are exactly the paths attackers target first.\n* Add a regression test asserting that a payload like `admin' --` does not authenticate."
+  },
+  {
+    "Summary": "[SAST] Insecure Hashing Algorithm (MD5) — AuthController.java",
+    "Issue Type": "Bug",
+    "Priority": "Highest",
+    "Component": "AuthController.java",
+    "Labels": "sast,vulnerability,owasp-a02,semgrep,sonarqube,authcontroller",
+    "Finding Count": 2,
+    "Severity": "Critical",
+    "Description": "h2. Summary\nPasswords are hashed with MD5 (AuthController.java, line 92), a cryptographically broken algorithm unsuitable for password storage. CWE-328: Use of Weak Hash. OWASP 2021 category: A02 Cryptographic Failures. Detected by both Semgrep and SonarQube.\n\nh2. Findings\n||Tool||Rule / Check ID||Line||Severity||\n|Semgrep|java.lang.security.audit.crypto.use-of-md5|92|Medium (confidence: high, likelihood: medium, impact: medium)|\n|SonarQube|java:S4790 - Weak hashing algorithms should not be used|92|Critical|\n\nh2. Notes\n* Replace MD5 with a password-hashing algorithm designed for that purpose - bcrypt, Argon2, or PBKDF2 - via Spring Security's `PasswordEncoder` abstraction (e.g. `BCryptPasswordEncoder`).\n* Salting MD5 is not a sufficient fix; the algorithm itself is too fast and too broken for password storage regardless of salt.\n* Existing stored MD5 hashes will need a migration path (e.g. re-hash on next successful login) since they can't be converted directly."
+  },
+  {
+    "Summary": "[SAST] Server-Side Request Forgery (SSRF) — CurrencyController.java",
+    "Issue Type": "Bug",
+    "Priority": "High",
+    "Component": "CurrencyController.java",
+    "Labels": "sast,vulnerability,owasp-a10,semgrep,currencycontroller",
+    "Finding Count": 1,
+    "Severity": "High",
+    "Description": "h2. Summary\nA user-controlled value is used as the host/URL for a server-side HTTP request with no validation (CurrencyController.java, line 27). CWE-918: SSRF. OWASP 2021 category: A10 Server-Side Request Forgery. Detected by Semgrep (interfile taint analysis).\n\nh2. Findings\n||Tool||Rule / Check ID||Line||Severity||\n|Semgrep|java.spring.security.injection.tainted-url-host|27|High (confidence: medium, likelihood: medium, impact: medium)|\n\nh2. Notes\n* Validate the destination against a strict allow-list of permitted hosts/domains before making the outbound request - never pass a user-supplied URL/host directly to an HTTP client.\n* Explicitly block requests to internal/link-local/loopback address ranges (127.0.0.0/8, 169.254.0.0/16, 10.0.0.0/8, etc.) to prevent pivoting to internal services or cloud metadata endpoints.\n* If the use case only ever needs a small fixed set of destinations, replace the dynamic host with a server-side enum/lookup instead of accepting one from the client at all."
+  },
+  {
+    "Summary": "[SAST] Path Traversal — FileController.java",
+    "Issue Type": "Bug",
+    "Priority": "High",
+    "Component": "FileController.java",
+    "Labels": "sast,vulnerability,owasp-a01,semgrep,filecontroller",
+    "Finding Count": 2,
+    "Severity": "High",
+    "Description": "h2. Summary\nA user-controlled filename is concatenated directly into a filesystem path with no sanitization, in two places (FileController.java, lines 37 and 54 - statement download and profile picture upload). CWE-23: Relative Path Traversal. OWASP 2021 category: A01 Broken Access Control. Detected by Semgrep (interfile taint analysis).\n\nh2. Findings\n||Tool||Rule / Check ID||Line||Severity||\n|Semgrep|java.spring.security.injection.tainted-file-path|37|High (confidence: high, likelihood: medium, impact: high)|\n|Semgrep|java.spring.security.injection.tainted-file-path|54|High (confidence: high, likelihood: medium, impact: high)|\n\nh2. Notes\n* Canonicalize the resolved path (`Path.normalize()` / `File.getCanonicalPath()`) and verify it still starts with the intended base directory before using it - reject anything that resolves outside that root.\n* Reject filenames containing `..` segments or absolute path components outright rather than trying to sanitize them.\n* For the upload path specifically, also enforce an allowed file-extension/MIME-type list and a size limit - unrestricted upload is a separate but related issue at the same location."
+  },
+  {
+    "Summary": "[SAST] XML External Entities (XXE) — ProfileController.java",
+    "Issue Type": "Bug",
+    "Priority": "Highest",
+    "Component": "ProfileController.java",
+    "Labels": "sast,vulnerability,owasp-a05,semgrep,sonarqube,profilecontroller",
+    "Finding Count": 2,
+    "Severity": "Critical",
+    "Description": "h2. Summary\nAn XML parser (DocumentBuilderFactory) is configured without disabling DOCTYPE/external entity processing before parsing client-supplied XML (ProfileController.java, line 37-42). CWE-611: XXE. OWASP 2021 category: A05 Security Misconfiguration. Detected by both Semgrep and SonarQube; SonarQube rates this its highest severity tier (Blocker).\n\nh2. Findings\n||Tool||Rule / Check ID||Line||Severity||\n|Semgrep|java.lang.security.audit.xxe.documentbuilderfactory-disallow-doctype-decl-missing|42|High (confidence: high, likelihood: low, impact: high)|\n|SonarQube|java:S2755 - XML parsers should not be vulnerable to XXE attacks|37|Blocker|\n\nh2. Notes\n* Disable DOCTYPE declarations entirely on the DocumentBuilderFactory: `setFeature(\"http://apache.org/xml/features/disallow-doctype-decl\", true)`.\n* If DOCTYPEs must be allowed for some reason, at minimum disable external general and parameter entities and external DTD loading (`disallow-doctype-decl` is the simplest complete fix when full DOCTYPE support isn't needed).\n* Apply the same hardening to any other XML parser instantiation in the codebase (SAXParserFactory, XMLInputFactory, etc.) - this fix is local to one factory instance and won't protect other parsers."
+  },
+  {
+    "Summary": "[SAST] Actuator Endpoints Fully Exposed — application.properties",
+    "Issue Type": "Bug",
+    "Priority": "High",
+    "Component": "application.properties",
+    "Labels": "sast,vulnerability,owasp-a01,semgrep,config",
+    "Finding Count": 1,
+    "Severity": "High",
+    "Description": "h2. Summary\nAll Spring Boot Actuator endpoints are exposed with no restriction (application.properties, line 6), including endpoints that leak configuration, environment variables, and heap dumps. CWE-200: Exposure of Sensitive Information to an Unauthorized Actor. OWASP 2021 category: A01 Broken Access Control. Detected by Semgrep.\n\nh2. Findings\n||Tool||Rule / Check ID||Line||Severity||\n|Semgrep|java.spring.security.audit.spring-actuator-fully-enabled|6|High (confidence: medium, likelihood: medium, impact: high)|\n\nh2. Notes\n* Restrict `management.endpoints.web.exposure.include` to only the endpoints actually needed (typically just `health`), rather than `*`.\n* Put any remaining exposed management endpoints behind authentication, and consider serving them on a separate internal-only management port (`management.server.port`).\n* Audit `/actuator/env` and `/actuator/heapdump` specifically - these are the two most commonly abused for credential/secret leakage once actuator is left open."
+  }
+]
