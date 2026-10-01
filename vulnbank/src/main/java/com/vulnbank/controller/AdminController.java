@@ -52,4 +52,24 @@ public class AdminController {
     public Object dumpEverything() {
         return userRepository.findAll();
     }
+
+    /**
+     * VULNERABLE: same broken backdoor-key "access control" as
+     * listUsers() above, trivially bypassed the same way (leak the key via
+     * /actuator/env, or brute-force it with Burp Intruder - no lockout, no
+     * rate limiting). On top of that: no confirmation step, no audit
+     * logging of who deleted what, and no check that the target `id` isn't
+     * the caller's own account or the last remaining admin.
+     *
+     * Try in Burp: DELETE /admin/users/2?key=Sup3rAdmin!2023 to delete bob
+     * as an unauthenticated/low-privileged caller.
+     */
+    @DeleteMapping("/users/{id}")
+    public String deleteUser(@PathVariable Long id, @RequestParam(required = false) String key) {
+        if (key == null || !key.equals(backdoorPassword)) {
+            return "Access denied"; // "denied" - but again: no 401/403, no logging, no lockout
+        }
+        userRepository.deleteById(id);
+        return "Deleted user " + id;
+    }
 }
