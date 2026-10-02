@@ -61,4 +61,42 @@ public class AccountController {
         // VULNERABLE: dumps every customer's account & balance, no auth check.
         return accountRepository.findAll();
     }
+
+    /**
+     * Credit (add money to) an account.
+     *
+     * VULNERABLE: same broken access control pattern as the rest of this
+     * class - no check that the caller owns `id`, no upper bound on
+     * `amount`, no audit trail. Try in Burp while logged in as alice (or
+     * with no cookie at all):
+     *   POST /account/1/credit?amount=100000
+     */
+    @PostMapping("/account/{id}/credit")
+    @ResponseBody
+    public Object credit(@PathVariable Long id, @RequestParam java.math.BigDecimal amount) {
+        Optional<Account> accountOpt = accountRepository.findById(id);
+        if (accountOpt.isEmpty()) return "Not found";
+        Account account = accountOpt.get();
+        account.setBalance(account.getBalance().add(amount));
+        accountRepository.save(account);
+        return account;
+    }
+
+    /**
+     * Debit (remove money from) an account.
+     *
+     * VULNERABLE: same as credit() above, plus no balance-floor check, so
+     * an account can be driven negative. Try in Burp:
+     *   POST /account/1/debit?amount=100000
+     */
+    @PostMapping("/account/{id}/debit")
+    @ResponseBody
+    public Object debit(@PathVariable Long id, @RequestParam java.math.BigDecimal amount) {
+        Optional<Account> accountOpt = accountRepository.findById(id);
+        if (accountOpt.isEmpty()) return "Not found";
+        Account account = accountOpt.get();
+        account.setBalance(account.getBalance().subtract(amount));
+        accountRepository.save(account);
+        return account;
+    }
 }
