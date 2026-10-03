@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Snyk test report</title>
-  <meta name="description" content="169 known vulnerabilities found in 169 vulnerable dependency paths.">
+  <meta name="description" content="177 known vulnerabilities found in 177 vulnerable dependency paths.">
   <base target="_blank">
   <link rel="icon" type="image/png" href="https://res.cloudinary.com/snyk/image/upload/v1468845142/favicon/favicon.png"
     sizes="194x194">
@@ -492,7 +492,7 @@
               <div class="header-wrap">
                   <h1 class="project__header__title">Snyk test report</h1>
     
-                <p class="timestamp">September 25th 2026, 11:29:14 am (UTC+00:00)</p>
+                <p class="timestamp">October 3rd 2026, 5:10:57 am (UTC+00:00)</p>
               </div>
               <div class="source-panel">
                 <span>Scanned the following path:</span>
@@ -502,8 +502,8 @@
               </div>
     
               <div class="meta-counts">
-                <div class="meta-count"><span>169</span> <span>known vulnerabilities</span></div>
-                <div class="meta-count"><span>169 vulnerable dependency paths</span></div>
+                <div class="meta-count"><span>177</span> <span>known vulnerabilities</span></div>
+                <div class="meta-count"><span>177 vulnerable dependency paths</span></div>
                 <div class="meta-count"><span>78</span> <span>dependencies</span></div>
               </div><!-- .meta-counts -->
             </div><!-- .layout-container--short -->
@@ -2006,6 +2006,168 @@
         
             <div class="cta card__cta">
                 <p><a href="https://snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-17733813">More about this vulnerability</a></p>
+            </div>
+        
+        </div><!-- .card -->
+        <div class="card card--vuln  disclosure--not-new severity--critical" data-snyk-test="critical">
+            <h2 class="card__title">Replay Attack</h2>
+            <div class="card__section">
+        
+                <div class="card__labels">
+                    <div class="label label--critical">
+                        <span class="label__text">critical severity</span>
+                    </div>
+                    <div class="label label--exploit">
+                        <span class="label__text">Exploit: Not Defined</span>
+                    </div>
+                </div>
+        
+                <hr/>
+        
+                <ul class="card__meta">
+                    <li class="card__meta__item">
+                        Package Manager: maven
+                    </li>
+                    <li class="card__meta__item">
+                            Vulnerable module:
+        
+                            org.apache.tomcat.embed:tomcat-embed-core
+                    </li>
+        
+                    <li class="card__meta__item">Introduced through:
+        
+        
+                                    com.vulnbank:vulnbank@1.0.0, org.springframework.boot:spring-boot-starter-web@2.7.5 and others
+                    </li>
+                </ul>
+        
+                <hr/>
+        
+        
+                        <h3 class="card__section__title">Detailed paths</h3>
+        
+                    <ul class="card__meta__paths">
+                                <li>
+                                <span class="list-paths__item__introduced"><em>Introduced through</em>:
+                                        com.vulnbank:vulnbank@1.0.0
+                                         <span class="list-paths__item__arrow">›</span> 
+                                        org.springframework.boot:spring-boot-starter-web@2.7.5
+                                         <span class="list-paths__item__arrow">›</span> 
+                                        org.springframework.boot:spring-boot-starter-tomcat@2.7.5
+                                         <span class="list-paths__item__arrow">›</span> 
+                                        org.apache.tomcat.embed:tomcat-embed-core@9.0.68
+                                        
+                                </span>
+        
+                            </li>
+                    </ul><!-- .list-paths -->
+        
+            </div><!-- .card__section -->
+        
+              <hr/>
+              <!-- Overview -->
+              <h2 id="overview">Overview</h2>
+        <p><a href="https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core">org.apache.tomcat.embed:tomcat-embed-core</a> is a Core Tomcat implementation.</p>
+        <p>Affected versions of this package are vulnerable to Replay Attack in the DIGEST authenticator’s nonce-count window handling. An attacker can reuse a valid DIGEST-authenticated request once by sending a request with a nonce count at the upper boundary of the replay window before the window has filled. This allows a captured authentication message to be replayed successfully within the same nonce-count window, letting the attacker impersonate an authenticated user and perform requests accepted as that user.</p>
+        <p><strong>Notes</strong></p>
+        <ul>
+        <li>The issue was fixed in Apache Tomcat 10.1.58, but the release vote for the 10.1.58 release candidate did not pass. Therefore, although users must download 10.1.59 to obtain a version that includes a fix for this issue, version 10.1.58 is not included in the list of affected versions.</li>
+        </ul>
+        <h2 id="remediation">Remediation</h2>
+        <p>Upgrade <code>org.apache.tomcat.embed:tomcat-embed-core</code> to version 9.0.121, 10.1.59, 11.0.25 or higher.</p>
+        <h2 id="references">References</h2>
+        <ul>
+        <li><a href="https://lists.apache.org/thread/9v114xlpgbzrrbzz5vf9f6r2q4wnxwwj">Apache Security Advisory</a></li>
+        <li><a href="https://github.com/apache/tomcat/commit/1c1a583ba57092206f77c375f45da12c99fb141d">GitHub Commit 10.1.58</a></li>
+        <li><a href="https://github.com/apache/tomcat/commit/c5f94ad1726e8399b77eb3fd69c811c1103894d6">GitHub Commit 11.0.25</a></li>
+        <li><a href="https://github.com/apache/tomcat/commit/a31181af45e494b6035575519f6d1d33875f050d">GitHub Commit 9.0.121</a></li>
+        </ul>
+        
+              <hr/>
+        
+            <div class="cta card__cta">
+                <p><a href="https://snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-20302842">More about this vulnerability</a></p>
+            </div>
+        
+        </div><!-- .card -->
+        <div class="card card--vuln  disclosure--not-new severity--critical" data-snyk-test="critical">
+            <h2 class="card__title">Incorrect Authorization</h2>
+            <div class="card__section">
+        
+                <div class="card__labels">
+                    <div class="label label--critical">
+                        <span class="label__text">critical severity</span>
+                    </div>
+                    <div class="label label--exploit">
+                        <span class="label__text">Exploit: Not Defined</span>
+                    </div>
+                </div>
+        
+                <hr/>
+        
+                <ul class="card__meta">
+                    <li class="card__meta__item">
+                        Package Manager: maven
+                    </li>
+                    <li class="card__meta__item">
+                            Vulnerable module:
+        
+                            org.apache.tomcat.embed:tomcat-embed-core
+                    </li>
+        
+                    <li class="card__meta__item">Introduced through:
+        
+        
+                                    com.vulnbank:vulnbank@1.0.0, org.springframework.boot:spring-boot-starter-web@2.7.5 and others
+                    </li>
+                </ul>
+        
+                <hr/>
+        
+        
+                        <h3 class="card__section__title">Detailed paths</h3>
+        
+                    <ul class="card__meta__paths">
+                                <li>
+                                <span class="list-paths__item__introduced"><em>Introduced through</em>:
+                                        com.vulnbank:vulnbank@1.0.0
+                                         <span class="list-paths__item__arrow">›</span> 
+                                        org.springframework.boot:spring-boot-starter-web@2.7.5
+                                         <span class="list-paths__item__arrow">›</span> 
+                                        org.springframework.boot:spring-boot-starter-tomcat@2.7.5
+                                         <span class="list-paths__item__arrow">›</span> 
+                                        org.apache.tomcat.embed:tomcat-embed-core@9.0.68
+                                        
+                                </span>
+        
+                            </li>
+                    </ul><!-- .list-paths -->
+        
+            </div><!-- .card__section -->
+        
+              <hr/>
+              <!-- Overview -->
+              <h2 id="overview">Overview</h2>
+        <p><a href="https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core">org.apache.tomcat.embed:tomcat-embed-core</a> is a Core Tomcat implementation.</p>
+        <p>Affected versions of this package are vulnerable to Incorrect Authorization via the <code>FormAuthenticator</code> and <code>AuthenticatorBase</code> FORM authentication flow. An attacker can bypass a security constraint that allows access to a resource for <code>POST</code> but not <code>GET</code> by authenticating through FORM login and restoring a saved request with a different HTTP method. This lets a request that should be blocked reach the protected resource, exposing content or actions that the user should not be allowed to access with that method.</p>
+        <p><strong>Notes</strong></p>
+        <ul>
+        <li>The issue was fixed in Apache Tomcat 10.1.58, but the release vote for the 10.1.58 release candidate did not pass. Therefore, although users must download 10.1.59 to obtain a version that includes a fix for this issue, version 10.1.58 is not included in the list of affected versions.</li>
+        </ul>
+        <h2 id="remediation">Remediation</h2>
+        <p>Upgrade <code>org.apache.tomcat.embed:tomcat-embed-core</code> to version 9.0.121, 10.1.58, 11.0.25 or higher.</p>
+        <h2 id="references">References</h2>
+        <ul>
+        <li><a href="https://lists.apache.org/thread/x1y2lfsgzxwzc456f8954vbvgn03zhd7">Apache Security Advisory</a></li>
+        <li><a href="https://github.com/apache/tomcat/commit/58123aa468a20e2a079b7e0c68a4009e2475c098">GitHub Commit 10.1.58</a></li>
+        <li><a href="https://github.com/apache/tomcat/commit/10d048e16034ddf12055e0cede0da05b15c823b8">GitHub Commit 11.0.25</a></li>
+        <li><a href="https://github.com/apache/tomcat/commit/32f0c38526b4e655ff0c17cd97afedefc624fe43">GitHub Commit 9.0.121</a></li>
+        </ul>
+        
+              <hr/>
+        
+            <div class="cta card__cta">
+                <p><a href="https://snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-20302843">More about this vulnerability</a></p>
             </div>
         
         </div><!-- .card -->
@@ -6175,6 +6337,239 @@
         
         </div><!-- .card -->
         <div class="card card--vuln  disclosure--not-new severity--high" data-snyk-test="high">
+            <h2 class="card__title">Off-by-one Error</h2>
+            <div class="card__section">
+        
+                <div class="card__labels">
+                    <div class="label label--high">
+                        <span class="label__text">high severity</span>
+                    </div>
+                    <div class="label label--exploit">
+                        <span class="label__text">Exploit: Not Defined</span>
+                    </div>
+                </div>
+        
+                <hr/>
+        
+                <ul class="card__meta">
+                    <li class="card__meta__item">
+                        Package Manager: maven
+                    </li>
+                    <li class="card__meta__item">
+                            Vulnerable module:
+        
+                            org.apache.tomcat.embed:tomcat-embed-core
+                    </li>
+        
+                    <li class="card__meta__item">Introduced through:
+        
+        
+                                    com.vulnbank:vulnbank@1.0.0, org.springframework.boot:spring-boot-starter-web@2.7.5 and others
+                    </li>
+                </ul>
+        
+                <hr/>
+        
+        
+                        <h3 class="card__section__title">Detailed paths</h3>
+        
+                    <ul class="card__meta__paths">
+                                <li>
+                                <span class="list-paths__item__introduced"><em>Introduced through</em>:
+                                        com.vulnbank:vulnbank@1.0.0
+                                         <span class="list-paths__item__arrow">›</span> 
+                                        org.springframework.boot:spring-boot-starter-web@2.7.5
+                                         <span class="list-paths__item__arrow">›</span> 
+                                        org.springframework.boot:spring-boot-starter-tomcat@2.7.5
+                                         <span class="list-paths__item__arrow">›</span> 
+                                        org.apache.tomcat.embed:tomcat-embed-core@9.0.68
+                                        
+                                </span>
+        
+                            </li>
+                    </ul><!-- .list-paths -->
+        
+            </div><!-- .card__section -->
+        
+              <hr/>
+              <!-- Overview -->
+              <h2 id="overview">Overview</h2>
+        <p><a href="https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core">org.apache.tomcat.embed:tomcat-embed-core</a> is a Core Tomcat implementation.</p>
+        <p>Affected versions of this package are vulnerable to Off-by-one Error in chain-rule handling due to the rule-skipping logic in <code>java/org/apache/catalina/valves/rewrite/RewriteValve.java</code>. An attacker can cause rewrite processing to apply the wrong rule by supplying a request that triggers a failing <code>[C]</code> chain, which incorrectly skips the terminal rule and resumes at the second rule instead of the first. This can rewrite a request to an unintended target path, breaking expected URL routing and letting crafted requests bypass the intended rewrite sequence.</p>
+        <p><strong>Notes</strong></p>
+        <ul>
+        <li>The issue was fixed in Apache Tomcat 10.1.58, but the release vote for the 10.1.58 release candidate did not pass. Therefore, although users must download 10.1.59 to obtain a version that includes a fix for this issue, version 10.1.58 is not included in the list of affected versions.</li>
+        </ul>
+        <h2 id="remediation">Remediation</h2>
+        <p>Upgrade <code>org.apache.tomcat.embed:tomcat-embed-core</code> to version 9.0.121, 10.1.59, 11.0.25 or higher.</p>
+        <h2 id="references">References</h2>
+        <ul>
+        <li><a href="https://lists.apache.org/thread/st1dx1zyn5y7ny2s0sscmh6lrv3worr4">Apache Security Advisory</a></li>
+        <li><a href="https://github.com/apache/tomcat/commit/7d2ae3952a39db5790dcfd36e5d79c75570a20ee">GitHub Commit 10.1.58</a></li>
+        <li><a href="https://github.com/apache/tomcat/commit/b80929d65be774dc90e378acdda2d16949d1e5f3">GitHub Commit 11.0.25</a></li>
+        <li><a href="https://github.com/apache/tomcat/commit/b477537e68acfcaa7220f90b512bf8a72bf237dc">GitHub Commit 9.0.121</a></li>
+        </ul>
+        
+              <hr/>
+        
+            <div class="cta card__cta">
+                <p><a href="https://snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-20302886">More about this vulnerability</a></p>
+            </div>
+        
+        </div><!-- .card -->
+        <div class="card card--vuln  disclosure--not-new severity--high" data-snyk-test="high">
+            <h2 class="card__title">Authentication Bypass by Primary Weakness</h2>
+            <div class="card__section">
+        
+                <div class="card__labels">
+                    <div class="label label--high">
+                        <span class="label__text">high severity</span>
+                    </div>
+                    <div class="label label--exploit">
+                        <span class="label__text">Exploit: Not Defined</span>
+                    </div>
+                </div>
+        
+                <hr/>
+        
+                <ul class="card__meta">
+                    <li class="card__meta__item">
+                        Package Manager: maven
+                    </li>
+                    <li class="card__meta__item">
+                            Vulnerable module:
+        
+                            org.apache.tomcat.embed:tomcat-embed-core
+                    </li>
+        
+                    <li class="card__meta__item">Introduced through:
+        
+        
+                                    com.vulnbank:vulnbank@1.0.0, org.springframework.boot:spring-boot-starter-web@2.7.5 and others
+                    </li>
+                </ul>
+        
+                <hr/>
+        
+        
+                        <h3 class="card__section__title">Detailed paths</h3>
+        
+                    <ul class="card__meta__paths">
+                                <li>
+                                <span class="list-paths__item__introduced"><em>Introduced through</em>:
+                                        com.vulnbank:vulnbank@1.0.0
+                                         <span class="list-paths__item__arrow">›</span> 
+                                        org.springframework.boot:spring-boot-starter-web@2.7.5
+                                         <span class="list-paths__item__arrow">›</span> 
+                                        org.springframework.boot:spring-boot-starter-tomcat@2.7.5
+                                         <span class="list-paths__item__arrow">›</span> 
+                                        org.apache.tomcat.embed:tomcat-embed-core@9.0.68
+                                        
+                                </span>
+        
+                            </li>
+                    </ul><!-- .list-paths -->
+        
+            </div><!-- .card__section -->
+        
+              <hr/>
+              <!-- Overview -->
+              <h2 id="overview">Overview</h2>
+        <p><a href="https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core">org.apache.tomcat.embed:tomcat-embed-core</a> is a Core Tomcat implementation.</p>
+        <p>Affected versions of this package are vulnerable to Authentication Bypass by Primary Weakness in the authentication process when using certain authentication mechanisms such as <code>CLIENT-CERT</code> or <code>SPNEGO</code>. An attacker can gain unauthorized access by authenticating with credentials that do not correspond to a valid user in the <code>DataSourceRealm</code>.</p>
+        <p><strong>Note:</strong> This issue was fixed in Apache Tomcat 10.1.58 but the release vote for the 10.1.58 release candidate did not pass. Therefore, although users must download 10.1.59 to obtain a version that includes a fix for this issue, version 10.1.58 is not included in the list of affected versions.</p>
+        <h2 id="remediation">Remediation</h2>
+        <p>Upgrade <code>org.apache.tomcat.embed:tomcat-embed-core</code> to version 9.0.121, 10.1.59, 11.0.25 or higher.</p>
+        <h2 id="references">References</h2>
+        <ul>
+        <li><a href="https://lists.apache.org/thread/8robqo76q0osxgw0b5lcwgz0hcf9h4zc">Apache Mailing List</a></li>
+        <li><a href="https://github.com/apache/tomcat/commit/790d6e2c3b4cd201a1fa556a23d5b7504dee18ad">GitHub Commit</a></li>
+        </ul>
+        
+              <hr/>
+        
+            <div class="cta card__cta">
+                <p><a href="https://snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-20302889">More about this vulnerability</a></p>
+            </div>
+        
+        </div><!-- .card -->
+        <div class="card card--vuln  disclosure--not-new severity--high" data-snyk-test="high">
+            <h2 class="card__title">Allocation of Resources Without Limits or Throttling</h2>
+            <div class="card__section">
+        
+                <div class="card__labels">
+                    <div class="label label--high">
+                        <span class="label__text">high severity</span>
+                    </div>
+                    <div class="label label--exploit">
+                        <span class="label__text">Exploit: Not Defined</span>
+                    </div>
+                </div>
+        
+                <hr/>
+        
+                <ul class="card__meta">
+                    <li class="card__meta__item">
+                        Package Manager: maven
+                    </li>
+                    <li class="card__meta__item">
+                            Vulnerable module:
+        
+                            org.apache.tomcat.embed:tomcat-embed-core
+                    </li>
+        
+                    <li class="card__meta__item">Introduced through:
+        
+        
+                                    com.vulnbank:vulnbank@1.0.0, org.springframework.boot:spring-boot-starter-web@2.7.5 and others
+                    </li>
+                </ul>
+        
+                <hr/>
+        
+        
+                        <h3 class="card__section__title">Detailed paths</h3>
+        
+                    <ul class="card__meta__paths">
+                                <li>
+                                <span class="list-paths__item__introduced"><em>Introduced through</em>:
+                                        com.vulnbank:vulnbank@1.0.0
+                                         <span class="list-paths__item__arrow">›</span> 
+                                        org.springframework.boot:spring-boot-starter-web@2.7.5
+                                         <span class="list-paths__item__arrow">›</span> 
+                                        org.springframework.boot:spring-boot-starter-tomcat@2.7.5
+                                         <span class="list-paths__item__arrow">›</span> 
+                                        org.apache.tomcat.embed:tomcat-embed-core@9.0.68
+                                        
+                                </span>
+        
+                            </li>
+                    </ul><!-- .list-paths -->
+        
+            </div><!-- .card__section -->
+        
+              <hr/>
+              <!-- Overview -->
+              <h2 id="overview">Overview</h2>
+        <p><a href="https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core">org.apache.tomcat.embed:tomcat-embed-core</a> is a Core Tomcat implementation.</p>
+        <p>Affected versions of this package are vulnerable to Allocation of Resources Without Limits or Throttling in the HTTP/2 backlog tracking when a stream is reset. An attacker can exhaust system resources by repeatedly resetting streams, leading to service disruption.</p>
+        <p><strong>Note:</strong> This issue was fixed in Apache Tomcat 10.1.58 but the release vote for the 10.1.58 release candidate did not pass. Therefore, although users must download 10.1.59 to obtain a version that includes a fix for this issue, version 10.1.58 is not included in the list of affected versions.</p>
+        <h2 id="remediation">Remediation</h2>
+        <p>Upgrade <code>org.apache.tomcat.embed:tomcat-embed-core</code> to version 9.0.121, 10.1.59, 11.0.25 or higher.</p>
+        <h2 id="references">References</h2>
+        <ul>
+        <li><a href="https://lists.apache.org/thread/tv51ty39ppv41v04hdtkp9dp7tg02nzl">Apache Mailing List</a></li>
+        <li><a href="https://github.com/apache/tomcat/commit/2a5ec806971627943db18601203129d9c58d959f">GitHub Commit</a></li>
+        </ul>
+        
+              <hr/>
+        
+            <div class="cta card__cta">
+                <p><a href="https://snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-20304748">More about this vulnerability</a></p>
+            </div>
+        
+        </div><!-- .card -->
+        <div class="card card--vuln  disclosure--not-new severity--high" data-snyk-test="high">
             <h2 class="card__title">Improper Input Validation</h2>
             <div class="card__section">
         
@@ -6970,6 +7365,73 @@
         
             <div class="cta card__cta">
                 <p><a href="https://snyk.io/vuln/SNYK-JAVA-IOMICROMETER-19256585">More about this vulnerability</a></p>
+            </div>
+        
+        </div><!-- .card -->
+        <div class="card card--vuln  disclosure--not-new severity--high" data-snyk-test="high">
+            <h2 class="card__title">Access Control Bypass</h2>
+            <div class="card__section">
+        
+                <div class="card__labels">
+                    <div class="label label--high">
+                        <span class="label__text">high severity</span>
+                    </div>
+                    <div class="label label--exploit">
+                        <span class="label__text">Exploit: Not Defined</span>
+                    </div>
+                </div>
+        
+                <hr/>
+        
+                <ul class="card__meta">
+                    <li class="card__meta__item">
+                        Package Manager: maven
+                    </li>
+                    <li class="card__meta__item">
+                            Vulnerable module:
+        
+                            com.mysql:mysql-connector-j
+                    </li>
+        
+                    <li class="card__meta__item">Introduced through:
+        
+                                com.vulnbank:vulnbank@1.0.0 and com.mysql:mysql-connector-j@8.0.31
+        
+                    </li>
+                </ul>
+        
+                <hr/>
+        
+        
+                        <h3 class="card__section__title">Detailed paths</h3>
+        
+                    <ul class="card__meta__paths">
+                                <li>
+                                <span class="list-paths__item__introduced"><em>Introduced through</em>:
+                                        com.vulnbank:vulnbank@1.0.0
+                                         <span class="list-paths__item__arrow">›</span> 
+                                        com.mysql:mysql-connector-j@8.0.31
+                                        
+                                </span>
+        
+                            </li>
+                    </ul><!-- .list-paths -->
+        
+            </div><!-- .card__section -->
+        
+              <hr/>
+              <!-- Overview -->
+              <h2 id="overview">Overview</h2>
+        <p>Affected versions of this package are vulnerable to Access Control Bypass. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise MySQL Connectors. Successful attacks require human interaction from a person other than the attacker and while the vulnerability is in MySQL Connectors, attacks may significantly impact additional products (scope change). </p>
+        <p><strong>Note:</strong></p>
+        <p>Successful attacks of this vulnerability can result in takeover of MySQL Connectors.</p>
+        <h2 id="remediation">Remediation</h2>
+        <p>Upgrade <code>com.mysql:mysql-connector-j</code> to version 8.2.0 or higher.</p>
+        
+              <hr/>
+        
+            <div class="cta card__cta">
+                <p><a href="https://snyk.io/vuln/SNYK-JAVA-COMMYSQL-6075938">More about this vulnerability</a></p>
             </div>
         
         </div><!-- .card -->
@@ -10597,6 +11059,81 @@
         
         </div><!-- .card -->
         <div class="card card--vuln  disclosure--not-new severity--medium" data-snyk-test="medium">
+            <h2 class="card__title">Insufficient Session Expiration</h2>
+            <div class="card__section">
+        
+                <div class="card__labels">
+                    <div class="label label--medium">
+                        <span class="label__text">medium severity</span>
+                    </div>
+                    <div class="label label--exploit">
+                        <span class="label__text">Exploit: Not Defined</span>
+                    </div>
+                </div>
+        
+                <hr/>
+        
+                <ul class="card__meta">
+                    <li class="card__meta__item">
+                        Package Manager: maven
+                    </li>
+                    <li class="card__meta__item">
+                            Vulnerable module:
+        
+                            org.apache.tomcat.embed:tomcat-embed-websocket
+                    </li>
+        
+                    <li class="card__meta__item">Introduced through:
+        
+        
+                                    com.vulnbank:vulnbank@1.0.0, org.springframework.boot:spring-boot-starter-web@2.7.5 and others
+                    </li>
+                </ul>
+        
+                <hr/>
+        
+        
+                        <h3 class="card__section__title">Detailed paths</h3>
+        
+                    <ul class="card__meta__paths">
+                                <li>
+                                <span class="list-paths__item__introduced"><em>Introduced through</em>:
+                                        com.vulnbank:vulnbank@1.0.0
+                                         <span class="list-paths__item__arrow">›</span> 
+                                        org.springframework.boot:spring-boot-starter-web@2.7.5
+                                         <span class="list-paths__item__arrow">›</span> 
+                                        org.springframework.boot:spring-boot-starter-tomcat@2.7.5
+                                         <span class="list-paths__item__arrow">›</span> 
+                                        org.apache.tomcat.embed:tomcat-embed-websocket@9.0.68
+                                        
+                                </span>
+        
+                            </li>
+                    </ul><!-- .list-paths -->
+        
+            </div><!-- .card__section -->
+        
+              <hr/>
+              <!-- Overview -->
+              <h2 id="overview">Overview</h2>
+        <p>Affected versions of this package are vulnerable to Insufficient Session Expiration due to the improper termination of WebSocket sessions when the associated HTTP session ends. An attacker can maintain access to resources beyond the intended session duration by establishing a WebSocket connection under an authenticated HTTP session and continuing to interact through the WebSocket after the HTTP session has expired.</p>
+        <p><strong>Note:</strong> This issue was fixed in Apache Tomcat 10.1.58 but the release vote for the 10.1.58 release candidate did not pass. Therefore, although users must download 10.1.59 to obtain a version that includes a fix for this issue, version 10.1.58 is not included in the list of affected versions.</p>
+        <h2 id="remediation">Remediation</h2>
+        <p>Upgrade <code>org.apache.tomcat.embed:tomcat-embed-websocket</code> to version 9.0.121, 10.1.59, 11.0.25 or higher.</p>
+        <h2 id="references">References</h2>
+        <ul>
+        <li><a href="https://lists.apache.org/thread/3j15vztszpyqss253mjq5v1kp7s6hooq">Apache Mailing List</a></li>
+        <li><a href="https://github.com/apache/tomcat/commit/e617a5d483b78851d289ca8dc1d68c49b541b419">GitHub Commit</a></li>
+        </ul>
+        
+              <hr/>
+        
+            <div class="cta card__cta">
+                <p><a href="https://snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-20302876">More about this vulnerability</a></p>
+            </div>
+        
+        </div><!-- .card -->
+        <div class="card card--vuln  disclosure--not-new severity--medium" data-snyk-test="medium">
             <h2 class="card__title">Improper Handling of Case Sensitivity</h2>
             <div class="card__section">
         
@@ -11626,6 +12163,82 @@
         
         </div><!-- .card -->
         <div class="card card--vuln  disclosure--not-new severity--medium" data-snyk-test="medium">
+            <h2 class="card__title">Insufficient Session Expiration</h2>
+            <div class="card__section">
+        
+                <div class="card__labels">
+                    <div class="label label--medium">
+                        <span class="label__text">medium severity</span>
+                    </div>
+                    <div class="label label--exploit">
+                        <span class="label__text">Exploit: Not Defined</span>
+                    </div>
+                </div>
+        
+                <hr/>
+        
+                <ul class="card__meta">
+                    <li class="card__meta__item">
+                        Package Manager: maven
+                    </li>
+                    <li class="card__meta__item">
+                            Vulnerable module:
+        
+                            org.apache.tomcat.embed:tomcat-embed-core
+                    </li>
+        
+                    <li class="card__meta__item">Introduced through:
+        
+        
+                                    com.vulnbank:vulnbank@1.0.0, org.springframework.boot:spring-boot-starter-web@2.7.5 and others
+                    </li>
+                </ul>
+        
+                <hr/>
+        
+        
+                        <h3 class="card__section__title">Detailed paths</h3>
+        
+                    <ul class="card__meta__paths">
+                                <li>
+                                <span class="list-paths__item__introduced"><em>Introduced through</em>:
+                                        com.vulnbank:vulnbank@1.0.0
+                                         <span class="list-paths__item__arrow">›</span> 
+                                        org.springframework.boot:spring-boot-starter-web@2.7.5
+                                         <span class="list-paths__item__arrow">›</span> 
+                                        org.springframework.boot:spring-boot-starter-tomcat@2.7.5
+                                         <span class="list-paths__item__arrow">›</span> 
+                                        org.apache.tomcat.embed:tomcat-embed-core@9.0.68
+                                        
+                                </span>
+        
+                            </li>
+                    </ul><!-- .list-paths -->
+        
+            </div><!-- .card__section -->
+        
+              <hr/>
+              <!-- Overview -->
+              <h2 id="overview">Overview</h2>
+        <p><a href="https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core">org.apache.tomcat.embed:tomcat-embed-core</a> is a Core Tomcat implementation.</p>
+        <p>Affected versions of this package are vulnerable to Insufficient Session Expiration due to the improper termination of WebSocket sessions when the associated HTTP session ends. An attacker can maintain access to resources beyond the intended session duration by establishing a WebSocket connection under an authenticated HTTP session and continuing to interact through the WebSocket after the HTTP session has expired.</p>
+        <p><strong>Note:</strong> This issue was fixed in Apache Tomcat 10.1.58 but the release vote for the 10.1.58 release candidate did not pass. Therefore, although users must download 10.1.59 to obtain a version that includes a fix for this issue, version 10.1.58 is not included in the list of affected versions.</p>
+        <h2 id="remediation">Remediation</h2>
+        <p>Upgrade <code>org.apache.tomcat.embed:tomcat-embed-core</code> to version 9.0.121, 10.1.59, 11.0.25 or higher.</p>
+        <h2 id="references">References</h2>
+        <ul>
+        <li><a href="https://lists.apache.org/thread/3j15vztszpyqss253mjq5v1kp7s6hooq">Apache Mailing List</a></li>
+        <li><a href="https://github.com/apache/tomcat/commit/e617a5d483b78851d289ca8dc1d68c49b541b419">GitHub Commit</a></li>
+        </ul>
+        
+              <hr/>
+        
+            <div class="cta card__cta">
+                <p><a href="https://snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCATEMBED-20302874">More about this vulnerability</a></p>
+            </div>
+        
+        </div><!-- .card -->
+        <div class="card card--vuln  disclosure--not-new severity--medium" data-snyk-test="medium">
             <h2 class="card__title">Denial of Service (DoS)</h2>
             <div class="card__section">
         
@@ -11871,6 +12484,7 @@
         <li><a href="https://github.com/apache/tomcat/commit/e3703c9abb8fe0d5602f6ba8a8f11d4b6940815a">GitHub Commit</a></li>
         <li><a href="https://github.com/shiomiyan/CVE-2023-41080">PoC</a></li>
         <li><a href="https://lists.apache.org/thread/71wvwprtx2j2m54fovq9zr7gbm2wow2f">Tomcat List Advisory</a></li>
+        <li><a href="https://github.com/sotiak/CVE-2023-41080">PoC in GitHub</a></li>
         </ul>
         
               <hr/>
@@ -12115,7 +12729,7 @@
         
         </div><!-- .card -->
         <div class="card card--vuln  disclosure--not-new severity--medium" data-snyk-test="medium">
-            <h2 class="card__title">Information Exposure</h2>
+            <h2 class="card__title">Remote Code Execution (RCE)</h2>
             <div class="card__section">
         
                 <div class="card__labels">
@@ -12136,12 +12750,12 @@
                     <li class="card__meta__item">
                             Vulnerable module:
         
-                            com.h2database:h2
+                            com.mysql:mysql-connector-j
                     </li>
         
                     <li class="card__meta__item">Introduced through:
         
-                                com.vulnbank:vulnbank@1.0.0 and com.h2database:h2@2.1.214
+                                com.vulnbank:vulnbank@1.0.0 and com.mysql:mysql-connector-j@8.0.31
         
                     </li>
                 </ul>
@@ -12156,7 +12770,7 @@
                                 <span class="list-paths__item__introduced"><em>Introduced through</em>:
                                         com.vulnbank:vulnbank@1.0.0
                                          <span class="list-paths__item__arrow">›</span> 
-                                        com.h2database:h2@2.1.214
+                                        com.mysql:mysql-connector-j@8.0.31
                                         
                                 </span>
         
@@ -12168,27 +12782,23 @@
               <hr/>
               <!-- Overview -->
               <h2 id="overview">Overview</h2>
-        <p><a href="http://www.h2database.com/html/main.html">com.h2database:h2</a> is a database engine</p>
-        <p>Affected versions of this package are vulnerable to Information Exposure when H2 web-based admin console was started via the CLI with the argument <code>-webAdminPassword</code>, which allows a local user to specify the password in plaintext for the web admin console. 
-        Consequently, a malicious local user or an attacker that has obtained local access through some means would be able to get the password for the H2 web admin console by looking at the running processes.</p>
-        <p><strong>Vendor Statement:</strong>
-        &quot;This is not a vulnerability of the H2 Console, this is an example of how not to use it. I think there is nothing to do with it on the H2 side. Passwords should never be passed on the command line, and every qualified DBA or system administrator is expected to know that.&quot;</p>
+        <p>Affected versions of this package are vulnerable to Remote Code Execution (RCE) due to insufficient checks in the <code>java.sql.DriverManager.getConnection()</code> method when used with untrusted inputs.</p>
+        <h2 id="poc">PoC</h2>
+        <pre><code>conn = DriverManager.getConnection(&quot;jdbc:mysql://localhost/test?&quot; + &quot;user=test&amp;password=test&amp;propertiesTransform=com.example.MyArbitraryClass&quot;);
+        </code></pre>
+        <p>In this example, the static analyzer of <code>com.example.MyArbitraryClass</code> will be executed, even if the class does not implement the <code>ConnectionPropertiesTransform</code> interface.</p>
         <h2 id="remediation">Remediation</h2>
-        <p>Upgrade <code>com.h2database:h2</code> to version 2.2.220 or higher.</p>
+        <p>Upgrade <code>com.mysql:mysql-connector-j</code> to version 8.0.33 or higher.</p>
         <h2 id="references">References</h2>
         <ul>
-        <li><a href="https://github.com/h2database/h2database/commit/581ed18ff9d6b3761d851620ed88a3994a351a0d">GitHub Commit</a></li>
-        <li><a href="https://github.com/h2database/h2database/pull/3832">GitHub PR</a></li>
-        <li><a href="https://sites.google.com/sonatype.com/vulnerabilities/sonatype-2022-6243">Sonatype Blog</a></li>
-        <li><a href="https://github.com/h2database/h2database/commit/819c88a4be2ab0a12a92a57f810cff87de53172d">Suggested Fix Commit</a></li>
-        <li><a href="https://github.com/h2database/h2database/commit/fd85ea22277c98cfa5dbc072cefa2c46eff9ef46">Suggested Fix Commit</a></li>
-        <li><a href="https://github.com/h2database/h2database/blob/96832bf5a97cdc0adc1f2066ed61c54990d66ab5/h2/src/main/org/h2/server/web/WebServer.java#L346-L347">Vulnerable Code</a></li>
+        <li><a href="https://www.code-intelligence.com/blog/cve-jdbc-mysql-driver-rce-unauthorized-read-write-access">Blog</a></li>
+        <li><a href="https://github.com/mysql/mysql-connector-j/commit/2b16eedca12bd1d42c4ee48016b75bc77b3705d6">GitHub Commit</a></li>
         </ul>
         
               <hr/>
         
             <div class="cta card__cta">
-                <p><a href="https://snyk.io/vuln/SNYK-JAVA-COMH2DATABASE-3146851">More about this vulnerability</a></p>
+                <p><a href="https://snyk.io/vuln/SNYK-JAVA-COMMYSQL-5441540">More about this vulnerability</a></p>
             </div>
         
         </div><!-- .card -->
