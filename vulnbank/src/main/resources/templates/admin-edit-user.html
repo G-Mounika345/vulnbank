@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>VulnBank - Edit User</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            background-color: skyblue;
+            border: 6px solid #8b0000;
+            box-sizing: border-box;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            color: red;
+            margin-top: 30px;
+        }
+        .logout-corner {
+            position: fixed;
+            top: 15px;
+            right: 20px;
+        }
+        .logout-corner a {
+            background-color: #8b0000;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .edit-form {
+            margin: 30px auto;
+            padding: 20px 30px;
+            max-width: 400px;
+            width: 80%;
+            background-color: #fff;
+            border: 2px solid #8b0000;
+            border-radius: 6px;
+        }
+        .edit-form label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+        .edit-form input, .edit-form select {
+            width: 100%;
+            padding: 6px;
+            margin-top: 4px;
+            box-sizing: border-box;
+        }
+        .edit-form button {
+            margin-top: 20px;
+            padding: 8px 20px;
+        }
+        .back-link {
+            text-align: center;
+            margin-top: auto;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="logout-corner"><a href="/logout">Log out</a></div>
+
+<h1>Edit User</h1>
+
+<div class="edit-form">
+    <form method="post" th:action="@{'/admin/users/' + ${targetUser.id} + '/edit'}">
+        <label>Username
+            <input type="text" name="username" th:value="${targetUser.username}"/>
+        </label>
+        <label>Full name
+            <input type="text" name="fullName" th:value="${targetUser.fullName}"/>
+        </label>
+        <label>Role
+            <select name="role">
+                <option value="USER" th:selected="${targetUser.role == 'USER'}">USER</option>
+                <option value="ADMIN" th:selected="${targetUser.role == 'ADMIN'}">ADMIN</option>
+            </select>
+        </label>
+        <label>New password (leave blank to keep current)
+            <input type="password" name="password"/>
+        </label>
+        <button type="submit">Save changes</button>
+    </form>
+</div>
+
+<p class="back-link"><a href="/dashboard?user=admin">Back to dashboard</a></p>
+</body>
+</html>

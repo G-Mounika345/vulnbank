@@ -1,15 +1,266 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head><title>VulnBank - Dashboard</title></head>
+<head>
+    <title>VulnBank - Dashboard</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            background-color: skyblue;
+            border: 6px solid #8b0000;
+            box-sizing: border-box;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            color: red;
+            margin-top: 30px;
+        }
+        .logout-corner {
+            position: fixed;
+            top: 15px;
+            right: 20px;
+        }
+        .logout-corner a {
+            background-color: #8b0000;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .layout {
+            display: flex;
+            flex-direction: row;
+            flex: 1;
+        }
+        .sidebar {
+            width: 220px;
+            flex-shrink: 0;
+            background-color: #fff;
+            border-right: 3px solid #8b0000;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .sidebar h2 {
+            margin-top: 0;
+            font-size: 18px;
+            text-align: center;
+        }
+        .sidebar ul {
+            padding-left: 20px;
+            list-style: none;
+            margin: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+        .main-content {
+            flex: 1;
+            padding: 0 20px;
+        }
+        .panel {
+            margin: 20px auto;
+            padding: 15px 25px;
+            max-width: 420px;
+            width: 80%;
+            background-color: #fff;
+            border: 2px solid #8b0000;
+            border-radius: 6px;
+        }
+        .panel h2 {
+            margin-top: 0;
+            text-align: center;
+            font-size: 18px;
+        }
+        .panel ul {
+            padding-left: 20px;
+        }
+        .admin-panel {
+            border-color: #ffb300;
+            background-color: #fffbe6;
+        }
+        .chief-admin-panel {
+            border-color: #6a0dad;
+            background-color: #f3e6fb;
+        }
+        .account-panel label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        .account-panel input[type=number] {
+            width: 150px;
+            padding: 6px;
+            margin-top: 5px;
+            margin-right: 10px;
+        }
+        .account-panel .balance {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .account-panel #tx-status {
+            margin-top: 12px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .account-panel select {
+            padding: 6px;
+            margin-top: 5px;
+            margin-right: 10px;
+        }
+        .account-panel .manage-line {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .account-panel .check-balance-link {
+            margin-top: 10px;
+            display: inline-block;
+            cursor: pointer;
+            color: #0645AD;
+            text-decoration: underline;
+        }
+    </style>
+</head>
 <body>
-<h1>Welcome, <span th:text="${username}"></span></h1>
-<ul>
-    <li><a href="/account/1">View account 1</a></li>
-    <li><a href="/account/2">View account 2</a></li>
-    <li><a href="/account/3">View account 3</a></li>
-    <li><a href="/messages">Support messages</a></li>
-    <li><a href="/search">Search</a></li>
-    <li><a href="/logout">Log out</a></li>
-</ul>
+<div class="logout-corner"><a href="/logout">Log out</a></div>
+
+<div class="layout">
+    <nav class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="/account/1">View account 1</a></li>
+            <li><a href="/account/2">View account 2</a></li>
+            <li><a href="/account/3">View account 3</a></li>
+            <li><a href="/account/4">View account 4</a></li>
+            <li><a href="/messages">Support messages</a></li>
+            <li><a href="/search">Search</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <h1>Welcome, <span th:text="${username}"></span></h1>
+
+        <div class="panel account-panel" th:if="${accountId != null and username != 'bob'}">
+            <h2>Manage your Account</h2>
+            <p class="balance">Current balance: $<span id="balance-display" th:text="${balance}"></span></p>
+
+            <label for="credit-amount">Amount to be credited:</label>
+            <input type="number" id="credit-amount" step="0.01" min="0"/>
+            <button type="button" onclick="doTransaction('credit')">Submit</button>
+
+            <label for="debit-amount">Amount to be deducted:</label>
+            <input type="number" id="debit-amount" step="0.01" min="0"/>
+            <button type="button" onclick="doTransaction('debit')">Submit</button>
+
+            <p id="tx-status"></p>
+        </div>
+
+        <div class="panel account-panel" th:if="${accountId != null and username == 'bob'}">
+            <label for="transfer-amount">Transfer Amount to others:</label>
+            <input type="number" id="transfer-amount" step="0.01" min="0"/>
+            <select id="transfer-to">
+                <option value="1">To: Alice (ACC-1001)</option>
+                <option value="3">To: Admin (ACC-9000)</option>
+            </select>
+            <button type="button" onclick="doTransfer()">Submit</button>
+
+            <label for="debit-amount">Amount to be deducted:</label>
+            <input type="number" id="debit-amount" step="0.01" min="0"/>
+            <button type="button" onclick="doTransaction('debit')">Submit</button>
+
+            <p class="manage-line">Manage Account</p>
+            <span class="check-balance-link" onclick="checkBalance()">Check available Balance</span>
+            <p id="tx-status"></p>
+        </div>
+
+        <div class="panel admin-panel" th:if="${manageableUserIds != null}"
+             th:classappend="${role == 'CHIEF_ADMIN'} ? 'chief-admin-panel' : ''">
+            <h2 th:text="${role == 'CHIEF_ADMIN'} ? 'Manage All Users &amp; Admins (Chief Admin)' : 'Manage Users (Admin)'"></h2>
+            <ul>
+                <li th:each="id : ${manageableUserIds}">
+                    User <span th:text="${id}"></span> -
+                    <a th:href="@{'/admin/users/' + ${id} + '/edit'}">View / Edit</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script th:inline="javascript">
+    var accountId = /*[[${accountId}]]*/ null;
+
+    function doTransaction(type) {
+        var inputId = type === 'credit' ? 'credit-amount' : 'debit-amount';
+        var amount = document.getElementById(inputId).value;
+        var statusEl = document.getElementById('tx-status');
+
+        if (!amount || Number(amount) <= 0) {
+            statusEl.textContent = 'Enter a valid amount.';
+            return;
+        }
+
+        fetch('/account/' + accountId + '/' + type + '?amount=' + encodeURIComponent(amount), {
+            method: 'POST'
+        })
+            .then(function (res) { return res.json(); })
+            .then(function (data) {
+                document.getElementById('balance-display').textContent = data.balance;
+                document.getElementById(inputId).value = '';
+                statusEl.textContent = (type === 'credit' ? 'Credited' : 'Debited') + ' $' + amount + ' successfully.';
+            })
+            .catch(function () {
+                statusEl.textContent = 'Transaction failed.';
+            });
+    }
+
+    function doTransfer() {
+        var amount = document.getElementById('transfer-amount').value;
+        var toId = document.getElementById('transfer-to').value;
+        var statusEl = document.getElementById('tx-status');
+
+        if (!amount || Number(amount) <= 0) {
+            statusEl.textContent = 'Enter a valid amount.';
+            return;
+        }
+
+        var body = new URLSearchParams();
+        body.set('fromId', accountId);
+        body.set('toId', toId);
+        body.set('amount', amount);
+
+        fetch('/transfer', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: body.toString()
+        })
+            .then(function (res) { return res.text(); })
+            .then(function (text) {
+                document.getElementById('transfer-amount').value = '';
+                statusEl.textContent = text;
+            })
+            .catch(function () {
+                statusEl.textContent = 'Transfer failed.';
+            });
+    }
+
+    function checkBalance() {
+        var statusEl = document.getElementById('tx-status');
+        fetch('/account/' + accountId)
+            .then(function (res) { return res.json(); })
+            .then(function (data) {
+                statusEl.textContent = 'Available balance: $' + data.balance;
+            })
+            .catch(function () {
+                statusEl.textContent = 'Could not fetch balance.';
+            });
+    }
+</script>
 </body>
 </html>

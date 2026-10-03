@@ -1,14 +1,105 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head><title>VulnBank - Login</title></head>
+<head>
+    <title>VulnBank - Login</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            background-color: skyblue;
+            border: 6px solid #8b0000;
+            box-sizing: border-box;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            color: red;
+            margin-top: 30px;
+        }
+        .login-form {
+            text-align: center;
+            margin: 20px auto;
+        }
+        .ad-banner {
+            margin: 30px auto;
+            padding: 15px 25px;
+            max-width: 420px;
+            width: 80%;
+            background-color: #fffbe6;
+            border: 2px dashed #ffb300;
+            border-radius: 6px;
+            text-align: center;
+            color: #555;
+        }
+        .ad-banner .ad-label {
+            display: block;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #999;
+            margin-bottom: 6px;
+        }
+        .ad-banner #ad-text {
+            font-style: italic;
+            margin: 0;
+        }
+        .sample-users {
+            margin-top: auto;
+            text-align: center;
+            padding: 15px 15px 0 15px;
+            font-size: 14px;
+            color: #333;
+        }
+        .main-users {
+            text-align: center;
+            padding: 0 15px 15px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #8b0000;
+        }
+    </style>
+</head>
 <body>
-<h1>VulnBank</h1>
-<p style="color:red;" th:if="${error}" th:text="${error}"></p>
-<form method="post" action="/login">
-    <label>Username: <input type="text" name="username"/></label><br/>
-    <label>Password: <input type="password" name="password"/></label><br/>
-    <button type="submit">Log in</button>
-</form>
-<p>Sample users: alice/password123, bob/password123, admin/admin</p>
+<h1>Welcome VulnBank</h1>
+<p style="color:red; text-align:center;" th:if="${error}" th:text="${error}"></p>
+
+<div class="ad-banner">
+    <span class="ad-label">ADVERTISEMENT</span>
+    <p id="ad-text">Loading offer...</p>
+</div>
+
+<div class="login-form">
+    <form method="post" action="/login">
+        <label>Username: <input type="text" name="username"/></label><br/><br/>
+        <label>Password: <input type="password" name="password"/></label><br/><br/>
+        <button type="submit">Log in</button>
+    </form>
+</div>
+
+<p class="sample-users">Sample users: alice/password123, bob/password123</p>
+<p class="main-users">Main users: admin/admin, chiefadmin/ChiefAdmin@123</p>
+
+
+<script>
+    var ads = [
+        "0% interest personal loans - apply in 2 minutes!",
+        "Get a VulnBank Platinum Card - cashback on every swipe.",
+        "Refer a friend and earn $50 instantly.",
+        "Open a savings account today and earn 5% APY."
+    ];
+    var adIndex = 0;
+    var adTextEl = document.getElementById("ad-text");
+    function rotateAd() {
+        adTextEl.textContent = ads[adIndex % ads.length];
+        adIndex++;
+    }
+    rotateAd();
+    setInterval(rotateAd, 3000);
+</script>
 </body>
 </html>
