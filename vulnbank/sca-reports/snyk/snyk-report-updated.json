@@ -1074,7 +1074,7 @@
           "severity": "low",
           "baseScore": 2.4,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-07-14T14:03:36.200062Z"
+          "modificationTime": "2026-09-25T21:40:52.977367Z"
         },
         {
           "type": "secondary",
@@ -1083,7 +1083,7 @@
           "severity": "high",
           "baseScore": 7.5,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-07-14T14:03:36.200062Z"
+          "modificationTime": "2026-09-25T21:40:52.977367Z"
         },
         {
           "type": "secondary",
@@ -1097,8 +1097,8 @@
       ],
       "description": "## Overview\n[ch.qos.logback:logback-core](https://mvnrepository.com/artifact/ch.qos.logback/logback-core) is a logback-core module.\n\nAffected versions of this package are vulnerable to Server-side Request Forgery (SSRF) through the `SaxEventRecorder` process. An attacker can forge requests by compromising logback configuration files in XML.\n## Remediation\nUpgrade `ch.qos.logback:logback-core` to version 1.3.15, 1.5.13 or higher.\n## References\n- [Additional Information](https://logback.qos.ch/news.html#1.5.13)\n- [GitHub Commit](https://github.com/qos-ch/logback/commit/2863a4974a3649b5b00d4a529ee6ff2063470f35)\n- [GitHub Commit](https://github.com/qos-ch/logback/commit/5f05041cba4c4ac0a62748c5c527a2da48999f2d)\n- [Release Notes](https://logback.qos.ch/news.html#1.3.15)\n",
       "epssDetails": {
-        "percentile": "0.13196",
-        "probability": "0.00225",
+        "percentile": "0.11876",
+        "probability": "0.00226",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -1140,7 +1140,7 @@
       },
       "publicationTime": "2024-12-20T09:26:25.178712Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-07-14T14:03:36.200062Z",
+      "modificationTime": "2026-09-25T21:40:52.977367Z",
       "socialTrendAlert": false,
       "severityWithCritical": "low",
       "from": [
@@ -1228,7 +1228,7 @@
           "severity": "medium",
           "baseScore": 5.9,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-08-31T14:11:50.505058Z"
+          "modificationTime": "2026-09-25T21:40:53.001549Z"
         },
         {
           "type": "secondary",
@@ -1237,7 +1237,7 @@
           "severity": "medium",
           "baseScore": 6.4,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-08-31T14:11:50.505058Z"
+          "modificationTime": "2026-09-25T21:40:53.001549Z"
         },
         {
           "type": "secondary",
@@ -1251,8 +1251,8 @@
       ],
       "description": "## Overview\n[ch.qos.logback:logback-core](https://mvnrepository.com/artifact/ch.qos.logback/logback-core) is a logback-core module.\n\nAffected versions of this package are vulnerable to Improper Neutralization of Special Elements via the `JaninoEventEvaluator` extension. An attacker can execute arbitrary code by compromising an existing logback configuration file or injecting an environment variable before program execution.\n## Remediation\nUpgrade `ch.qos.logback:logback-core` to version 1.3.15, 1.5.13 or higher.\n## References\n- [Additional Information](https://logback.qos.ch/news.html#1.5.13)\n- [GitHub Commit](https://github.com/qos-ch/logback/commit/2cb6d520df7592ef1c3a198f1b5df3c10c93e183)\n- [GitHub Commit](https://github.com/qos-ch/logback/commit/b44b940cc7d4839e06e31a7d60dca174b99c1aa5)\n- [Release Notes](https://logback.qos.ch/news.html#1.3.15)\n",
       "epssDetails": {
-        "percentile": "0.37952",
-        "probability": "0.00457",
+        "percentile": "0.37058",
+        "probability": "0.00458",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -1294,7 +1294,7 @@
       },
       "publicationTime": "2024-12-20T13:49:24.170686Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-08-31T14:11:50.505058Z",
+      "modificationTime": "2026-09-25T21:40:53.001549Z",
       "socialTrendAlert": false,
       "severityWithCritical": "medium",
       "from": [
@@ -1964,7 +1964,7 @@
           "severity": "medium",
           "baseScore": 5.9,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-08-31T14:11:50.505979Z"
+          "modificationTime": "2026-09-25T21:40:53.002066Z"
         },
         {
           "type": "secondary",
@@ -1973,7 +1973,7 @@
           "severity": "medium",
           "baseScore": 6.4,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-08-31T14:11:50.505979Z"
+          "modificationTime": "2026-09-25T21:40:53.002066Z"
         },
         {
           "type": "secondary",
@@ -1987,8 +1987,8 @@
       ],
       "description": "## Overview\n[ch.qos.logback:logback-classic](https://mvnrepository.com/artifact/ch.qos.logback/logback-classic) is a reliable, generic, fast and flexible logging library for Java.\n\nAffected versions of this package are vulnerable to Improper Neutralization of Special Elements via the `JaninoEventEvaluator` extension. An attacker can execute arbitrary code by compromising an existing logback configuration file or injecting an environment variable before program execution.\n## Remediation\nUpgrade `ch.qos.logback:logback-classic` to version 1.3.15, 1.5.13 or higher.\n## References\n- [Additional Information](https://logback.qos.ch/news.html#1.5.13)\n- [GitHub Commit](https://github.com/qos-ch/logback/commit/2cb6d520df7592ef1c3a198f1b5df3c10c93e183)\n- [GitHub Commit](https://github.com/qos-ch/logback/commit/b44b940cc7d4839e06e31a7d60dca174b99c1aa5)\n- [Release Notes](https://logback.qos.ch/news.html#1.3.15)\n",
       "epssDetails": {
-        "percentile": "0.37952",
-        "probability": "0.00457",
+        "percentile": "0.37058",
+        "probability": "0.00458",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -2030,7 +2030,7 @@
       },
       "publicationTime": "2024-12-20T13:49:24.484058Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-08-31T14:11:50.505979Z",
+      "modificationTime": "2026-09-25T21:40:53.002066Z",
       "socialTrendAlert": false,
       "severityWithCritical": "medium",
       "from": [
@@ -2106,7 +2106,7 @@
           "severity": "high",
           "baseScore": 8.7,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-09-15T14:02:20.794054Z"
+          "modificationTime": "2026-09-26T14:05:32.215714Z"
         },
         {
           "type": "secondary",
@@ -2115,7 +2115,7 @@
           "severity": "high",
           "baseScore": 7.5,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-09-15T14:02:20.794054Z"
+          "modificationTime": "2026-09-26T14:05:32.215714Z"
         },
         {
           "type": "secondary",
@@ -2129,8 +2129,8 @@
       ],
       "description": "## Overview\n[com.fasterxml.jackson.core:jackson-core](https://github.com/FasterXML/jackson-core) is a Core Jackson abstractions, basic JSON streaming API implementation\n\nAffected versions of this package are vulnerable to Stack-based Buffer Overflow due to the `parse` process, which accepts an unlimited input file with deeply nested data. An attacker can cause a stack overflow and crash the application by providing input files with excessively deep nesting.\n## Remediation\nUpgrade `com.fasterxml.jackson.core:jackson-core` to version 2.15.0-rc1 or higher.\n## References\n- [GitHub Commit](https://github.com/FasterXML/jackson-core/commit/54f78a9cff5e3bace1cf8042ac1b4c3785dc9f5e)\n- [GitHub PR](https://github.com/FasterXML/jackson-core/pull/943)\n",
       "epssDetails": {
-        "percentile": "0.51957",
-        "probability": "0.00718",
+        "percentile": "0.53850",
+        "probability": "0.00772",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -2172,7 +2172,7 @@
       },
       "publicationTime": "2025-06-26T07:40:10.032633Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-09-15T14:02:20.794054Z",
+      "modificationTime": "2026-09-26T14:05:32.215714Z",
       "socialTrendAlert": false,
       "severityWithCritical": "high",
       "from": [
@@ -2241,6 +2241,13 @@
           "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
           "cvssV3BaseScore": 5.3,
           "modificationTime": "2026-08-11T05:29:02.098004Z"
+        },
+        {
+          "assigner": "SUSE",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+          "cvssV3BaseScore": 5.3,
+          "modificationTime": "2026-09-30T11:03:12.701570Z"
         }
       ],
       "cvssSources": [
@@ -2251,7 +2258,7 @@
           "severity": "high",
           "baseScore": 8.7,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-09-24T14:05:19.469418Z"
+          "modificationTime": "2026-10-02T14:04:35.071386Z"
         },
         {
           "type": "secondary",
@@ -2260,7 +2267,7 @@
           "severity": "high",
           "baseScore": 7.5,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-09-24T14:05:19.469418Z"
+          "modificationTime": "2026-10-02T14:04:35.071386Z"
         },
         {
           "type": "secondary",
@@ -2270,12 +2277,21 @@
           "baseScore": 5.3,
           "cvssVersion": "3.1",
           "modificationTime": "2026-08-11T05:29:02.098004Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+          "assigner": "SUSE",
+          "severity": "medium",
+          "baseScore": 5.3,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-09-30T11:03:12.701570Z"
         }
       ],
       "description": "## Overview\n[com.fasterxml.jackson.core:jackson-core](https://github.com/FasterXML/jackson-core) is a Core Jackson abstractions, basic JSON streaming API implementation\n\nAffected versions of this package are vulnerable to Allocation of Resources Without Limits or Throttling in which the non-blocking async JSON parser can be made to bypass the `maxNumberLength` constraint (default: 1000 characters) defined in `StreamReadConstraints`. An attacker can cause excessive memory allocation and CPU exhaustion by submitting JSON documents containing extremely long numeric values through the asynchronous parser interface.\n## PoC\nThe following JUnit 5 test demonstrates the vulnerability. It shows that the async parser accepts a 5,000-digit number, whereas the limit should be 1,000.\r\n\r\n``` js\r\npackage tools.jackson.core.unittest.dos;\r\n\r\nimport java.nio.charset.StandardCharsets;\r\n\r\nimport org.junit.jupiter.api.Test;\r\n\r\nimport tools.jackson.core.*;\r\nimport tools.jackson.core.exc.StreamConstraintsException;\r\nimport tools.jackson.core.json.JsonFactory;\r\nimport tools.jackson.core.json.async.NonBlockingByteArrayJsonParser;\r\n\r\nimport static org.junit.jupiter.api.Assertions.*;\r\n\r\n/**\r\n * POC: Number Length Constraint Bypass in Non-Blocking (Async) JSON Parsers\r\n *\r\n * Authors: sprabhav7, rohan-repos\r\n * \r\n * maxNumberLength default = 1000 characters (digits).\r\n * A number with more than 1000 digits should be rejected by any parser.\r\n *\r\n * BUG: The async parser never calls resetInt()/resetFloat() which is where\r\n * validateIntegerLength()/validateFPLength() lives. Instead it calls\r\n * _valueComplete() which skips all number length validation.\r\n *\r\n * CWE-770: Allocation of Resources Without Limits or Throttling\r\n */\r\nclass AsyncParserNumberLengthBypassTest {\r\n\r\n    private static final int MAX_NUMBER_LENGTH = 1000;\r\n    private static final int TEST_NUMBER_LENGTH = 5000;\r\n\r\n    private final JsonFactory factory = new JsonFactory();\r\n\r\n    // CONTROL: Sync parser correctly rejects a number exceeding maxNumberLength\r\n    @Test\r\n    void syncParserRejectsLongNumber() throws Exception {\r\n        byte[] payload = buildPayloadWithLongInteger(TEST_NUMBER_LENGTH);\r\n\t\t\r\n\t\t// Output to console\r\n        System.out.println(\"[SYNC] Parsing \" + TEST_NUMBER_LENGTH + \"-digit number (limit: \" + MAX_NUMBER_LENGTH + \")\");\r\n        try {\r\n            try (JsonParser p = factory.createParser(ObjectReadContext.empty(), payload)) {\r\n                while (p.nextToken() != null) {\r\n                    if (p.currentToken() == JsonToken.VALUE_NUMBER_INT) {\r\n                        System.out.println(\"[SYNC] Accepted number with \" + p.getText().length() + \" digits — UNEXPECTED\");\r\n                    }\r\n                }\r\n            }\r\n            fail(\"Sync parser must reject a \" + TEST_NUMBER_LENGTH + \"-digit number\");\r\n        } catch (StreamConstraintsException e) {\r\n            System.out.println(\"[SYNC] Rejected with StreamConstraintsException: \" + e.getMessage());\r\n        }\r\n    }\r\n\r\n    // VULNERABILITY: Async parser accepts the SAME number that sync rejects\r\n    @Test\r\n    void asyncParserAcceptsLongNumber() throws Exception {\r\n        byte[] payload = buildPayloadWithLongInteger(TEST_NUMBER_LENGTH);\r\n\r\n        NonBlockingByteArrayJsonParser p =\r\n            (NonBlockingByteArrayJsonParser) factory.createNonBlockingByteArrayParser(ObjectReadContext.empty());\r\n        p.feedInput(payload, 0, payload.length);\r\n        p.endOfInput();\r\n\r\n        boolean foundNumber = false;\r\n        try {\r\n            while (p.nextToken() != null) {\r\n                if (p.currentToken() == JsonToken.VALUE_NUMBER_INT) {\r\n                    foundNumber = true;\r\n                    String numberText = p.getText();\r\n                    assertEquals(TEST_NUMBER_LENGTH, numberText.length(),\r\n                        \"Async parser silently accepted all \" + TEST_NUMBER_LENGTH + \" digits\");\r\n                }\r\n            }\r\n            // Output to console\r\n            System.out.println(\"[ASYNC INT] Accepted number with \" + TEST_NUMBER_LENGTH + \" digits — BUG CONFIRMED\");\r\n            assertTrue(foundNumber, \"Parser should have produced a VALUE_NUMBER_INT token\");\r\n        } catch (StreamConstraintsException e) {\r\n            fail(\"Bug is fixed — async parser now correctly rejects long numbers: \" + e.getMessage());\r\n        }\r\n        p.close();\r\n    }\r\n\r\n    private byte[] buildPayloadWithLongInteger(int numDigits) {\r\n        StringBuilder sb = new StringBuilder(numDigits + 10);\r\n        sb.append(\"{\\\"v\\\":\");\r\n        for (int i = 0; i < numDigits; i++) {\r\n            sb.append((char) ('1' + (i % 9)));\r\n        }\r\n        sb.append('}');\r\n        return sb.toString().getBytes(StandardCharsets.UTF_8);\r\n    }\r\n}\r\n```\n\n## Details\n\nDenial of Service (DoS) describes a family of attacks, all aimed at making a system inaccessible to its intended and legitimate users.\n\nUnlike other vulnerabilities, DoS attacks usually do not aim at breaching security. Rather, they are focused on making websites and services unavailable to genuine users resulting in downtime.\n\nOne popular Denial of Service vulnerability is DDoS (a Distributed Denial of Service), an attack that attempts to clog network pipes to the system by generating a large volume of traffic from many machines.\n\nWhen it comes to open source libraries, DoS vulnerabilities allow attackers to trigger such a crash or crippling of the service by using a flaw either in the application code or from the use of open source libraries.\n\nTwo common types of DoS vulnerabilities:\n\n* High CPU/Memory Consumption- An attacker sending crafted requests that could cause the system to take a disproportionate amount of time to process. For example, [commons-fileupload:commons-fileupload](https://security.snyk.io/vuln/SNYK-JAVA-COMMONSFILEUPLOAD-30082).\n\n* Crash - An attacker sending crafted requests that could cause the system to crash. For Example,  [npm `ws` package](https://snyk.io/vuln/npm:ws:20171108)\n\n## Remediation\nUpgrade `com.fasterxml.jackson.core:jackson-core` to version 2.18.6, 2.21.1 or higher.\n## References\n- [GitHub Advisory](https://github.com/FasterXML/jackson-core/security/advisories/GHSA-72hv-8253-57qq)\n- [GitHub Commit](https://github.com/FasterXML/jackson-core/commit/b0c428e6f993e1b5ece5c1c3cb2523e887cd52cf)\n- [GitHub PR](https://github.com/FasterXML/jackson-core/pull/1555)\n",
       "epssDetails": {
-        "percentile": "0.42800",
-        "probability": "0.00538",
+        "percentile": "0.32712",
+        "probability": "0.00408",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -2319,7 +2335,7 @@
       },
       "publicationTime": "2026-03-01T10:24:20.092629Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-09-24T14:05:19.469418Z",
+      "modificationTime": "2026-10-02T14:04:35.071386Z",
       "socialTrendAlert": false,
       "severityWithCritical": "high",
       "from": [
@@ -2524,6 +2540,13 @@
           "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
           "cvssV3BaseScore": 7.5,
           "modificationTime": "2026-08-06T06:44:52.613877Z"
+        },
+        {
+          "assigner": "SUSE",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 7.5,
+          "modificationTime": "2026-09-30T11:03:17.304848Z"
         }
       ],
       "cvssSources": [
@@ -2534,7 +2557,7 @@
           "severity": "high",
           "baseScore": 8.7,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-09-24T14:16:59.943788Z"
+          "modificationTime": "2026-10-02T14:02:52.994399Z"
         },
         {
           "type": "secondary",
@@ -2543,7 +2566,7 @@
           "severity": "high",
           "baseScore": 7.5,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-09-24T14:16:59.943788Z"
+          "modificationTime": "2026-10-02T14:02:52.994399Z"
         },
         {
           "type": "secondary",
@@ -2553,12 +2576,21 @@
           "baseScore": 7.5,
           "cvssVersion": "3.1",
           "modificationTime": "2026-08-06T06:44:52.613877Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "assigner": "SUSE",
+          "severity": "high",
+          "baseScore": 7.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-09-30T11:03:17.304848Z"
         }
       ],
       "description": "## Overview\n[com.fasterxml.jackson.core:jackson-core](https://github.com/FasterXML/jackson-core) is a Core Jackson abstractions, basic JSON streaming API implementation\n\nAffected versions of this package are vulnerable to Allocation of Resources Without Limits or Throttling in the `NonBlockingUtf8JsonParserBase` file. An attacker can exhaust system memory by streaming JSON input in small chunks to the asynchronous parser, causing unbounded accumulation of digit characters in memory due to missing validation of number length during chunked parsing. This can lead to denial of service by overwhelming the application's memory resources.\n## Remediation\nUpgrade `com.fasterxml.jackson.core:jackson-core` to version 2.18.8, 2.21.4 or higher.\n## References\n- [GitHub Advisory](https://github.com/FasterXML/jackson-core/security/advisories/GHSA-r7wm-3cxj-wff9)\n- [GitHub Commit](https://github.com/FasterXML/jackson-core/commit/050b429804dce2a7e08f0be1b0b4c3d040fdb9cd)\n- [GitHub Commit](https://github.com/FasterXML/jackson-core/commit/4cdd529749da396cc7edf6d4a2aad41d47902641)\n- [GitHub Commit](https://github.com/FasterXML/jackson-core/commit/b0c428e6f993e1b5ece5c1c3cb2523e887cd52cf)\n- [GitHub Commit](https://github.com/FasterXML/jackson-core/commit/c5941e5aae7fd5aeac55d66933cfb82b9aabeef8)\n- [GitHub PR](https://github.com/FasterXML/jackson-core/pull/1611)\n",
       "epssDetails": {
-        "percentile": "0.47375",
-        "probability": "0.00619",
+        "percentile": "0.37901",
+        "probability": "0.00463",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -2602,7 +2634,7 @@
       },
       "publicationTime": "2026-08-04T19:29:43.326902Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-09-24T14:16:59.943788Z",
+      "modificationTime": "2026-10-02T14:02:52.994399Z",
       "socialTrendAlert": false,
       "severityWithCritical": "high",
       "from": [
@@ -2672,6 +2704,13 @@
           "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
           "cvssV3BaseScore": 7.5,
           "modificationTime": "2026-09-24T05:32:04.341951Z"
+        },
+        {
+          "assigner": "SUSE",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 7.5,
+          "modificationTime": "2026-09-30T11:03:29.585320Z"
         }
       ],
       "cvssSources": [
@@ -2682,7 +2721,7 @@
           "severity": "high",
           "baseScore": 8.7,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-09-24T14:23:16.571289Z"
+          "modificationTime": "2026-09-30T11:03:29.798484Z"
         },
         {
           "type": "secondary",
@@ -2691,7 +2730,7 @@
           "severity": "high",
           "baseScore": 7.5,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-09-24T14:23:16.571289Z"
+          "modificationTime": "2026-09-30T11:03:29.798484Z"
         },
         {
           "type": "secondary",
@@ -2701,6 +2740,15 @@
           "baseScore": 7.5,
           "cvssVersion": "3.1",
           "modificationTime": "2026-09-24T05:32:04.341951Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "assigner": "SUSE",
+          "severity": "high",
+          "baseScore": 7.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-09-30T11:03:29.585320Z"
         }
       ],
       "description": "## Overview\n[com.fasterxml.jackson.core:jackson-core](https://github.com/FasterXML/jackson-core) is a Core Jackson abstractions, basic JSON streaming API implementation\n\nAffected versions of this package are vulnerable to Allocation of Resources Without Limits or Throttling in the `_reportInvalidToken(int, String, String)` method of `UTF8DataInputJsonParser`, which accumulates invalid token characters into a `StringBuilder` with no check against `ErrorReportConfiguration.getMaxErrorTokenLength()`, unlike `UTF8StreamJsonParser`, `ReaderBasedJsonParser`, and `NonBlockingUtf8JsonParserBase`, which enforce the 256-character default. An attacker can exhaust the JVM heap by submitting a sufficiently long malformed token, since the whole token is copied into the exception message, where a 20-million-character token produces a 20,000,109-character message against 367 characters on the bounded path. This requires the application to create its parser through `JsonFactory.createParser(DataInput)`, and no configuration constrains the path, since `maxDocumentLength` does not apply to `DataInput` sources and `maxStringLength` does not cover it.\n## Remediation\nUpgrade `com.fasterxml.jackson.core:jackson-core` to version 2.18.11, 2.21.7, 2.22.3 or higher.\n## References\n- [GitHub Advisory](https://github.com/FasterXML/jackson-core/security/advisories/GHSA-7hhh-6rmp-j9qf)\n- [GitHub Commit](https://github.com/FasterXML/jackson-core/commit/211cf2c5d91abbec38067f37efc1363cd4e88ee3)\n- [GitHub PR](https://github.com/FasterXML/jackson-core/pull/1698)\n",
@@ -2750,7 +2798,7 @@
       },
       "publicationTime": "2026-09-23T11:43:21.851833Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-09-24T14:23:16.571289Z",
+      "modificationTime": "2026-09-30T11:03:29.798484Z",
       "socialTrendAlert": false,
       "severityWithCritical": "high",
       "from": [
@@ -3895,6 +3943,13 @@
           "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
           "cvssV3BaseScore": 5.3,
           "modificationTime": "2026-09-04T06:25:11.048489Z"
+        },
+        {
+          "assigner": "SUSE",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:L",
+          "cvssV3BaseScore": 4.8,
+          "modificationTime": "2026-09-30T11:03:16.802710Z"
         }
       ],
       "cvssSources": [
@@ -3905,7 +3960,7 @@
           "severity": "medium",
           "baseScore": 6.9,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-09-24T14:18:59.425779Z"
+          "modificationTime": "2026-09-30T11:03:17.703140Z"
         },
         {
           "type": "secondary",
@@ -3914,7 +3969,7 @@
           "severity": "medium",
           "baseScore": 5.3,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-09-24T14:18:59.425779Z"
+          "modificationTime": "2026-09-30T11:03:17.703140Z"
         },
         {
           "type": "secondary",
@@ -3924,6 +3979,15 @@
           "baseScore": 5.3,
           "cvssVersion": "3.1",
           "modificationTime": "2026-09-04T06:25:11.048489Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:N/A:L",
+          "assigner": "SUSE",
+          "severity": "medium",
+          "baseScore": 4.8,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-09-30T11:03:16.802710Z"
         }
       ],
       "description": "## Overview\n[com.fasterxml.jackson.core:jackson-databind](https://github.com/FasterXML/jackson-databind) is a library which contains the general-purpose data-binding functionality and tree-model for Jackson Data Processor.\n\nAffected versions of this package are vulnerable to Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection') through `NioPathDeserializer` in `src/main/java/com/fasterxml/jackson/databind/ext/NioPathDeserializer.java`. An attacker can force `readValue()` to resolve an attacker-controlled `java.nio.file.Path` URI by supplying a non-`file` scheme such as `jar:`, `http:`, `s3:`, or a custom provider scheme in untrusted JSON. That input reaches `new URI(value)` and then `Path.of(uri)`, which falls back to `ServiceLoader<FileSystemProvider>` resolution and can invoke a matching provider’s `getPath(uri)` during deserialization. The result is unintended provider loading and provider-driven path handling inside the application, which can trigger denial of service or other side effects depending on what `FileSystemProvider` implementations are present on the classpath.\n## Remediation\nUpgrade `com.fasterxml.jackson.core:jackson-databind` to version 2.18.10, 2.21.6, 2.22.2 or higher.\n## References\n- [GitHub Commit](https://github.com/FasterXML/jackson-databind/commit/cc6756b61ed90b6b9227f670e0408d5d9bd48551)\n- [GitHub Commit](https://github.com/FasterXML/jackson-databind/commit/ce26eda3481cd796f76ba4c53ffe1da23b53f166)\n- [GitHub Commit](https://github.com/FasterXML/jackson-databind/commit/d94bb632becfe0ba96926b9909ab06d1f87aad6d)\n- [GitHub PR](https://github.com/FasterXML/jackson-databind/pull/6129)\n- [Maintainer's Advisory](https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-wjgm-6hv5-3cvf)\n",
@@ -3971,7 +4035,7 @@
       },
       "publicationTime": "2026-09-01T10:43:46.909393Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-09-24T14:18:59.425779Z",
+      "modificationTime": "2026-09-30T11:03:17.703140Z",
       "socialTrendAlert": false,
       "severityWithCritical": "medium",
       "from": [
@@ -4044,6 +4108,13 @@
           "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
           "cvssV3BaseScore": 5.6,
           "modificationTime": "2026-09-04T06:27:33.983016Z"
+        },
+        {
+          "assigner": "SUSE",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
+          "cvssV3BaseScore": 5.6,
+          "modificationTime": "2026-09-30T11:03:34.100897Z"
         }
       ],
       "cvssSources": [
@@ -4054,7 +4125,7 @@
           "severity": "medium",
           "baseScore": 6.3,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-09-24T14:24:01.056204Z"
+          "modificationTime": "2026-10-02T14:04:04.634280Z"
         },
         {
           "type": "secondary",
@@ -4063,7 +4134,7 @@
           "severity": "medium",
           "baseScore": 5.6,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-09-24T14:24:01.056204Z"
+          "modificationTime": "2026-10-02T14:04:04.634280Z"
         },
         {
           "type": "secondary",
@@ -4073,12 +4144,21 @@
           "baseScore": 5.6,
           "cvssVersion": "3.1",
           "modificationTime": "2026-09-04T06:27:33.983016Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
+          "assigner": "SUSE",
+          "severity": "medium",
+          "baseScore": 5.6,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-09-30T11:03:34.100897Z"
         }
       ],
       "description": "## Overview\n[com.fasterxml.jackson.core:jackson-databind](https://github.com/FasterXML/jackson-databind) is a library which contains the general-purpose data-binding functionality and tree-model for Jackson Data Processor.\n\nAffected versions of this package are vulnerable to Deserialization of Untrusted Data in the `isSafeSubType()` method of `DefaultBaseTypeLimitingValidator`, whose denylist of unsafe base types omits `java.lang.Comparable`, so the method returns true for any subtype resolved under a `Comparable` base. An attacker can trigger instantiation of arbitrary classes that implement `Comparable`, such as `java.io.File` to reach path-traversal primitives, by sending JSON with attacker-controlled type identifiers. This requires the application to use a bare `@JsonTypeInfo` with the default validator and no explicit `PolymorphicTypeValidator`, and a property or class whose declared base type is `Comparable`.\r\n\r\n## Workaround\r\n\r\nThis vulnerability can be avoided by configuring an explicit restrictive `PolymorphicTypeValidator`, such as a `BasicPolymorphicTypeValidator` allowlist passed to `activateDefaultTyping()`, instead of relying on the default validator.\r\n\r\n**Note:** The discoverer of this vulnerability reports that \"I have not identified a class implementing Comparable that yields code execution purely through deserialization\".\n\n## Details\n\nSerialization is a process of converting an object into a sequence of bytes which can be persisted to a disk or database or can be sent through streams. The reverse process of creating object from sequence of bytes is called deserialization. Serialization is commonly used for communication (sharing objects between multiple hosts) and persistence (store the object state in a file or a database). It is an integral part of popular protocols like _Remote Method Invocation (RMI)_, _Java Management Extension (JMX)_, _Java Messaging System (JMS)_, _Action Message Format (AMF)_, _Java Server Faces (JSF) ViewState_, etc.\n\n_Deserialization of untrusted data_ ([CWE-502](https://cwe.mitre.org/data/definitions/502.html)) is when the application deserializes untrusted data without sufficiently verifying that the resulting data will be valid, thus allowing the attacker to control the state or the flow of the execution.\n  \n## Remediation\nUpgrade `com.fasterxml.jackson.core:jackson-databind` to version 2.18.10, 2.21.6, 2.22.2 or higher.\n## References\n- [GitHub Advisory](https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-gx83-3vf8-gh7j)\n- [GitHub Commit](https://github.com/FasterXML/jackson-databind/commit/eb3b7fc0f9c0d27f471550ac3316b17d1987388f)\n- [GitHub Issue](https://github.com/FasterXML/jackson-databind/issues/6156)\n- [GitHub PR](https://github.com/FasterXML/jackson-databind/pull/6155)\n",
       "epssDetails": {
-        "percentile": "0.51488",
-        "probability": "0.00711",
+        "percentile": "0.52142",
+        "probability": "0.00717",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -4122,7 +4202,7 @@
       },
       "publicationTime": "2026-09-02T09:16:53.646709Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-09-24T14:24:01.056204Z",
+      "modificationTime": "2026-10-02T14:04:04.634280Z",
       "socialTrendAlert": false,
       "severityWithCritical": "medium",
       "from": [
@@ -4184,7 +4264,15 @@
           "title": "GitHub Issue"
         }
       ],
-      "cvssDetails": [],
+      "cvssDetails": [
+        {
+          "assigner": "SUSE",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 7.5,
+          "modificationTime": "2026-09-30T11:03:48.891590Z"
+        }
+      ],
       "cvssSources": [
         {
           "type": "primary",
@@ -4193,7 +4281,7 @@
           "severity": "high",
           "baseScore": 8.7,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-09-24T14:23:19.131226Z"
+          "modificationTime": "2026-09-30T11:03:49.325663Z"
         },
         {
           "type": "secondary",
@@ -4202,7 +4290,16 @@
           "severity": "high",
           "baseScore": 7.5,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-09-24T14:23:19.131226Z"
+          "modificationTime": "2026-09-30T11:03:49.325663Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "assigner": "SUSE",
+          "severity": "high",
+          "baseScore": 7.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-09-30T11:03:48.891590Z"
         }
       ],
       "description": "## Overview\n[com.fasterxml.jackson.core:jackson-databind](https://github.com/FasterXML/jackson-databind) is a library which contains the general-purpose data-binding functionality and tree-model for Jackson Data Processor.\n\nAffected versions of this package are vulnerable to Allocation of Resources Without Limits or Throttling in the `resolveForwardReference()` method of `CollectionDeserializer.CollectionReferringAccumulator`, and in the corresponding map accumulators, which perform a linear search of the pending accumulator for every resolved object ID. An attacker can consume quadratic CPU and exhaust a request-time or worker-capacity budget by submitting JSON whose N unresolved object-ID references resolve in reverse order, costing roughly N*(N+1)/2 comparisons, measured at 2,003,000 for N=2,000. This requires the application to deserialize attacker-influenced JSON into an identity-enabled collection or map under `@JsonIdentityInfo`, though it needs no deep nesting or unusual JSON syntax.\n## Remediation\nUpgrade `com.fasterxml.jackson.core:jackson-databind` to version 2.18.11, 2.21.7, 2.22.3 or higher.\n## References\n- [GitHub Advisory](https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-cxp5-3px4-pw24)\n- [GitHub Commit](https://github.com/FasterXML/jackson-databind/commit/37ad9b81712cbb9fb62c2d2c1813593252a24b67)\n- [GitHub Issue](https://github.com/FasterXML/jackson-databind/issues/6204)\n",
@@ -4250,7 +4347,7 @@
       },
       "publicationTime": "2026-09-23T12:23:18.230681Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-09-24T14:23:19.131226Z",
+      "modificationTime": "2026-09-30T11:03:49.325663Z",
       "socialTrendAlert": false,
       "severityWithCritical": "high",
       "from": [
@@ -4312,7 +4409,22 @@
           "title": "GitHub Issue"
         }
       ],
-      "cvssDetails": [],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 7.5,
+          "modificationTime": "2026-10-02T13:31:50.024852Z"
+        },
+        {
+          "assigner": "SUSE",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+          "cvssV3BaseScore": 5.3,
+          "modificationTime": "2026-09-30T11:03:32.194694Z"
+        }
+      ],
       "cvssSources": [
         {
           "type": "primary",
@@ -4321,7 +4433,7 @@
           "severity": "medium",
           "baseScore": 6.9,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-09-24T14:23:19.280796Z"
+          "modificationTime": "2026-10-02T13:31:50.516071Z"
         },
         {
           "type": "secondary",
@@ -4330,7 +4442,25 @@
           "severity": "medium",
           "baseScore": 5.3,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-09-24T14:23:19.280796Z"
+          "modificationTime": "2026-10-02T13:31:50.516071Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "assigner": "Red Hat",
+          "severity": "high",
+          "baseScore": 7.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-02T13:31:50.024852Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+          "assigner": "SUSE",
+          "severity": "medium",
+          "baseScore": 5.3,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-09-30T11:03:32.194694Z"
         }
       ],
       "description": "## Overview\n[com.fasterxml.jackson.core:jackson-databind](https://github.com/FasterXML/jackson-databind) is a library which contains the general-purpose data-binding functionality and tree-model for Jackson Data Processor.\n\nAffected versions of this package are vulnerable to Allocation of Resources Without Limits or Throttling in the `_findDeserializer()` method of `TypeDeserializerBase`, which caches every unknown type ID as a distinct key in the `_deserializers` map even when all of them resolve to the same `defaultImpl` fallback. An attacker can grow that cache without bound for the lifetime of the process, exhausting memory over time, by submitting a stream of novel type identifiers. This requires the application to use name-based polymorphism through `@JsonTypeInfo(use = Id.NAME, defaultImpl = ...)`, to accept attacker-controlled type identifiers, and to reuse the mapper instance across requests.\n## Remediation\nUpgrade `com.fasterxml.jackson.core:jackson-databind` to version 2.18.11, 2.21.7, 2.22.3 or higher.\n## References\n- [GitHub Advisory](https://github.com/FasterXML/jackson-databind/security/advisories/GHSA-wv8q-qhhj-9h54)\n- [GitHub Commit](https://github.com/FasterXML/jackson-databind/commit/2870d1d6dc1b7e1c07ee11dd5b04ab71cddbb577)\n- [GitHub Issue](https://github.com/FasterXML/jackson-databind/issues/6203)\n",
@@ -4378,7 +4508,7 @@
       },
       "publicationTime": "2026-09-23T12:36:49.642990Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-09-24T14:23:19.280796Z",
+      "modificationTime": "2026-10-02T13:31:50.516071Z",
       "socialTrendAlert": false,
       "severityWithCritical": "medium",
       "from": [
@@ -4396,20 +4526,20 @@
       "version": "2.13.4.2"
     },
     {
-      "id": "SNYK-JAVA-COMH2DATABASE-3146851",
-      "title": "Information Exposure",
-      "CVSSv3": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:L/A:N/E:P",
+      "id": "SNYK-JAVA-COMMYSQL-5441540",
+      "title": "Remote Code Execution (RCE)",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:U/C:L/I:L/A:H/E:P",
       "credit": [
-        "Unknown"
+        "Google OSS-Fuzz"
       ],
       "semver": {
         "vulnerable": [
-          "[1.4.198,2.2.220)"
+          "[,8.0.33)"
         ]
       },
       "exploit": "Proof of Concept",
       "fixedIn": [
-        "2.2.220"
+        "8.0.33"
       ],
       "patches": [],
       "insights": {
@@ -4421,85 +4551,82 @@
       "functions": [],
       "malicious": false,
       "isDisputed": false,
-      "moduleName": "com.h2database:h2",
+      "moduleName": "com.mysql:mysql-connector-j",
       "references": [
         {
-          "url": "https://github.com/h2database/h2database/commit/581ed18ff9d6b3761d851620ed88a3994a351a0d",
+          "url": "https://www.code-intelligence.com/blog/cve-jdbc-mysql-driver-rce-unauthorized-read-write-access",
+          "title": "Blog"
+        },
+        {
+          "url": "https://github.com/mysql/mysql-connector-j/commit/2b16eedca12bd1d42c4ee48016b75bc77b3705d6",
           "title": "GitHub Commit"
-        },
-        {
-          "url": "https://github.com/h2database/h2database/pull/3832",
-          "title": "GitHub PR"
-        },
-        {
-          "url": "https://sites.google.com/sonatype.com/vulnerabilities/sonatype-2022-6243",
-          "title": "Sonatype Blog"
-        },
-        {
-          "url": "https://github.com/h2database/h2database/commit/819c88a4be2ab0a12a92a57f810cff87de53172d",
-          "title": "Suggested Fix Commit"
-        },
-        {
-          "url": "https://github.com/h2database/h2database/commit/fd85ea22277c98cfa5dbc072cefa2c46eff9ef46",
-          "title": "Suggested Fix Commit"
-        },
-        {
-          "url": "https://github.com/h2database/h2database/blob/96832bf5a97cdc0adc1f2066ed61c54990d66ab5/h2/src/main/org/h2/server/web/WebServer.java%23L346-L347",
-          "title": "Vulnerable Code"
         }
       ],
       "cvssDetails": [
         {
           "assigner": "NVD",
-          "severity": "high",
-          "cvssV3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
-          "cvssV3BaseScore": 7.8,
-          "modificationTime": "2024-03-11T09:52:49.176060Z"
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:U/C:L/I:L/A:H",
+          "cvssV3BaseScore": 5.3,
+          "modificationTime": "2024-03-11T09:53:09.239572Z"
+        },
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:U/C:L/I:L/A:H",
+          "cvssV3BaseScore": 5.3,
+          "modificationTime": "2024-03-11T09:53:13.089496Z"
         }
       ],
       "cvssSources": [
         {
           "type": "primary",
-          "vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:L/A:N/E:P",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:U/C:L/I:L/A:H/E:P",
           "assigner": "Snyk",
           "severity": "medium",
           "baseScore": 5.3,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-09-23T14:14:58.798737Z"
+          "modificationTime": "2026-06-15T15:17:02.940585Z"
         },
         {
           "type": "secondary",
-          "vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:U/C:L/I:L/A:H",
           "assigner": "NVD",
-          "severity": "high",
-          "baseScore": 7.8,
+          "severity": "medium",
+          "baseScore": 5.3,
           "cvssVersion": "3.1",
-          "modificationTime": "2024-03-11T09:52:49.176060Z"
+          "modificationTime": "2024-03-11T09:53:09.239572Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:R/S:U/C:L/I:L/A:H",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 5.3,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-03-11T09:53:13.089496Z"
         }
       ],
-      "description": "## Overview\n[com.h2database:h2](http://www.h2database.com/html/main.html) is a database engine\n\nAffected versions of this package are vulnerable to Information Exposure when H2 web-based admin console was started via the CLI with the argument `-webAdminPassword`, which allows a local user to specify the password in plaintext for the web admin console. \r\nConsequently, a malicious local user or an attacker that has obtained local access through some means would be able to get the password for the H2 web admin console by looking at the running processes.\r\n\r\n**Vendor Statement:**\r\n\"This is not a vulnerability of the H2 Console, this is an example of how not to use it. I think there is nothing to do with it on the H2 side. Passwords should never be passed on the command line, and every qualified DBA or system administrator is expected to know that.\"\n## Remediation\nUpgrade `com.h2database:h2` to version 2.2.220 or higher.\n## References\n- [GitHub Commit](https://github.com/h2database/h2database/commit/581ed18ff9d6b3761d851620ed88a3994a351a0d)\n- [GitHub PR](https://github.com/h2database/h2database/pull/3832)\n- [Sonatype Blog](https://sites.google.com/sonatype.com/vulnerabilities/sonatype-2022-6243)\n- [Suggested Fix Commit](https://github.com/h2database/h2database/commit/819c88a4be2ab0a12a92a57f810cff87de53172d)\n- [Suggested Fix Commit](https://github.com/h2database/h2database/commit/fd85ea22277c98cfa5dbc072cefa2c46eff9ef46)\n- [Vulnerable Code](https://github.com/h2database/h2database/blob/96832bf5a97cdc0adc1f2066ed61c54990d66ab5/h2/src/main/org/h2/server/web/WebServer.java#L346-L347)\n",
+      "description": "## Overview\n\nAffected versions of this package are vulnerable to Remote Code Execution (RCE) due to insufficient checks in the `java.sql.DriverManager.getConnection()` method when used with untrusted inputs.\n## PoC\n```\nconn = DriverManager.getConnection(\"jdbc:mysql://localhost/test?\" + \"user=test&password=test&propertiesTransform=com.example.MyArbitraryClass\");\n```\n\nIn this example, the static analyzer of `com.example.MyArbitraryClass` will be executed, even if the class does not implement the `ConnectionPropertiesTransform` interface.\n## Remediation\nUpgrade `com.mysql:mysql-connector-j` to version 8.0.33 or higher.\n## References\n- [Blog](https://www.code-intelligence.com/blog/cve-jdbc-mysql-driver-rce-unauthorized-read-write-access)\n- [GitHub Commit](https://github.com/mysql/mysql-connector-j/commit/2b16eedca12bd1d42c4ee48016b75bc77b3705d6)\n",
       "epssDetails": {
-        "percentile": "0.24010",
-        "probability": "0.00310",
+        "percentile": "0.66275",
+        "probability": "0.01286",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
         "CVE": [
-          "CVE-2022-45868"
+          "CVE-2023-21971"
         ],
         "CWE": [
-          "CWE-200"
-        ],
-        "GHSA": [
-          "GHSA-22wj-vf5f-wrvj"
+          "CWE-94"
         ]
       },
-      "packageName": "com.h2database:h2",
+      "packageName": "com.mysql:mysql-connector-j",
       "proprietary": false,
-      "creationTime": "2022-11-24T10:50:47.911000Z",
+      "creationTime": "2023-04-21T08:43:18.506047Z",
       "functions_new": [],
       "alternativeIds": [],
-      "disclosureTime": "2022-11-24T10:14:41Z",
+      "disclosureTime": "2023-04-21T08:28:54.392000Z",
       "exploitDetails": {
         "sources": [
           "Snyk"
@@ -4519,26 +4646,157 @@
       },
       "packageManager": "maven",
       "mavenModuleName": {
-        "groupId": "com.h2database",
-        "artifactId": "h2"
+        "groupId": "com.mysql",
+        "artifactId": "mysql-connector-j"
       },
-      "publicationTime": "2022-11-24T10:56:05.763030Z",
+      "publicationTime": "2023-04-21T08:43:18.710300Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-09-23T14:14:58.798737Z",
+      "modificationTime": "2026-06-15T15:17:02.940585Z",
       "socialTrendAlert": false,
       "severityWithCritical": "medium",
       "from": [
         "com.vulnbank:vulnbank@1.0.0",
-        "com.h2database:h2@2.1.214"
+        "com.mysql:mysql-connector-j@8.0.31"
       ],
       "upgradePath": [
         false,
-        "com.h2database:h2@2.2.220"
+        "com.mysql:mysql-connector-j@8.0.33"
       ],
       "isUpgradable": true,
       "isPatchable": false,
-      "name": "com.h2database:h2",
-      "version": "2.1.214"
+      "name": "com.mysql:mysql-connector-j",
+      "version": "8.0.31"
+    },
+    {
+      "id": "SNYK-JAVA-COMMYSQL-6075938",
+      "title": "Access Control Bypass",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H",
+      "credit": [
+        "Unknown"
+      ],
+      "semver": {
+        "vulnerable": [
+          "[,8.2.0)"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "8.2.0"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "java",
+      "severity": "high",
+      "cvssScore": 8.3,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "com.mysql:mysql-connector-j",
+      "references": [],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H",
+          "cvssV3BaseScore": 8.3,
+          "modificationTime": "2024-03-11T09:48:19.582508Z"
+        },
+        {
+          "assigner": "NVD",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H",
+          "cvssV3BaseScore": 8.3,
+          "modificationTime": "2024-03-11T09:53:41.925087Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H",
+          "assigner": "Snyk",
+          "severity": "high",
+          "baseScore": 8.3,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-06-16T02:01:26.570213Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H",
+          "assigner": "Red Hat",
+          "severity": "high",
+          "baseScore": 8.3,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-03-11T09:48:19.582508Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H",
+          "assigner": "NVD",
+          "severity": "high",
+          "baseScore": 8.3,
+          "cvssVersion": "3.1",
+          "modificationTime": "2024-03-11T09:53:41.925087Z"
+        }
+      ],
+      "description": "## Overview\n\nAffected versions of this package are vulnerable to Access Control Bypass. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise MySQL Connectors. Successful attacks require human interaction from a person other than the attacker and while the vulnerability is in MySQL Connectors, attacks may significantly impact additional products (scope change). \r\n\r\n**Note:**\r\n\r\nSuccessful attacks of this vulnerability can result in takeover of MySQL Connectors.\n## Remediation\nUpgrade `com.mysql:mysql-connector-j` to version 8.2.0 or higher.\n",
+      "epssDetails": {
+        "percentile": "0.53992",
+        "probability": "0.00872",
+        "modelVersion": "v2026.06.15"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2023-22102"
+        ],
+        "CWE": [
+          "CWE-284"
+        ]
+      },
+      "packageName": "com.mysql:mysql-connector-j",
+      "proprietary": false,
+      "creationTime": "2023-11-22T14:44:10.940482Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2023-11-22T14:43:56Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "maven",
+      "mavenModuleName": {
+        "groupId": "com.mysql",
+        "artifactId": "mysql-connector-j"
+      },
+      "publicationTime": "2023-11-22T14:44:11.292563Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2026-06-16T02:01:26.570213Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "high",
+      "from": [
+        "com.vulnbank:vulnbank@1.0.0",
+        "com.mysql:mysql-connector-j@8.0.31"
+      ],
+      "upgradePath": [
+        false,
+        "com.mysql:mysql-connector-j@8.2.0"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "com.mysql:mysql-connector-j",
+      "version": "8.0.31"
     },
     {
       "id": "SNYK-JAVA-IOMICROMETER-17260885",
@@ -5681,7 +5939,7 @@
           "severity": "high",
           "baseScore": 8.7,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-08-18T15:25:27.642011Z"
+          "modificationTime": "2026-09-30T14:03:15.680914Z"
         },
         {
           "type": "secondary",
@@ -5690,7 +5948,7 @@
           "severity": "high",
           "baseScore": 7.5,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-08-18T15:25:27.642011Z"
+          "modificationTime": "2026-09-30T14:03:15.680914Z"
         },
         {
           "type": "secondary",
@@ -5713,8 +5971,8 @@
       ],
       "description": "## Overview\n[org.apache.tomcat.embed:tomcat-embed-core](https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core) is a Core Tomcat implementation.\n\nAffected versions of this package are vulnerable to Integer Overflow or Wraparound via file uploads through servlet containers. An attacker can craft malicious multipart/form-data requests with specially crafted Content-Length headers that trigger integer overflow vulnerabilities, potentially bypassing file size restrictions and causing memory exhaustion.\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-core` to version 9.0.107, 10.1.43, 11.0.9 or higher.\n## References\n- [Apache Advisory](https://lists.apache.org/thread/trqq01bbxw6c92zx69kx2mw2qgmfy0o5)\n- [Apache Tomcat Advisory](https://tomcat.apache.org/security-9.html)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/927d66fbc294cb65242102b817a45fd80834e040)\n",
       "epssDetails": {
-        "percentile": "0.79675",
-        "probability": "0.02056",
+        "percentile": "0.81015",
+        "probability": "0.02102",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -5753,7 +6011,7 @@
       },
       "publicationTime": "2025-07-10T14:54:23.324748Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-08-18T15:25:27.642011Z",
+      "modificationTime": "2026-09-30T14:03:15.680914Z",
       "socialTrendAlert": false,
       "severityWithCritical": "high",
       "from": [
@@ -5841,7 +6099,7 @@
           "severity": "high",
           "baseScore": 8.9,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-08-18T14:04:29.615622Z"
+          "modificationTime": "2026-09-30T14:03:15.926423Z"
         },
         {
           "type": "secondary",
@@ -5850,7 +6108,7 @@
           "severity": "medium",
           "baseScore": 6.8,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-08-18T14:04:29.615622Z"
+          "modificationTime": "2026-09-30T14:03:15.926423Z"
         },
         {
           "type": "secondary",
@@ -5873,8 +6131,8 @@
       ],
       "description": "## Overview\n[org.apache.tomcat.embed:tomcat-embed-core](https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core) is a Core Tomcat implementation.\n\nAffected versions of this package are vulnerable to Race Condition on connection close when using the APR/Native connector. An attacker could trigger a JVM crash by rapidly opening and closing HTTP/2 connections. The likelihood of hitting the race condition increases if the connections are closed from the client side.\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-core` to version 9.0.107 or higher.\n## References\n- [Apache Advisory](https://lists.apache.org/thread/gxgh65004f25y8519coth6w7vchww030)\n- [Apache Tomcat Advisory](https://tomcat.apache.org/security-9.html)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/8a83c3c42d20762782678932c14005cd3397a018)\n",
       "epssDetails": {
-        "percentile": "0.78034",
-        "probability": "0.01909",
+        "percentile": "0.79793",
+        "probability": "0.01983",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -5913,7 +6171,7 @@
       },
       "publicationTime": "2025-07-11T08:36:58.672552Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-08-18T14:04:29.615622Z",
+      "modificationTime": "2026-09-30T14:03:15.926423Z",
       "socialTrendAlert": false,
       "severityWithCritical": "high",
       "from": [
@@ -6010,7 +6268,7 @@
           "severity": "high",
           "baseScore": 8.7,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-08-18T14:04:29.597314Z"
+          "modificationTime": "2026-09-30T14:04:05.556076Z"
         },
         {
           "type": "secondary",
@@ -6019,7 +6277,7 @@
           "severity": "high",
           "baseScore": 7.5,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-08-18T14:04:29.597314Z"
+          "modificationTime": "2026-09-30T14:04:05.556076Z"
         },
         {
           "type": "secondary",
@@ -6042,8 +6300,8 @@
       ],
       "description": "## Overview\n[org.apache.tomcat.embed:tomcat-embed-core](https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core) is a Core Tomcat implementation.\n\nAffected versions of this package are vulnerable to Allocation of Resources Without Limits or Throttling via HTTP/2 multiplexing feature. an attacker can trigger resource exhaustion by creating excessive HTTP/2 streams within a single TCP connection.\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-core` to version 9.0.107, 10.1.43, 11.0.9 or higher.\n## References\n- [Apache Tomcat Advisory](https://lists.apache.org/thread/p09775q0rd185m6zz98krg0fp45j8kr0)\n- [Apache Tomcat Advisory](https://tomcat.apache.org/security-10.html)\n- [Apache Tomcat Advisory](https://tomcat.apache.org/security-11.html)\n- [Apache Tomcat Advisory](https://tomcat.apache.org/security-9.html)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/434772930f362145516dd60681134e7f0cf8115b)\n",
       "epssDetails": {
-        "percentile": "0.78969",
-        "probability": "0.01991",
+        "percentile": "0.80348",
+        "probability": "0.02035",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -6082,7 +6340,7 @@
       },
       "publicationTime": "2025-07-11T09:00:14.414593Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-08-18T14:04:29.597314Z",
+      "modificationTime": "2026-09-30T14:04:05.556076Z",
       "socialTrendAlert": false,
       "severityWithCritical": "high",
       "from": [
@@ -6529,7 +6787,7 @@
           "severity": "medium",
           "baseScore": 6,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-07-23T14:05:21.833255Z"
+          "modificationTime": "2026-09-27T14:03:58.894009Z"
         },
         {
           "type": "secondary",
@@ -6538,7 +6796,7 @@
           "severity": "medium",
           "baseScore": 5.3,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-07-23T14:05:21.833255Z"
+          "modificationTime": "2026-09-27T14:03:58.894009Z"
         },
         {
           "type": "secondary",
@@ -6561,8 +6819,8 @@
       ],
       "description": "## Overview\n[org.apache.tomcat.embed:tomcat-embed-core](https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core) is a Core Tomcat implementation.\n\nAffected versions of this package are vulnerable to Improper Resource Shutdown or Release due to the delayed cleaning of multipart upload temporary files. An attacker can cause a denial-of-service by sending crafted requests that create temporary copies of uploaded parts faster than the garbage collector clears them, leading to resource exhaustion.\r\n\r\n**Note:** Successful exploitation depends on the JVM settings, the application memory usage, and application load.\n\n## Details\n\nDenial of Service (DoS) describes a family of attacks, all aimed at making a system inaccessible to its intended and legitimate users.\n\nUnlike other vulnerabilities, DoS attacks usually do not aim at breaching security. Rather, they are focused on making websites and services unavailable to genuine users resulting in downtime.\n\nOne popular Denial of Service vulnerability is DDoS (a Distributed Denial of Service), an attack that attempts to clog network pipes to the system by generating a large volume of traffic from many machines.\n\nWhen it comes to open source libraries, DoS vulnerabilities allow attackers to trigger such a crash or crippling of the service by using a flaw either in the application code or from the use of open source libraries.\n\nTwo common types of DoS vulnerabilities:\n\n* High CPU/Memory Consumption- An attacker sending crafted requests that could cause the system to take a disproportionate amount of time to process. For example, [commons-fileupload:commons-fileupload](https://security.snyk.io/vuln/SNYK-JAVA-COMMONSFILEUPLOAD-30082).\n\n* Crash - An attacker sending crafted requests that could cause the system to crash. For Example,  [npm `ws` package](https://snyk.io/vuln/npm:ws:20171108)\n\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-core` to version 9.0.110, 10.1.47, 11.0.12 or higher.\n## References\n- [Apache Mail](https://lists.apache.org/thread/wm9mx8brmx9g4zpywm06ryrtvd3160pp)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/1cdf5f730ede75a0759492f179ac21ca4ff68e06)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/af6e9181620304c0d818121c29c074e1330610d0)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/afa422bd7ca1eef0f507259c682fd876494d9c3b)\n- [Red Hat Bugzilla Bug](https://bugzilla.redhat.com/show_bug.cgi?id=2406588)\n- [Vulnerability Advisory](https://tomcat.apache.org/security-11.html#Fixed_in_Apache_Tomcat_11.0.12)\n",
       "epssDetails": {
-        "percentile": "0.64003",
-        "probability": "0.01165",
+        "percentile": "0.68180",
+        "probability": "0.01249",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -6601,7 +6859,7 @@
       },
       "publicationTime": "2025-10-28T14:35:15.060605Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-07-23T14:05:21.833255Z",
+      "modificationTime": "2026-09-27T14:03:58.894009Z",
       "socialTrendAlert": false,
       "severityWithCritical": "medium",
       "from": [
@@ -6710,7 +6968,7 @@
           "severity": "high",
           "baseScore": 7.7,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-09-04T05:20:03.716994Z"
+          "modificationTime": "2026-09-27T14:05:26.178344Z"
         },
         {
           "type": "secondary",
@@ -6719,7 +6977,7 @@
           "severity": "high",
           "baseScore": 7.5,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-09-04T05:20:03.716994Z"
+          "modificationTime": "2026-09-27T14:05:26.178344Z"
         },
         {
           "type": "secondary",
@@ -6742,8 +7000,8 @@
       ],
       "description": "## Overview\n[org.apache.tomcat.embed:tomcat-embed-core](https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core) is a Core Tomcat implementation.\n\nAffected versions of this package are vulnerable to Relative Path Traversal via the URL normalization. An attacker can bypass security constraints and access restricted directories such as `/WEB-INF/` and `/META-INF/` by manipulating the request URI. If PUT requests are also enabled then malicious files could be uploaded leading to remote code execution.\r\n\r\n**Note:**\r\n\r\n1) Older, EOL versions may also be affected.\r\n2) PUT requests are normally limited to trusted users and it is considered unlikely that PUT requests would be enabled in conjunction with a rewrite that manipulated the URI.\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-core` to version 9.0.109, 10.1.45, 11.0.11 or higher.\n## References\n- [Apache Mailing List](https://lists.apache.org/thread/n05kjcwyj1s45ovs8ll1qrrojhfb1tog)\n- [Apache Tomcat Advisory](https://tomcat.apache.org/security-10.html#Fixed_in_Apache_Tomcat_10.1.45)\n- [Apache Tomcat Advisory](https://tomcat.apache.org/security-11.html#Fixed_in_Apache_Tomcat_11.0.11)\n- [Apache Tomcat Advisory](https://tomcat.apache.org/security-9.html#Fixed_in_Apache_Tomcat_9.0.109)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/130d36d8492ef9e4eb22952c17c92423cb35fd06)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/b5042622b8b78340ae65403c55dcb9c7416924df)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/fec06c610ed7466b401e29cc567a58aee5ed826a)\n- [PoC in GitHub](https://github.com/TAM-K592/CVE-2025-55752)\n",
       "epssDetails": {
-        "percentile": "0.99186",
-        "probability": "0.66535",
+        "percentile": "0.99212",
+        "probability": "0.64413",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -6787,7 +7045,7 @@
       },
       "publicationTime": "2025-10-29T10:18:29.155755Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-09-04T05:20:03.716994Z",
+      "modificationTime": "2026-09-27T14:05:26.178344Z",
       "socialTrendAlert": false,
       "severityWithCritical": "high",
       "from": [
@@ -7373,7 +7631,7 @@
           "severity": "high",
           "baseScore": 8.8,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-09-24T14:11:29.836810Z"
+          "modificationTime": "2026-09-29T14:04:25.605283Z"
         },
         {
           "type": "secondary",
@@ -7382,7 +7640,7 @@
           "severity": "high",
           "baseScore": 8.2,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-09-24T14:11:29.836810Z"
+          "modificationTime": "2026-09-29T14:04:25.605283Z"
         },
         {
           "type": "secondary",
@@ -7405,8 +7663,8 @@
       ],
       "description": "## Overview\n[org.apache.tomcat.embed:tomcat-embed-core](https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core) is a Core Tomcat implementation.\n\nAffected versions of this package are vulnerable to Improper Authentication in `processOCSPRequest()`, which is part of the the `CLIENT_CERT` authentication process. An attacker can trigger a soft-fail of OCSP checks when soft-fail is disabled.\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-core` to version 9.0.116, 10.1.53, 11.0.20 or higher.\n## References\n- [Apache Mailing List](https://lists.apache.org/thread/yz5fxmhd2j43wgqykssdo7kltws57jfz)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/721591f7bff424c693f26adc18ae9b9abac3655b)\n- [GitHub Commit](https://github.com/apache/tomcat-native/commit/a0127f7d3b68dca553261f8d7d3540bfeeafc0d2)\n- [OSS Security Advisory](http://www.openwall.com/lists/oss-security/2026/04/09/23)\n",
       "epssDetails": {
-        "percentile": "0.47931",
-        "probability": "0.00630",
+        "percentile": "0.51849",
+        "probability": "0.00715",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -7448,7 +7706,7 @@
       },
       "publicationTime": "2026-04-12T10:17:46.621950Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-09-24T14:11:29.836810Z",
+      "modificationTime": "2026-09-29T14:04:25.605283Z",
       "socialTrendAlert": false,
       "severityWithCritical": "high",
       "from": [
@@ -7537,7 +7795,7 @@
           "severity": "medium",
           "baseScore": 6.3,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-09-24T14:04:54.570268Z"
+          "modificationTime": "2026-09-29T14:04:26.327229Z"
         },
         {
           "type": "secondary",
@@ -7546,7 +7804,7 @@
           "severity": "low",
           "baseScore": 3.7,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-09-24T14:04:54.570268Z"
+          "modificationTime": "2026-09-29T14:04:26.327229Z"
         },
         {
           "type": "secondary",
@@ -7569,8 +7827,8 @@
       ],
       "description": "## Overview\n[org.apache.tomcat.embed:tomcat-embed-core](https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core) is a Core Tomcat implementation.\n\nAffected versions of this package are vulnerable to Improper Encoding or Escaping of Output in `JsonAccessLogValve()`, which relies on an unescaped `append()` in generating JSON logs. If non-default values are used for the Connector attributes `relaxedPathChars` or `relaxedQueryChars`, an attacker can inject malicious JSON into logs.\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-core` to version 9.0.117, 10.1.54, 11.0.21 or higher.\n## References\n- [Apache Mailing List](https://lists.apache.org/thread/j1w7304yonlr8vo1tkb5nfs7od1y228b)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/f9ddc24fcfcdfaea4a6953198d8636aca3e957bc)\n- [OSS Security Advisory](http://www.openwall.com/lists/oss-security/2026/04/09/26)\n",
       "epssDetails": {
-        "percentile": "0.47519",
-        "probability": "0.00622",
+        "percentile": "0.37512",
+        "probability": "0.00461",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -7612,7 +7870,7 @@
       },
       "publicationTime": "2026-04-12T10:17:09.614965Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-09-24T14:04:54.570268Z",
+      "modificationTime": "2026-09-29T14:04:26.327229Z",
       "socialTrendAlert": false,
       "severityWithCritical": "medium",
       "from": [
@@ -7701,7 +7959,7 @@
           "severity": "high",
           "baseScore": 8.3,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-09-24T14:04:53.591565Z"
+          "modificationTime": "2026-09-29T14:04:34.555403Z"
         },
         {
           "type": "secondary",
@@ -7710,7 +7968,7 @@
           "severity": "medium",
           "baseScore": 6.5,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-09-24T14:04:53.591565Z"
+          "modificationTime": "2026-09-29T14:04:34.555403Z"
         },
         {
           "type": "secondary",
@@ -7733,8 +7991,8 @@
       ],
       "description": "## Overview\n[org.apache.tomcat.embed:tomcat-embed-core](https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core) is a Core Tomcat implementation.\n\nAffected versions of this package are vulnerable to Improper Authentication in `processOCSPRequest()`, which is part of the the `CLIENT_CERT` authentication process. In some \"edge cases\", an attacker can trigger a soft-fail of OCSP checks when soft-fail is disabled.\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-core` to version 9.0.117, 10.1.54, 11.0.21 or higher.\n## References\n- [Apache Mailing List](https://lists.apache.org/thread/7rcl4zdxryc8hy3htyfyxkbqpxjtfdl2)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/c13e60e732ea6d07087293a41ad1866c20848271)\n- [OSS Security Advisory](http://www.openwall.com/lists/oss-security/2026/04/09/29)\n",
       "epssDetails": {
-        "percentile": "0.46424",
-        "probability": "0.00601",
+        "percentile": "0.36682",
+        "probability": "0.00450",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -7776,7 +8034,7 @@
       },
       "publicationTime": "2026-04-12T10:45:47.078053Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-09-24T14:04:53.591565Z",
+      "modificationTime": "2026-09-29T14:04:34.555403Z",
       "socialTrendAlert": false,
       "severityWithCritical": "high",
       "from": [
@@ -8033,7 +8291,7 @@
           "severity": "medium",
           "baseScore": 5.1,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-09-24T14:09:27.418036Z"
+          "modificationTime": "2026-09-29T14:04:28.753320Z"
         },
         {
           "type": "secondary",
@@ -8042,7 +8300,7 @@
           "severity": "medium",
           "baseScore": 6.1,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-09-24T14:09:27.418036Z"
+          "modificationTime": "2026-09-29T14:04:28.753320Z"
         },
         {
           "type": "secondary",
@@ -8065,8 +8323,8 @@
       ],
       "description": "## Overview\n[org.apache.tomcat.embed:tomcat-embed-core](https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core) is a Core Tomcat implementation.\n\nAffected versions of this package are vulnerable to Open Redirect via the `LoadBalancerDrainingValve.invoke()` function. When the `LoadBalancerDrainingValve` is in the disabled (draining) state, an attacker can redirect users to a malicious attacker-controlled URL.\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-core` to version 9.0.116, 10.1.53, 11.0.20 or higher.\n## References\n- [Apache Mailing List](https://lists.apache.org/thread/ghct3b6o74bp2vm7q875s1zh0dqrz3h0)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/4c5d306001b780c9316aea5ff6502c524fb20695)\n- [OSS Security Advisory](http://www.openwall.com/lists/oss-security/2026/04/09/21)\n",
       "epssDetails": {
-        "percentile": "0.43155",
-        "probability": "0.00543",
+        "percentile": "0.42283",
+        "probability": "0.00526",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -8108,7 +8366,7 @@
       },
       "publicationTime": "2026-04-12T12:26:08.238426Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-09-24T14:09:27.418036Z",
+      "modificationTime": "2026-09-29T14:04:28.753320Z",
       "socialTrendAlert": false,
       "severityWithCritical": "medium",
       "from": [
@@ -8511,7 +8769,7 @@
           "severity": "medium",
           "baseScore": 5.3,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-09-24T14:14:32.334857Z"
+          "modificationTime": "2026-09-26T14:05:57.628351Z"
         },
         {
           "type": "secondary",
@@ -8520,7 +8778,7 @@
           "severity": "medium",
           "baseScore": 5.4,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-09-24T14:14:32.334857Z"
+          "modificationTime": "2026-09-26T14:05:57.628351Z"
         },
         {
           "type": "secondary",
@@ -8543,8 +8801,8 @@
       ],
       "description": "## Overview\n[org.apache.tomcat.embed:tomcat-embed-core](https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core) is a Core Tomcat implementation.\n\nAffected versions of this package are vulnerable to Improper Authorization in the processing of security constraints when multiple method constraints define an HTTP method for the same extension. An attacker can gain unauthorized access to protected resources by crafting requests that exploit the improper application of these constraints.\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-core` to version 9.0.118, 10.1.55, 11.0.22 or higher.\n## References\n- [Apache Mailing List](https://lists.apache.org/thread/746nxfxod0wsocxtmv8pb8nkgmwpc6bb)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/db919ff9912b4d61d1b702a1342b8bde39270031)\n",
       "epssDetails": {
-        "percentile": "0.48814",
-        "probability": "0.00648",
+        "percentile": "0.67492",
+        "probability": "0.01221",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -8583,7 +8841,7 @@
       },
       "publicationTime": "2026-05-14T14:20:28.290343Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-09-24T14:14:32.334857Z",
+      "modificationTime": "2026-09-26T14:05:57.628351Z",
       "socialTrendAlert": false,
       "severityWithCritical": "medium",
       "from": [
@@ -8833,7 +9091,7 @@
           "severity": "medium",
           "baseScore": 5.3,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-09-25T02:01:58.636460Z"
+          "modificationTime": "2026-09-27T02:01:25.608531Z"
         },
         {
           "type": "secondary",
@@ -8842,7 +9100,7 @@
           "severity": "medium",
           "baseScore": 4.3,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-09-25T02:01:58.636460Z"
+          "modificationTime": "2026-09-27T02:01:25.608531Z"
         },
         {
           "type": "secondary",
@@ -8865,8 +9123,8 @@
       ],
       "description": "## Overview\n[org.apache.tomcat.embed:tomcat-embed-core](https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core) is a Core Tomcat implementation.\n\nAffected versions of this package are vulnerable to Improper Handling of Case Sensitivity in the `LockOutRealm` function. An attacker can bypass account lockout protections by submitting usernames with different letter casing.\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-core` to version 9.0.118, 10.1.55, 11.0.22 or higher.\n## References\n- [Apache Mailing List](https://lists.apache.org/thread/ytjcgldshj73lcnd1sh95od5hrghwogp)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/6dd75beb55bd42fc5f78e929596b25018cd17717)\n",
       "epssDetails": {
-        "percentile": "0.51573",
-        "probability": "0.00713",
+        "percentile": "0.40553",
+        "probability": "0.00503",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -8905,7 +9163,7 @@
       },
       "publicationTime": "2026-05-14T14:38:55.527805Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-09-25T02:01:58.636460Z",
+      "modificationTime": "2026-09-27T02:01:25.608531Z",
       "socialTrendAlert": false,
       "severityWithCritical": "medium",
       "from": [
@@ -8990,7 +9248,7 @@
           "severity": "critical",
           "baseScore": 9.1,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-09-24T14:13:26.388633Z"
+          "modificationTime": "2026-09-26T14:05:59.082429Z"
         },
         {
           "type": "secondary",
@@ -8999,7 +9257,7 @@
           "severity": "high",
           "baseScore": 7.4,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-09-24T14:13:26.388633Z"
+          "modificationTime": "2026-09-26T14:05:59.082429Z"
         },
         {
           "type": "secondary",
@@ -9022,8 +9280,8 @@
       ],
       "description": "## Overview\n[org.apache.tomcat.embed:tomcat-embed-core](https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core) is a Core Tomcat implementation.\n\nAffected versions of this package are vulnerable to Improper Authentication when DIGEST authentication is configured. An attacker can gain unauthorized access by providing any unknown username, as the system will incorrectly authenticate the user.\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-core` to version 9.0.118, 10.1.55, 11.0.22 or higher.\n## References\n- [Apache Mailing List](https://lists.apache.org/thread/7x09x7o12solvclslw3sz0288xc8wx73)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/6565a6cb6499e56fe2f34457cec99f9d1c4f39e9)\n",
       "epssDetails": {
-        "percentile": "0.58508",
-        "probability": "0.00918",
+        "percentile": "0.69848",
+        "probability": "0.01326",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -9062,7 +9320,7 @@
       },
       "publicationTime": "2026-05-14T14:45:51.670841Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-09-24T14:13:26.388633Z",
+      "modificationTime": "2026-09-26T14:05:59.082429Z",
       "socialTrendAlert": false,
       "severityWithCritical": "critical",
       "from": [
@@ -9332,7 +9590,7 @@
           "severity": "critical",
           "baseScore": 9.3,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-09-24T14:14:32.702094Z"
+          "modificationTime": "2026-09-25T21:42:27.553258Z"
         },
         {
           "type": "secondary",
@@ -9341,7 +9599,7 @@
           "severity": "critical",
           "baseScore": 9.1,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-09-24T14:14:32.702094Z"
+          "modificationTime": "2026-09-25T21:42:27.553258Z"
         },
         {
           "type": "secondary",
@@ -9355,8 +9613,8 @@
       ],
       "description": "## Overview\n[org.apache.tomcat.embed:tomcat-embed-core](https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core) is a Core Tomcat implementation.\n\nAffected versions of this package are vulnerable to Missing Critical Step in Authentication in the `JNDIRealm` process when configured to authenticate binds using GSSAPI. An attacker can gain unauthorized access by bypassing password verification during authentication.\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-core` to version 9.0.101, 10.1.37, 11.0.5 or higher.\n## References\n- [Apache Mailing List](https://lists.apache.org/thread/7fk339o5jvd4mcgsf0chbrn4o525ccjh)\n- [Apache Tomcat Advisory](https://tomcat.apache.org/security-10.html)\n- [Apache Tomcat Advisory](https://tomcat.apache.org/security-11.html)\n- [Apache Tomcat Advisory](https://tomcat.apache.org/security-9.html)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/0cd21c0393b8811af22daddbba7b4e7328e2d79e)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/c32bbd37ea9ee0aaab848af4ee1c9a76e84240ea)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/fd96ab415631eea44636c94f911dd38427070ef9)\n",
       "epssDetails": {
-        "percentile": "0.54970",
-        "probability": "0.00808",
+        "percentile": "0.86168",
+        "probability": "0.02855",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -9395,7 +9653,7 @@
       },
       "publicationTime": "2026-06-30T17:18:11.467067Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-09-24T14:14:32.702094Z",
+      "modificationTime": "2026-09-25T21:42:27.553258Z",
       "socialTrendAlert": false,
       "severityWithCritical": "critical",
       "from": [
@@ -9676,7 +9934,7 @@
           "severity": "medium",
           "baseScore": 5.3,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-09-25T02:01:58.639073Z"
+          "modificationTime": "2026-10-03T02:01:37.828288Z"
         },
         {
           "type": "secondary",
@@ -9685,7 +9943,7 @@
           "severity": "medium",
           "baseScore": 5.4,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-09-25T02:01:58.639073Z"
+          "modificationTime": "2026-10-03T02:01:37.828288Z"
         },
         {
           "type": "secondary",
@@ -9708,8 +9966,8 @@
       ],
       "description": "## Overview\n[org.apache.tomcat.embed:tomcat-embed-core](https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core) is a Core Tomcat implementation.\n\nAffected versions of this package are vulnerable to Always-Incorrect Control Flow Implementation due to the incomplete logging of the effective `web.xml` when special roles and empty authorization constraints are present. An attacker can bypass intended access restrictions by exploiting the absence of these constraints in the logged configuration.\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-core` to version 9.0.119, 10.1.56, 11.0.23 or higher.\n## References\n- [Apache Mailing List](https://lists.apache.org/thread/jy09xjlzn6r2qwvqoph8vcmf959yq68v)\n- [Apache Tomcat Advisory](https://tomcat.apache.org/security-10.html)\n- [Apache Tomcat Advisory](https://tomcat.apache.org/security-11.html)\n- [Apache Tomcat Advisory](https://tomcat.apache.org/security-9.html)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/25677f90fd721c26ef0f613d34ef8275b1aafc31)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/e391c6b201eae2ad9707a1335aff68ab8b3e0f84)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/f844614c6d92eeb11e81e179606bf4c390f642dd)\n",
       "epssDetails": {
-        "percentile": "0.46219",
-        "probability": "0.00597",
+        "percentile": "0.47142",
+        "probability": "0.00607",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -9748,7 +10006,7 @@
       },
       "publicationTime": "2026-06-30T17:28:12.526265Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-09-25T02:01:58.639073Z",
+      "modificationTime": "2026-10-03T02:01:37.828288Z",
       "socialTrendAlert": false,
       "severityWithCritical": "medium",
       "from": [
@@ -9923,6 +10181,974 @@
       "modificationTime": "2026-09-25T02:01:58.639502Z",
       "socialTrendAlert": false,
       "severityWithCritical": "medium",
+      "from": [
+        "com.vulnbank:vulnbank@1.0.0",
+        "org.springframework.boot:spring-boot-starter-web@2.7.5",
+        "org.springframework.boot:spring-boot-starter-tomcat@2.7.5",
+        "org.apache.tomcat.embed:tomcat-embed-core@9.0.68"
+      ],
+      "upgradePath": [
+        false,
+        "org.springframework.boot:spring-boot-starter-web@4.0.0",
+        "org.springframework.boot:spring-boot-starter-tomcat@4.0.0"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "org.apache.tomcat.embed:tomcat-embed-core",
+      "version": "9.0.68"
+    },
+    {
+      "id": "SNYK-JAVA-ORGAPACHETOMCATEMBED-20302842",
+      "title": "Replay Attack",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "credit": [
+        "4ra1n",
+        "pyn3rd",
+        "unam4"
+      ],
+      "semver": {
+        "vulnerable": [
+          "[9.0.0.M1,9.0.121)",
+          "[11.0.0-M1,10.1.59)",
+          "[11.0.0-M1,11.0.25)"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "9.0.121",
+        "10.1.59",
+        "11.0.25"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "java",
+      "severity": "critical",
+      "cvssScore": 9.3,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "org.apache.tomcat.embed:tomcat-embed-core",
+      "references": [
+        {
+          "url": "https://lists.apache.org/thread/9v114xlpgbzrrbzz5vf9f6r2q4wnxwwj",
+          "title": "Apache Security Advisory"
+        },
+        {
+          "url": "https://github.com/apache/tomcat/commit/1c1a583ba57092206f77c375f45da12c99fb141d",
+          "title": "GitHub Commit 10.1.58"
+        },
+        {
+          "url": "https://github.com/apache/tomcat/commit/c5f94ad1726e8399b77eb3fd69c811c1103894d6",
+          "title": "GitHub Commit 11.0.25"
+        },
+        {
+          "url": "https://github.com/apache/tomcat/commit/a31181af45e494b6035575519f6d1d33875f050d",
+          "title": "GitHub Commit 9.0.121"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+          "cvssV3BaseScore": 4.8,
+          "modificationTime": "2026-09-01T05:36:33.609458Z"
+        },
+        {
+          "assigner": "SUSE",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+          "cvssV3BaseScore": 5.3,
+          "modificationTime": "2026-09-15T11:03:37.092929Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N",
+          "assigner": "Snyk",
+          "severity": "critical",
+          "baseScore": 9.3,
+          "cvssVersion": "4.0",
+          "modificationTime": "2026-10-02T14:02:52.487679Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          "assigner": "Snyk",
+          "severity": "critical",
+          "baseScore": 9.8,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-02T14:02:52.487679Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 4.8,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-09-01T05:36:33.609458Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+          "assigner": "SUSE",
+          "severity": "medium",
+          "baseScore": 5.3,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-09-15T11:03:37.092929Z"
+        }
+      ],
+      "description": "## Overview\n[org.apache.tomcat.embed:tomcat-embed-core](https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core) is a Core Tomcat implementation.\n\nAffected versions of this package are vulnerable to Replay Attack in the DIGEST authenticator’s nonce-count window handling. An attacker can reuse a valid DIGEST-authenticated request once by sending a request with a nonce count at the upper boundary of the replay window before the window has filled. This allows a captured authentication message to be replayed successfully within the same nonce-count window, letting the attacker impersonate an authenticated user and perform requests accepted as that user.\r\n\r\n**Notes**\r\n\r\n- The issue was fixed in Apache Tomcat 10.1.58, but the release vote for the 10.1.58 release candidate did not pass. Therefore, although users must download 10.1.59 to obtain a version that includes a fix for this issue, version 10.1.58 is not included in the list of affected versions.\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-core` to version 9.0.121, 10.1.59, 11.0.25 or higher.\n## References\n- [Apache Security Advisory](https://lists.apache.org/thread/9v114xlpgbzrrbzz5vf9f6r2q4wnxwwj)\n- [GitHub Commit 10.1.58](https://github.com/apache/tomcat/commit/1c1a583ba57092206f77c375f45da12c99fb141d)\n- [GitHub Commit 11.0.25](https://github.com/apache/tomcat/commit/c5f94ad1726e8399b77eb3fd69c811c1103894d6)\n- [GitHub Commit 9.0.121](https://github.com/apache/tomcat/commit/a31181af45e494b6035575519f6d1d33875f050d)\n",
+      "epssDetails": {
+        "percentile": "0.44748",
+        "probability": "0.00562",
+        "modelVersion": "v2026.06.15"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2026-65905"
+        ],
+        "CWE": [
+          "CWE-294"
+        ]
+      },
+      "packageName": "org.apache.tomcat.embed:tomcat-embed-core",
+      "proprietary": false,
+      "creationTime": "2026-09-30T08:47:19.756218Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2026-08-26T00:33:25Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "maven",
+      "mavenModuleName": {
+        "groupId": "org.apache.tomcat.embed",
+        "artifactId": "tomcat-embed-core"
+      },
+      "publicationTime": "2026-09-30T08:47:19.943795Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2026-10-02T14:02:52.487679Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "critical",
+      "from": [
+        "com.vulnbank:vulnbank@1.0.0",
+        "org.springframework.boot:spring-boot-starter-web@2.7.5",
+        "org.springframework.boot:spring-boot-starter-tomcat@2.7.5",
+        "org.apache.tomcat.embed:tomcat-embed-core@9.0.68"
+      ],
+      "upgradePath": [
+        false,
+        "org.springframework.boot:spring-boot-starter-web@3.0.0",
+        "org.springframework.boot:spring-boot-starter-tomcat@3.0.0",
+        "org.apache.tomcat.embed:tomcat-embed-core@10.1.1"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "org.apache.tomcat.embed:tomcat-embed-core",
+      "version": "9.0.68"
+    },
+    {
+      "id": "SNYK-JAVA-ORGAPACHETOMCATEMBED-20302843",
+      "title": "Incorrect Authorization",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+      "credit": [
+        "4ra1n",
+        "pyn3rd",
+        "unam4"
+      ],
+      "semver": {
+        "vulnerable": [
+          "[9.0.0.M1,9.0.121)",
+          "[10.1.0-M1,10.1.58)",
+          "[11.0.0-M1,11.0.25)"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "9.0.121",
+        "10.1.58",
+        "11.0.25"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "java",
+      "severity": "critical",
+      "cvssScore": 9.3,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "org.apache.tomcat.embed:tomcat-embed-core",
+      "references": [
+        {
+          "url": "https://lists.apache.org/thread/x1y2lfsgzxwzc456f8954vbvgn03zhd7",
+          "title": "Apache Security Advisory"
+        },
+        {
+          "url": "https://github.com/apache/tomcat/commit/58123aa468a20e2a079b7e0c68a4009e2475c098",
+          "title": "GitHub Commit 10.1.58"
+        },
+        {
+          "url": "https://github.com/apache/tomcat/commit/10d048e16034ddf12055e0cede0da05b15c823b8",
+          "title": "GitHub Commit 11.0.25"
+        },
+        {
+          "url": "https://github.com/apache/tomcat/commit/32f0c38526b4e655ff0c17cd97afedefc624fe43",
+          "title": "GitHub Commit 9.0.121"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+          "cvssV3BaseScore": 6.5,
+          "modificationTime": "2026-09-01T05:36:34.526352Z"
+        },
+        {
+          "assigner": "SUSE",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+          "cvssV3BaseScore": 6.5,
+          "modificationTime": "2026-09-15T11:03:58.918064Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N",
+          "assigner": "Snyk",
+          "severity": "critical",
+          "baseScore": 9.3,
+          "cvssVersion": "4.0",
+          "modificationTime": "2026-10-02T14:02:53.411848Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+          "assigner": "Snyk",
+          "severity": "critical",
+          "baseScore": 9.1,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-02T14:02:53.411848Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 6.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-09-01T05:36:34.526352Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+          "assigner": "SUSE",
+          "severity": "medium",
+          "baseScore": 6.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-09-15T11:03:58.918064Z"
+        }
+      ],
+      "description": "## Overview\n[org.apache.tomcat.embed:tomcat-embed-core](https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core) is a Core Tomcat implementation.\n\nAffected versions of this package are vulnerable to Incorrect Authorization via the `FormAuthenticator` and `AuthenticatorBase` FORM authentication flow. An attacker can bypass a security constraint that allows access to a resource for `POST` but not `GET` by authenticating through FORM login and restoring a saved request with a different HTTP method. This lets a request that should be blocked reach the protected resource, exposing content or actions that the user should not be allowed to access with that method.\r\n\r\n**Notes**\r\n\r\n- The issue was fixed in Apache Tomcat 10.1.58, but the release vote for the 10.1.58 release candidate did not pass. Therefore, although users must download 10.1.59 to obtain a version that includes a fix for this issue, version 10.1.58 is not included in the list of affected versions.\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-core` to version 9.0.121, 10.1.58, 11.0.25 or higher.\n## References\n- [Apache Security Advisory](https://lists.apache.org/thread/x1y2lfsgzxwzc456f8954vbvgn03zhd7)\n- [GitHub Commit 10.1.58](https://github.com/apache/tomcat/commit/58123aa468a20e2a079b7e0c68a4009e2475c098)\n- [GitHub Commit 11.0.25](https://github.com/apache/tomcat/commit/10d048e16034ddf12055e0cede0da05b15c823b8)\n- [GitHub Commit 9.0.121](https://github.com/apache/tomcat/commit/32f0c38526b4e655ff0c17cd97afedefc624fe43)\n",
+      "epssDetails": {
+        "percentile": "0.38938",
+        "probability": "0.00477",
+        "modelVersion": "v2026.06.15"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2026-68525"
+        ],
+        "CWE": [
+          "CWE-863"
+        ]
+      },
+      "packageName": "org.apache.tomcat.embed:tomcat-embed-core",
+      "proprietary": false,
+      "creationTime": "2026-09-30T08:47:55.026802Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2026-08-26T00:33:41Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "maven",
+      "mavenModuleName": {
+        "groupId": "org.apache.tomcat.embed",
+        "artifactId": "tomcat-embed-core"
+      },
+      "publicationTime": "2026-09-30T08:47:55.199470Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2026-10-02T14:02:53.411848Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "critical",
+      "from": [
+        "com.vulnbank:vulnbank@1.0.0",
+        "org.springframework.boot:spring-boot-starter-web@2.7.5",
+        "org.springframework.boot:spring-boot-starter-tomcat@2.7.5",
+        "org.apache.tomcat.embed:tomcat-embed-core@9.0.68"
+      ],
+      "upgradePath": [
+        false,
+        "org.springframework.boot:spring-boot-starter-web@4.0.0",
+        "org.springframework.boot:spring-boot-starter-tomcat@4.0.0"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "org.apache.tomcat.embed:tomcat-embed-core",
+      "version": "9.0.68"
+    },
+    {
+      "id": "SNYK-JAVA-ORGAPACHETOMCATEMBED-20302874",
+      "title": "Insufficient Session Expiration",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+      "credit": [
+        "0xCc.zhang"
+      ],
+      "semver": {
+        "vulnerable": [
+          "[9.0.0.M1, 9.0.121)",
+          "[10.1.0-M1, 10.1.59)",
+          "[11.0.0-M1, 11.0.25)"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "9.0.121",
+        "10.1.59",
+        "11.0.25"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "java",
+      "severity": "medium",
+      "cvssScore": 5.3,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "org.apache.tomcat.embed:tomcat-embed-core",
+      "references": [
+        {
+          "url": "https://lists.apache.org/thread/3j15vztszpyqss253mjq5v1kp7s6hooq",
+          "title": "Apache Mailing List"
+        },
+        {
+          "url": "https://github.com/apache/tomcat/commit/e617a5d483b78851d289ca8dc1d68c49b541b419",
+          "title": "GitHub Commit"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+          "cvssV3BaseScore": 5.4,
+          "modificationTime": "2026-09-01T05:36:28.910373Z"
+        },
+        {
+          "assigner": "SUSE",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+          "cvssV3BaseScore": 6.5,
+          "modificationTime": "2026-09-15T11:04:21.122955Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 5.3,
+          "cvssVersion": "4.0",
+          "modificationTime": "2026-10-02T14:03:56.668808Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 5.4,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-02T14:03:56.668808Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 5.4,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-09-01T05:36:28.910373Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+          "assigner": "SUSE",
+          "severity": "medium",
+          "baseScore": 6.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-09-15T11:04:21.122955Z"
+        }
+      ],
+      "description": "## Overview\n[org.apache.tomcat.embed:tomcat-embed-core](https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core) is a Core Tomcat implementation.\n\nAffected versions of this package are vulnerable to Insufficient Session Expiration due to the improper termination of WebSocket sessions when the associated HTTP session ends. An attacker can maintain access to resources beyond the intended session duration by establishing a WebSocket connection under an authenticated HTTP session and continuing to interact through the WebSocket after the HTTP session has expired.\r\n\r\n**Note:** This issue was fixed in Apache Tomcat 10.1.58 but the release vote for the 10.1.58 release candidate did not pass. Therefore, although users must download 10.1.59 to obtain a version that includes a fix for this issue, version 10.1.58 is not included in the list of affected versions.\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-core` to version 9.0.121, 10.1.59, 11.0.25 or higher.\n## References\n- [Apache Mailing List](https://lists.apache.org/thread/3j15vztszpyqss253mjq5v1kp7s6hooq)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/e617a5d483b78851d289ca8dc1d68c49b541b419)\n",
+      "epssDetails": {
+        "percentile": "0.36095",
+        "probability": "0.00441",
+        "modelVersion": "v2026.06.15"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2026-73180"
+        ],
+        "CWE": [
+          "CWE-613"
+        ]
+      },
+      "packageName": "org.apache.tomcat.embed:tomcat-embed-core",
+      "proprietary": false,
+      "creationTime": "2026-09-30T10:00:25.307102Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2026-08-26T00:33:04Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "maven",
+      "mavenModuleName": {
+        "groupId": "org.apache.tomcat.embed",
+        "artifactId": "tomcat-embed-core"
+      },
+      "publicationTime": "2026-09-30T10:00:25.471696Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2026-10-02T14:03:56.668808Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "medium",
+      "from": [
+        "com.vulnbank:vulnbank@1.0.0",
+        "org.springframework.boot:spring-boot-starter-web@2.7.5",
+        "org.springframework.boot:spring-boot-starter-tomcat@2.7.5",
+        "org.apache.tomcat.embed:tomcat-embed-core@9.0.68"
+      ],
+      "upgradePath": [
+        false,
+        "org.springframework.boot:spring-boot-starter-web@4.0.0",
+        "org.springframework.boot:spring-boot-starter-tomcat@4.0.0"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "org.apache.tomcat.embed:tomcat-embed-core",
+      "version": "9.0.68"
+    },
+    {
+      "id": "SNYK-JAVA-ORGAPACHETOMCATEMBED-20302886",
+      "title": "Off-by-one Error",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "credit": [
+        "4ra1n",
+        "pyn3rd",
+        "unam4"
+      ],
+      "semver": {
+        "vulnerable": [
+          "[9.0.0.M1,9.0.121)",
+          "[11.0.0-M1,10.1.59)",
+          "[11.0.0-M1,11.0.25)"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "9.0.121",
+        "10.1.59",
+        "11.0.25"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "java",
+      "severity": "high",
+      "cvssScore": 8.7,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "org.apache.tomcat.embed:tomcat-embed-core",
+      "references": [
+        {
+          "url": "https://lists.apache.org/thread/st1dx1zyn5y7ny2s0sscmh6lrv3worr4",
+          "title": "Apache Security Advisory"
+        },
+        {
+          "url": "https://github.com/apache/tomcat/commit/7d2ae3952a39db5790dcfd36e5d79c75570a20ee",
+          "title": "GitHub Commit 10.1.58"
+        },
+        {
+          "url": "https://github.com/apache/tomcat/commit/b80929d65be774dc90e378acdda2d16949d1e5f3",
+          "title": "GitHub Commit 11.0.25"
+        },
+        {
+          "url": "https://github.com/apache/tomcat/commit/b477537e68acfcaa7220f90b512bf8a72bf237dc",
+          "title": "GitHub Commit 9.0.121"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+          "cvssV3BaseScore": 8.2,
+          "modificationTime": "2026-09-01T05:36:02.118559Z"
+        },
+        {
+          "assigner": "SUSE",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+          "cvssV3BaseScore": 7.3,
+          "modificationTime": "2026-09-15T11:03:51.137021Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          "assigner": "Snyk",
+          "severity": "high",
+          "baseScore": 8.7,
+          "cvssVersion": "4.0",
+          "modificationTime": "2026-10-02T14:02:52.764421Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "assigner": "Snyk",
+          "severity": "high",
+          "baseScore": 7.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-02T14:02:52.764421Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+          "assigner": "Red Hat",
+          "severity": "high",
+          "baseScore": 8.2,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-09-01T05:36:02.118559Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:L",
+          "assigner": "SUSE",
+          "severity": "high",
+          "baseScore": 7.3,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-09-15T11:03:51.137021Z"
+        }
+      ],
+      "description": "## Overview\n[org.apache.tomcat.embed:tomcat-embed-core](https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core) is a Core Tomcat implementation.\n\nAffected versions of this package are vulnerable to Off-by-one Error in chain-rule handling due to the rule-skipping logic in `java/org/apache/catalina/valves/rewrite/RewriteValve.java`. An attacker can cause rewrite processing to apply the wrong rule by supplying a request that triggers a failing `[C]` chain, which incorrectly skips the terminal rule and resumes at the second rule instead of the first. This can rewrite a request to an unintended target path, breaking expected URL routing and letting crafted requests bypass the intended rewrite sequence.\r\n\r\n**Notes**\r\n\r\n- The issue was fixed in Apache Tomcat 10.1.58, but the release vote for the 10.1.58 release candidate did not pass. Therefore, although users must download 10.1.59 to obtain a version that includes a fix for this issue, version 10.1.58 is not included in the list of affected versions.\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-core` to version 9.0.121, 10.1.59, 11.0.25 or higher.\n## References\n- [Apache Security Advisory](https://lists.apache.org/thread/st1dx1zyn5y7ny2s0sscmh6lrv3worr4)\n- [GitHub Commit 10.1.58](https://github.com/apache/tomcat/commit/7d2ae3952a39db5790dcfd36e5d79c75570a20ee)\n- [GitHub Commit 11.0.25](https://github.com/apache/tomcat/commit/b80929d65be774dc90e378acdda2d16949d1e5f3)\n- [GitHub Commit 9.0.121](https://github.com/apache/tomcat/commit/b477537e68acfcaa7220f90b512bf8a72bf237dc)\n",
+      "epssDetails": {
+        "percentile": "0.50827",
+        "probability": "0.00684",
+        "modelVersion": "v2026.06.15"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2026-65927"
+        ],
+        "CWE": [
+          "CWE-193"
+        ]
+      },
+      "packageName": "org.apache.tomcat.embed:tomcat-embed-core",
+      "proprietary": false,
+      "creationTime": "2026-09-30T10:01:56.651795Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2026-08-26T00:33:36Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "maven",
+      "mavenModuleName": {
+        "groupId": "org.apache.tomcat.embed",
+        "artifactId": "tomcat-embed-core"
+      },
+      "publicationTime": "2026-09-30T10:01:56.838902Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2026-10-02T14:02:52.764421Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "high",
+      "from": [
+        "com.vulnbank:vulnbank@1.0.0",
+        "org.springframework.boot:spring-boot-starter-web@2.7.5",
+        "org.springframework.boot:spring-boot-starter-tomcat@2.7.5",
+        "org.apache.tomcat.embed:tomcat-embed-core@9.0.68"
+      ],
+      "upgradePath": [
+        false,
+        "org.springframework.boot:spring-boot-starter-web@3.0.0",
+        "org.springframework.boot:spring-boot-starter-tomcat@3.0.0",
+        "org.apache.tomcat.embed:tomcat-embed-core@10.1.1"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "org.apache.tomcat.embed:tomcat-embed-core",
+      "version": "9.0.68"
+    },
+    {
+      "id": "SNYK-JAVA-ORGAPACHETOMCATEMBED-20302889",
+      "title": "Authentication Bypass by Primary Weakness",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "credit": [
+        "Unknown"
+      ],
+      "semver": {
+        "vulnerable": [
+          "[9.0.0.M1, 9.0.121)",
+          "[10.1.0-M1, 10.1.59)",
+          "[11.0.0-M1, 11.0.25)"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "9.0.121",
+        "10.1.59",
+        "11.0.25"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "java",
+      "severity": "high",
+      "cvssScore": 8.7,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "org.apache.tomcat.embed:tomcat-embed-core",
+      "references": [
+        {
+          "url": "https://lists.apache.org/thread/8robqo76q0osxgw0b5lcwgz0hcf9h4zc",
+          "title": "Apache Mailing List"
+        },
+        {
+          "url": "https://github.com/apache/tomcat/commit/790d6e2c3b4cd201a1fa556a23d5b7504dee18ad",
+          "title": "GitHub Commit"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+          "cvssV3BaseScore": 8.2,
+          "modificationTime": "2026-09-01T05:36:36.838793Z"
+        },
+        {
+          "assigner": "SUSE",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+          "cvssV3BaseScore": 6.5,
+          "modificationTime": "2026-09-15T11:04:11.923230Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N",
+          "assigner": "Snyk",
+          "severity": "high",
+          "baseScore": 8.7,
+          "cvssVersion": "4.0",
+          "modificationTime": "2026-10-02T14:02:53.633778Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+          "assigner": "Snyk",
+          "severity": "high",
+          "baseScore": 7.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-02T14:02:53.633778Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+          "assigner": "Red Hat",
+          "severity": "high",
+          "baseScore": 8.2,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-09-01T05:36:36.838793Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+          "assigner": "SUSE",
+          "severity": "medium",
+          "baseScore": 6.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-09-15T11:04:11.923230Z"
+        }
+      ],
+      "description": "## Overview\n[org.apache.tomcat.embed:tomcat-embed-core](https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core) is a Core Tomcat implementation.\n\nAffected versions of this package are vulnerable to Authentication Bypass by Primary Weakness in the authentication process when using certain authentication mechanisms such as `CLIENT-CERT` or `SPNEGO`. An attacker can gain unauthorized access by authenticating with credentials that do not correspond to a valid user in the `DataSourceRealm`.\r\n\r\n**Note:** This issue was fixed in Apache Tomcat 10.1.58 but the release vote for the 10.1.58 release candidate did not pass. Therefore, although users must download 10.1.59 to obtain a version that includes a fix for this issue, version 10.1.58 is not included in the list of affected versions.\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-core` to version 9.0.121, 10.1.59, 11.0.25 or higher.\n## References\n- [Apache Mailing List](https://lists.apache.org/thread/8robqo76q0osxgw0b5lcwgz0hcf9h4zc)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/790d6e2c3b4cd201a1fa556a23d5b7504dee18ad)\n",
+      "epssDetails": {
+        "percentile": "0.37670",
+        "probability": "0.00460",
+        "modelVersion": "v2026.06.15"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2026-68569"
+        ],
+        "CWE": [
+          "CWE-305"
+        ]
+      },
+      "packageName": "org.apache.tomcat.embed:tomcat-embed-core",
+      "proprietary": false,
+      "creationTime": "2026-09-30T10:02:42.676914Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2026-08-26T00:33:30Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "maven",
+      "mavenModuleName": {
+        "groupId": "org.apache.tomcat.embed",
+        "artifactId": "tomcat-embed-core"
+      },
+      "publicationTime": "2026-09-30T10:02:42.843657Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2026-10-02T14:02:53.633778Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "high",
+      "from": [
+        "com.vulnbank:vulnbank@1.0.0",
+        "org.springframework.boot:spring-boot-starter-web@2.7.5",
+        "org.springframework.boot:spring-boot-starter-tomcat@2.7.5",
+        "org.apache.tomcat.embed:tomcat-embed-core@9.0.68"
+      ],
+      "upgradePath": [
+        false,
+        "org.springframework.boot:spring-boot-starter-web@4.0.0",
+        "org.springframework.boot:spring-boot-starter-tomcat@4.0.0"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "org.apache.tomcat.embed:tomcat-embed-core",
+      "version": "9.0.68"
+    },
+    {
+      "id": "SNYK-JAVA-ORGAPACHETOMCATEMBED-20304748",
+      "title": "Allocation of Resources Without Limits or Throttling",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "credit": [
+        "Zhen Kong"
+      ],
+      "semver": {
+        "vulnerable": [
+          "[9.0.39, 9.0.121)",
+          "[10.1.0-M1, 10.1.59)",
+          "[11.0.0-M1, 11.0.25)"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "9.0.121",
+        "10.1.59",
+        "11.0.25"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "java",
+      "severity": "high",
+      "cvssScore": 8.7,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "org.apache.tomcat.embed:tomcat-embed-core",
+      "references": [
+        {
+          "url": "https://lists.apache.org/thread/tv51ty39ppv41v04hdtkp9dp7tg02nzl",
+          "title": "Apache Mailing List"
+        },
+        {
+          "url": "https://github.com/apache/tomcat/commit/2a5ec806971627943db18601203129d9c58d959f",
+          "title": "GitHub Commit"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 7.5,
+          "modificationTime": "2026-09-01T05:36:41.264355Z"
+        },
+        {
+          "assigner": "SUSE",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 7.5,
+          "modificationTime": "2026-09-15T11:04:19.398480Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N",
+          "assigner": "Snyk",
+          "severity": "high",
+          "baseScore": 8.7,
+          "cvssVersion": "4.0",
+          "modificationTime": "2026-10-02T14:02:52.167157Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "assigner": "Snyk",
+          "severity": "high",
+          "baseScore": 7.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-02T14:02:52.167157Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "assigner": "Red Hat",
+          "severity": "high",
+          "baseScore": 7.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-09-01T05:36:41.264355Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "assigner": "SUSE",
+          "severity": "high",
+          "baseScore": 7.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-09-15T11:04:19.398480Z"
+        }
+      ],
+      "description": "## Overview\n[org.apache.tomcat.embed:tomcat-embed-core](https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core) is a Core Tomcat implementation.\n\nAffected versions of this package are vulnerable to Allocation of Resources Without Limits or Throttling in the HTTP/2 backlog tracking when a stream is reset. An attacker can exhaust system resources by repeatedly resetting streams, leading to service disruption.\r\n\r\n**Note:** This issue was fixed in Apache Tomcat 10.1.58 but the release vote for the 10.1.58 release candidate did not pass. Therefore, although users must download 10.1.59 to obtain a version that includes a fix for this issue, version 10.1.58 is not included in the list of affected versions.\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-core` to version 9.0.121, 10.1.59, 11.0.25 or higher.\n## References\n- [Apache Mailing List](https://lists.apache.org/thread/tv51ty39ppv41v04hdtkp9dp7tg02nzl)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/2a5ec806971627943db18601203129d9c58d959f)\n",
+      "epssDetails": {
+        "percentile": "0.53135",
+        "probability": "0.00745",
+        "modelVersion": "v2026.06.15"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2026-68763"
+        ],
+        "CWE": [
+          "CWE-770"
+        ]
+      },
+      "packageName": "org.apache.tomcat.embed:tomcat-embed-core",
+      "proprietary": false,
+      "creationTime": "2026-09-30T10:08:34.774106Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2026-08-26T00:33:04Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "maven",
+      "mavenModuleName": {
+        "groupId": "org.apache.tomcat.embed",
+        "artifactId": "tomcat-embed-core"
+      },
+      "publicationTime": "2026-09-30T10:08:35.009118Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2026-10-02T14:02:52.167157Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "high",
       "from": [
         "com.vulnbank:vulnbank@1.0.0",
         "org.springframework.boot:spring-boot-starter-web@2.7.5",
@@ -10545,6 +11771,10 @@
         {
           "url": "https://lists.apache.org/thread/71wvwprtx2j2m54fovq9zr7gbm2wow2f",
           "title": "Tomcat List Advisory"
+        },
+        {
+          "url": "https://github.com/sotiak/CVE-2023-41080",
+          "title": "PoC in GitHub"
         }
       ],
       "cvssDetails": [
@@ -10578,7 +11808,7 @@
           "severity": "medium",
           "baseScore": 6.5,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-08-27T02:01:20.887897Z"
+          "modificationTime": "2026-09-29T02:01:05.920801Z"
         },
         {
           "type": "secondary",
@@ -10608,7 +11838,7 @@
           "modificationTime": "2024-03-11T09:54:02.866244Z"
         }
       ],
-      "description": "## Overview\n[org.apache.tomcat.embed:tomcat-embed-core](https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core) is a Core Tomcat implementation.\n\nAffected versions of this package are vulnerable to Access Restriction Bypass. If the ROOT (default) web application is configured to use FORM authentication then it is possible that a specially crafted URL could be used to trigger a redirect to an URL of the attackers choice.\r\n\r\nThe vulnerability is limited to the ROOT (default) web application.\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-core` to version 8.5.93, 9.0.80, 10.1.13, 11.0.0-M11 or higher.\n## References\n- [GitHub Commit](https://github.com/apache/tomcat/commit/4998ad745b67edeadefe541c94ed029b53933d3b)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/77c0ce2d169efa248b64b992e547aad549ec906b)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/bb4624a9f3e69d495182ebfa68d7983076407a27)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/e3703c9abb8fe0d5602f6ba8a8f11d4b6940815a)\n- [PoC](https://github.com/shiomiyan/CVE-2023-41080)\n- [Tomcat List Advisory](https://lists.apache.org/thread/71wvwprtx2j2m54fovq9zr7gbm2wow2f)\n",
+      "description": "## Overview\n[org.apache.tomcat.embed:tomcat-embed-core](https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core) is a Core Tomcat implementation.\n\nAffected versions of this package are vulnerable to Access Restriction Bypass. If the ROOT (default) web application is configured to use FORM authentication then it is possible that a specially crafted URL could be used to trigger a redirect to an URL of the attackers choice.\r\n\r\nThe vulnerability is limited to the ROOT (default) web application.\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-core` to version 8.5.93, 9.0.80, 10.1.13, 11.0.0-M11 or higher.\n## References\n- [GitHub Commit](https://github.com/apache/tomcat/commit/4998ad745b67edeadefe541c94ed029b53933d3b)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/77c0ce2d169efa248b64b992e547aad549ec906b)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/bb4624a9f3e69d495182ebfa68d7983076407a27)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/e3703c9abb8fe0d5602f6ba8a8f11d4b6940815a)\n- [PoC](https://github.com/shiomiyan/CVE-2023-41080)\n- [Tomcat List Advisory](https://lists.apache.org/thread/71wvwprtx2j2m54fovq9zr7gbm2wow2f)\n- [PoC in GitHub](https://github.com/sotiak/CVE-2023-41080)\n",
       "epssDetails": {
         "percentile": "0.92826",
         "probability": "0.06047",
@@ -10656,7 +11886,7 @@
       },
       "publicationTime": "2023-08-26T09:35:36.958923Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-08-27T02:01:20.887897Z",
+      "modificationTime": "2026-09-29T02:01:05.920801Z",
       "socialTrendAlert": false,
       "severityWithCritical": "medium",
       "from": [
@@ -12464,7 +13694,7 @@
           "severity": "critical",
           "baseScore": 9.2,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-07-15T14:03:44.306151Z"
+          "modificationTime": "2026-09-26T14:04:29.405145Z"
         },
         {
           "type": "secondary",
@@ -12473,7 +13703,7 @@
           "severity": "high",
           "baseScore": 8.1,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-07-15T14:03:44.306151Z"
+          "modificationTime": "2026-09-26T14:04:29.405145Z"
         },
         {
           "type": "secondary",
@@ -12496,8 +13726,8 @@
       ],
       "description": "## Overview\n[org.apache.tomcat.embed:tomcat-embed-core](https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core) is a Core Tomcat implementation.\n\nAffected versions of this package are vulnerable to Time-of-check Time-of-use (TOCTOU) Race Condition due to imcomplete mitigation advice associated with [CVE-2024-50379](https://security.snyk.io/vuln/SNYK-JAVA-ORGAPACHETOMCAT-8523184) in the file-handling process with servlet write enabled.\r\n\r\nIn addition to upgrading to the fixed version, users are advised to apply the following mitigations, depending on which version of Java they are using with Tomcat :\r\n\r\n1) running on Java 8 or Java 11: the system property `sun.io.useCanonCaches` must be explicitly set to false (it defaults to true)\r\n\r\n2) running on Java 17: the system property `sun.io.useCanonCaches`, if set, must be set to false (it defaults to false)\r\n\r\n3) running on Java 21 onwards: no further configuration is required (the system property and the problematic cache have been removed)\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-core` to version 9.0.98, 10.1.34, 11.0.2 or higher.\n## References\n- [Additional Protection](https://github.com/apache/tomcat/commit/0c75cd1e3ac85944fb8ecbcf88cc38e9fa1fe4d5)\n- [Apache Thread](https://lists.apache.org/thread/b2b9qrgjrz1kvo4ym8y2wkfdvwoq6qbp)\n- [Apache Tomcat Advisory](https://tomcat.apache.org/security-10.html#Fixed_in_Apache_Tomcat_10.1.34)\n- [Apache Tomcat Advisory](https://tomcat.apache.org/security-11.html#Fixed_in_Apache_Tomcat_11.0.2)\n- [Apache Tomcat Advisory](https://tomcat.apache.org/security-9.html#Fixed_in_Apache_Tomcat_9.0.98)\n- [Follow-up PR](https://github.com/apache/tomcat/pull/858)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/43b507ebac9d268b1ea3d908e296cc6e46795c00)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/631500b0c9b2a2a2abb707e3de2e10a5936e5d41)\n- [PoC](https://github.com/SleepingBag945/CVE-2024-50379)\n",
       "epssDetails": {
-        "percentile": "0.94692",
-        "probability": "0.09028",
+        "percentile": "0.95088",
+        "probability": "0.08969",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -12541,7 +13771,7 @@
       },
       "publicationTime": "2024-12-22T14:26:39.665860Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-07-15T14:03:44.306151Z",
+      "modificationTime": "2026-09-26T14:04:29.405145Z",
       "socialTrendAlert": false,
       "severityWithCritical": "critical",
       "from": [
@@ -12845,7 +14075,7 @@
           "severity": "medium",
           "baseScore": 6.9,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-09-25T02:01:54.686736Z"
+          "modificationTime": "2026-09-27T02:01:25.183523Z"
         },
         {
           "type": "secondary",
@@ -12854,7 +14084,7 @@
           "severity": "medium",
           "baseScore": 6.8,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-09-25T02:01:54.686736Z"
+          "modificationTime": "2026-09-27T02:01:25.183523Z"
         },
         {
           "type": "secondary",
@@ -12877,8 +14107,8 @@
       ],
       "description": "## Overview\n\nAffected versions of this package are vulnerable to Exposure of Private Personal Information to an Unauthorized Actor in WebSocket client during authentication. An attacker can obtain sensitive HTTP authentication headers by initiating a WebSocket handshake with a malicious host.\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-websocket` to version 8.0.1, 9.0.0.M1, 9.0.118, 10.1.55, 11.0.22 or higher.\n## References\n- [Apache Mailing List](https://lists.apache.org/thread/n61zwf75jrv09rz90j4jssncm244bwdb)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/b288a7a92d1dfe85c90bb1f485bcbbc66f4de1af)\n- [OSS Security Advisory](https://www.openwall.com/lists/oss-security/2026/05/12/14)\n",
       "epssDetails": {
-        "percentile": "0.52847",
-        "probability": "0.00747",
+        "percentile": "0.48865",
+        "probability": "0.00646",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -12917,7 +14147,7 @@
       },
       "publicationTime": "2026-05-13T10:04:42.055970Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-09-25T02:01:54.686736Z",
+      "modificationTime": "2026-09-27T02:01:25.183523Z",
       "socialTrendAlert": false,
       "severityWithCritical": "medium",
       "from": [
@@ -12931,6 +14161,162 @@
         "org.springframework.boot:spring-boot-starter-web@3.5.15",
         "org.springframework.boot:spring-boot-starter-tomcat@3.5.15",
         "org.apache.tomcat.embed:tomcat-embed-websocket@10.1.55"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "org.apache.tomcat.embed:tomcat-embed-websocket",
+      "version": "9.0.68"
+    },
+    {
+      "id": "SNYK-JAVA-ORGAPACHETOMCATEMBED-20302876",
+      "title": "Insufficient Session Expiration",
+      "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+      "credit": [
+        "0xCc.zhang"
+      ],
+      "semver": {
+        "vulnerable": [
+          "[9.0.0.M1, 9.0.121)",
+          "[10.1.0-M1, 10.1.59)",
+          "[11.0.0-M1, 11.0.25)"
+        ]
+      },
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "9.0.121",
+        "10.1.59",
+        "11.0.25"
+      ],
+      "patches": [],
+      "insights": {
+        "triageAdvice": null
+      },
+      "language": "java",
+      "severity": "medium",
+      "cvssScore": 5.3,
+      "functions": [],
+      "malicious": false,
+      "isDisputed": false,
+      "moduleName": "org.apache.tomcat.embed:tomcat-embed-websocket",
+      "references": [
+        {
+          "url": "https://lists.apache.org/thread/3j15vztszpyqss253mjq5v1kp7s6hooq",
+          "title": "Apache Mailing List"
+        },
+        {
+          "url": "https://github.com/apache/tomcat/commit/e617a5d483b78851d289ca8dc1d68c49b541b419",
+          "title": "GitHub Commit"
+        }
+      ],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+          "cvssV3BaseScore": 5.4,
+          "modificationTime": "2026-09-01T05:36:28.910373Z"
+        },
+        {
+          "assigner": "SUSE",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+          "cvssV3BaseScore": 6.5,
+          "modificationTime": "2026-09-15T11:04:21.122955Z"
+        }
+      ],
+      "cvssSources": [
+        {
+          "type": "primary",
+          "vector": "CVSS:4.0/AV:N/AC:L/AT:N/PR:L/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 5.3,
+          "cvssVersion": "4.0",
+          "modificationTime": "2026-10-02T14:03:56.669654Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+          "assigner": "Snyk",
+          "severity": "medium",
+          "baseScore": 5.4,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-02T14:03:56.669654Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:N",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 5.4,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-09-01T05:36:28.910373Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+          "assigner": "SUSE",
+          "severity": "medium",
+          "baseScore": 6.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-09-15T11:04:21.122955Z"
+        }
+      ],
+      "description": "## Overview\n\nAffected versions of this package are vulnerable to Insufficient Session Expiration due to the improper termination of WebSocket sessions when the associated HTTP session ends. An attacker can maintain access to resources beyond the intended session duration by establishing a WebSocket connection under an authenticated HTTP session and continuing to interact through the WebSocket after the HTTP session has expired.\r\n\r\n**Note:** This issue was fixed in Apache Tomcat 10.1.58 but the release vote for the 10.1.58 release candidate did not pass. Therefore, although users must download 10.1.59 to obtain a version that includes a fix for this issue, version 10.1.58 is not included in the list of affected versions.\n## Remediation\nUpgrade `org.apache.tomcat.embed:tomcat-embed-websocket` to version 9.0.121, 10.1.59, 11.0.25 or higher.\n## References\n- [Apache Mailing List](https://lists.apache.org/thread/3j15vztszpyqss253mjq5v1kp7s6hooq)\n- [GitHub Commit](https://github.com/apache/tomcat/commit/e617a5d483b78851d289ca8dc1d68c49b541b419)\n",
+      "epssDetails": {
+        "percentile": "0.36095",
+        "probability": "0.00441",
+        "modelVersion": "v2026.06.15"
+      },
+      "identifiers": {
+        "CVE": [
+          "CVE-2026-73180"
+        ],
+        "CWE": [
+          "CWE-613"
+        ]
+      },
+      "packageName": "org.apache.tomcat.embed:tomcat-embed-websocket",
+      "proprietary": false,
+      "creationTime": "2026-09-30T10:00:25.672371Z",
+      "functions_new": [],
+      "alternativeIds": [],
+      "disclosureTime": "2026-08-26T00:33:04Z",
+      "exploitDetails": {
+        "sources": [],
+        "maturityLevels": [
+          {
+            "type": "secondary",
+            "level": "Not Defined",
+            "format": "CVSSv3"
+          },
+          {
+            "type": "primary",
+            "level": "Not Defined",
+            "format": "CVSSv4"
+          }
+        ]
+      },
+      "packageManager": "maven",
+      "mavenModuleName": {
+        "groupId": "org.apache.tomcat.embed",
+        "artifactId": "tomcat-embed-websocket"
+      },
+      "publicationTime": "2026-09-30T10:00:25.831632Z",
+      "severityBasedOn": "CVSS",
+      "modificationTime": "2026-10-02T14:03:56.669654Z",
+      "socialTrendAlert": false,
+      "severityWithCritical": "medium",
+      "from": [
+        "com.vulnbank:vulnbank@1.0.0",
+        "org.springframework.boot:spring-boot-starter-web@2.7.5",
+        "org.springframework.boot:spring-boot-starter-tomcat@2.7.5",
+        "org.apache.tomcat.embed:tomcat-embed-websocket@9.0.68"
+      ],
+      "upgradePath": [
+        false,
+        "org.springframework.boot:spring-boot-starter-web@4.0.0",
+        "org.springframework.boot:spring-boot-starter-tomcat@4.0.0"
       ],
       "isUpgradable": true,
       "isPatchable": false,
@@ -13155,7 +14541,7 @@
           "severity": "high",
           "baseScore": 8.2,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-08-14T15:25:23.825996Z"
+          "modificationTime": "2026-09-26T14:05:19.438545Z"
         },
         {
           "type": "secondary",
@@ -13164,7 +14550,7 @@
           "severity": "medium",
           "baseScore": 5.9,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-08-14T15:25:23.825996Z"
+          "modificationTime": "2026-09-26T14:05:19.438545Z"
         },
         {
           "type": "secondary",
@@ -13178,8 +14564,8 @@
       ],
       "description": "## Overview\n[org.springframework:spring-beans](https://www.baeldung.com/spring-bean) is a package that is the basis for Spring Framework's IoC container. The BeanFactory interface provides an advanced configuration mechanism capable of managing any type of object.\n\nAffected versions of this package are vulnerable to Relative Path Traversal when deployed on non-compliant Servlet containers. An unauthenticated attacker could gain access to files and directories outside the intended web root.\r\n\r\n**Notes:**\r\n\r\n1) This is only exploitable if the application is deployed as a WAR or with an embedded Servlet container, the Servlet container does not reject suspicious sequences and the application serves static resources with Spring resource handling.\r\n\r\n2) Applications deployed on Apache Tomcat or Eclipse Jetty are not vulnerable, as long as default security features are not disabled in the configuration.\r\n\r\n3) This vulnerability was also fixed in the commercial versions 6.1.22 and 5.3.44.\n## Remediation\nUpgrade `org.springframework:spring-beans` to version 6.2.10 or higher.\n## References\n- [GitHub Commit](https://github.com/spring-projects/spring-framework/commit/3781ba223ed76823b99e9c699e0957b391e22bf9)\n- [GitHub Release](https://github.com/spring-projects/spring-framework/releases/tag/v6.2.10)\n- [Spring Release](https://spring.io/blog/2025/08/14/spring-framework-6-2-10-release-fixes-cve-2025-41242)\n- [Vendor Advisory](https://spring.io/security/cve-2025-41242)\n- [Nuclei Templates](https://github.com/projectdiscovery/nuclei-templates/blob/main/http/cves/2025/CVE-2025-41242.yaml)\n",
       "epssDetails": {
-        "percentile": "0.79139",
-        "probability": "0.02054",
+        "percentile": "0.81191",
+        "probability": "0.02127",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -13220,7 +14606,7 @@
       },
       "publicationTime": "2025-08-19T08:14:29.077518Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-08-14T15:25:23.825996Z",
+      "modificationTime": "2026-09-26T14:05:19.438545Z",
       "socialTrendAlert": false,
       "severityWithCritical": "high",
       "from": [
@@ -14507,7 +15893,15 @@
           "title": "Spring Security Advisory"
         }
       ],
-      "cvssDetails": [],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N",
+          "cvssV3BaseScore": 5.4,
+          "modificationTime": "2026-09-25T13:34:00.906021Z"
+        }
+      ],
       "cvssSources": [
         {
           "type": "primary",
@@ -14516,7 +15910,7 @@
           "severity": "high",
           "baseScore": 7.1,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-09-24T14:11:25.908662Z"
+          "modificationTime": "2026-09-25T13:34:01.056496Z"
         },
         {
           "type": "secondary",
@@ -14525,7 +15919,16 @@
           "severity": "medium",
           "baseScore": 6.9,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-09-24T14:11:25.908662Z"
+          "modificationTime": "2026-09-25T13:34:01.056496Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 5.4,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-09-25T13:34:00.906021Z"
         }
       ],
       "description": "## Overview\n[org.springframework:spring-web](https://github.com/spring-projects/spring-framework) is a package that provides a comprehensive programming and configuration model for modern Java-based enterprise applications - on any kind of deployment platform.\n\nAffected versions of this package are vulnerable to Cross-site Scripting (XSS) via the `Errors.getFieldErrors()` or `Errors.getFieldError()` accessors when rendering field errors with HTML escaping enabled. An attacker can inject arbitrary HTML or JavaScript code by supplying crafted input that is not properly escaped.\n## Details\n\nCross-site scripting (or XSS) is a code vulnerability that occurs when an attacker “injects” a malicious script into an otherwise trusted website. The injected script gets downloaded and executed by the end user’s browser when the user interacts with the compromised website.\n\nThis is done by escaping the context of the web application; the web application then delivers that data to its users along with other trusted dynamic content, without validating it. The browser unknowingly executes malicious script on the client side (through client-side languages; usually JavaScript or HTML)  in order to perform actions that are otherwise typically blocked by the browser’s Same Origin Policy.\n\nInjecting malicious code is the most prevalent manner by which XSS is exploited; for this reason, escaping characters in order to prevent this manipulation is the top method for securing code against this vulnerability.\n\nEscaping means that the application is coded to mark key characters, and particularly key characters included in user input, to prevent those characters from being interpreted in a dangerous context. For example, in HTML, `<` can be coded as  `&lt`; and `>` can be coded as `&gt`; in order to be interpreted and displayed as themselves in text, while within the code itself, they are used for HTML tags. If malicious content is injected into an application that escapes special characters and that malicious content uses `<` and `>` as HTML tags, those characters are nonetheless not interpreted as HTML tags by the browser if they’ve been correctly escaped in the application code and in this way the attempted attack is diverted.\n \nThe most prominent use of XSS is to steal cookies (source: OWASP HttpOnly) and hijack user sessions, but XSS exploits have been used to expose sensitive information, enable access to privileged services and functionality and deliver malware. \n\n### Types of attacks\nThere are a few methods by which XSS can be manipulated:\n\n|Type|Origin|Description|\n|--|--|--|\n|**Stored**|Server|The malicious code is inserted in the application (usually as a link) by the attacker. The code is activated every time a user clicks the link.|\n|**Reflected**|Server|The attacker delivers a malicious link externally from the vulnerable web site application to a user. When clicked, malicious code is sent to the vulnerable web site, which reflects the attack back to the user’s browser.| \n|**DOM-based**|Client|The attacker forces the user’s browser to render a malicious page. The data in the page itself delivers the cross-site scripting data.|\n|**Mutated**| |The attacker injects code that appears safe, but is then rewritten and modified by the browser, while parsing the markup. An example is rebalancing unclosed quotation marks or even adding quotation marks to unquoted parameters.|\n\n### Affected environments\nThe following environments are susceptible to an XSS attack:\n\n* Web servers\n* Application servers\n* Web application environments\n\n### How to prevent\nThis section describes the top best practices designed to specifically protect your code: \n\n* Sanitize data input in an HTTP request before reflecting it back, ensuring all data is validated, filtered or escaped before echoing anything back to the user, such as the values of query parameters during searches. \n* Convert special characters such as `?`, `&`, `/`, `<`, `>` and spaces to their respective HTML or URL encoded equivalents. \n* Give users the option to disable client-side scripts.\n* Redirect invalid requests.\n* Detect simultaneous logins, including those from two separate IP addresses, and invalidate those sessions.\n* Use and enforce a Content Security Policy (source: Wikipedia) to disable any features that might be manipulated for an XSS attack.\n* Read the documentation for any of the libraries referenced in your code to understand which elements allow for embedded HTML.\n\n## Remediation\nUpgrade `org.springframework:spring-web` to version 7.0.9 or higher.\n## References\n- [GitHub Commit](https://github.com/spring-projects/spring-framework/commit/ac0f8be0d821d0a51f02b4ef504755ff35ccd464)\n- [Spring Security Advisory](https://spring.io/security/cve-2026-59281)\n",
@@ -14570,7 +15973,7 @@
       },
       "publicationTime": "2026-08-26T10:34:57.879374Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-09-24T14:11:25.908662Z",
+      "modificationTime": "2026-09-25T13:34:01.056496Z",
       "socialTrendAlert": false,
       "severityWithCritical": "high",
       "from": [
@@ -16165,7 +17568,15 @@
           "title": "Spring Security Advisory"
         }
       ],
-      "cvssDetails": [],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+          "cvssV3BaseScore": 5.9,
+          "modificationTime": "2026-09-25T13:33:55.625533Z"
+        }
+      ],
       "cvssSources": [
         {
           "type": "primary",
@@ -16174,7 +17585,7 @@
           "severity": "high",
           "baseScore": 8.2,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-09-24T14:15:17.528862Z"
+          "modificationTime": "2026-09-25T13:33:56.011079Z"
         },
         {
           "type": "secondary",
@@ -16183,7 +17594,16 @@
           "severity": "medium",
           "baseScore": 5.9,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-09-24T14:15:17.528862Z"
+          "modificationTime": "2026-09-25T13:33:56.011079Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 5.9,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-09-25T13:33:55.625533Z"
         }
       ],
       "description": "## Overview\n[org.springframework:spring-webmvc](https://mvnrepository.com/artifact/org.springframework/spring-webmvc) is a package that provides Model-View-Controller (MVC) architecture and ready components that can be used to develop flexible and loosely coupled web applications.\n\nAffected versions of this package are vulnerable to Direct Request ('Forced Browsing') via shared caching of static resource resolutions across resource handlers. An attacker can gain unauthorized access to protected resources when a shared cache stores a resource resolution result from a publicly accessible handler and subsequently reuses it for a protected handler serving a resource with the same name. This can cause resources that should require authentication to be served without proper access control checks.\r\n\r\n**Note:** This is only exploitable if the application uses Spring MVC or Spring WebFlux, configures multiple resource handlers with different resource locations, protects at least one handler with authentication, and uses a shared cache for resource resolution.\n## Remediation\nUpgrade `org.springframework:spring-webmvc` to version 6.0.0, 6.2.19, 7.0.8 or higher.\n## References\n- [GitHub Commit](https://github.com/spring-projects/spring-framework/commit/46867fad81dc8a3c9552d96750f5e37b1a4edd75)\n- [GitHub Release](https://github.com/spring-projects/spring-framework/releases/tag/v6.2.19)\n- [GitHub Release](https://github.com/spring-projects/spring-framework/releases/tag/v7.0.8)\n- [Spring Security Advisory](https://spring.io/security/cve-2026-41841)\n",
@@ -16228,7 +17648,7 @@
       },
       "publicationTime": "2026-06-09T12:56:08.919743Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-09-24T14:15:17.528862Z",
+      "modificationTime": "2026-09-25T13:33:56.011079Z",
       "socialTrendAlert": false,
       "severityWithCritical": "high",
       "from": [
@@ -16824,7 +18244,15 @@
           "title": "Spring Security Advisory"
         }
       ],
-      "cvssDetails": [],
+      "cvssDetails": [
+        {
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+          "cvssV3BaseScore": 6.5,
+          "modificationTime": "2026-09-26T13:33:01.918793Z"
+        }
+      ],
       "cvssSources": [
         {
           "type": "primary",
@@ -16833,7 +18261,7 @@
           "severity": "low",
           "baseScore": 2.1,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-09-24T14:14:38.297041Z"
+          "modificationTime": "2026-09-26T13:33:02.154860Z"
         },
         {
           "type": "secondary",
@@ -16842,7 +18270,16 @@
           "severity": "low",
           "baseScore": 2.6,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-09-24T14:14:38.297041Z"
+          "modificationTime": "2026-09-26T13:33:02.154860Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+          "assigner": "Red Hat",
+          "severity": "medium",
+          "baseScore": 6.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-09-26T13:33:01.918793Z"
         }
       ],
       "description": "## Overview\n[org.springframework:spring-webmvc](https://mvnrepository.com/artifact/org.springframework/spring-webmvc) is a package that provides Model-View-Controller (MVC) architecture and ready components that can be used to develop flexible and loosely coupled web applications.\n\nAffected versions of this package are vulnerable to Improper Neutralization in the `ServerResponse.sse` process. An attacker can corrupt the data stream sent to other users by injecting malicious or malformed data into the stream when the application uses plain text messages and the attacker controls the streamed data. This is only exploitable if the application uses Spring MVC's functional web framework, streams data using Server Sent Events (SSE), does not use a structured message format like JSON, and allows an attacker to control the streamed data.\n## Remediation\nUpgrade `org.springframework:spring-webmvc` to version 7.0.9 or higher.\n## References\n- [Spring Security Advisory](https://spring.io/security/cve-2026-59313)\n",
@@ -16887,7 +18324,7 @@
       },
       "publicationTime": "2026-08-26T11:44:07.762024Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-09-24T14:14:38.297041Z",
+      "modificationTime": "2026-09-26T13:33:02.154860Z",
       "socialTrendAlert": false,
       "severityWithCritical": "low",
       "from": [
@@ -17397,7 +18834,7 @@
           "severity": "high",
           "baseScore": 8.7,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-08-16T15:29:53.790076Z"
+          "modificationTime": "2026-09-25T21:46:37.596568Z"
         },
         {
           "type": "secondary",
@@ -17406,7 +18843,7 @@
           "severity": "high",
           "baseScore": 7.5,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-08-16T15:29:53.790076Z"
+          "modificationTime": "2026-09-25T21:46:37.596568Z"
         },
         {
           "type": "secondary",
@@ -17420,8 +18857,8 @@
       ],
       "description": "## Overview\n[org.springframework:spring-webmvc](https://mvnrepository.com/artifact/org.springframework/spring-webmvc) is a package that provides Model-View-Controller (MVC) architecture and ready components that can be used to develop flexible and loosely coupled web applications.\n\nAffected versions of this package are vulnerable to Path Traversal through the functional web frameworks `WebMvc.fn` or `WebFlux.fn`. An attacker can craft malicious HTTP requests and obtain any file on the file system that is also accessible.\r\n\r\n**Note:**\r\nThis is similar to [CVE-2024-38816](https://security.snyk.io/vuln/SNYK-JAVA-ORGSPRINGFRAMEWORK-7945490), but with different input.\n## Remediation\nUpgrade `org.springframework:spring-webmvc` to version 6.1.14 or higher.\n## References\n- [GitHub Commit](https://github.com/spring-projects/spring-framework/commit/fb7890d73975a3d9e0763e0926df2bd0a608e87e)\n- [Spring Security Advisory](https://spring.io/security/cve-2024-38819)\n- [PoC in GitHub](https://github.com/masa42/CVE-2024-38819-POC)\n- [Nuclei Templates](https://github.com/projectdiscovery/nuclei-templates/blob/main/http/cves/2024/CVE-2024-38819.yaml)\n",
       "epssDetails": {
-        "percentile": "0.98892",
-        "probability": "0.54862",
+        "percentile": "0.99015",
+        "probability": "0.56040",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -17463,7 +18900,7 @@
       },
       "publicationTime": "2024-10-18T09:43:36.202769Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-08-16T15:29:53.790076Z",
+      "modificationTime": "2026-09-25T21:46:37.596568Z",
       "socialTrendAlert": false,
       "severityWithCritical": "high",
       "from": [
@@ -25780,17 +27217,19 @@
     "autoApproveIgnores": false,
     "approvalWorkflowEnabled": false
   },
-  "summary": "169 vulnerable dependency paths",
+  "summary": "177 vulnerable dependency paths",
   "remediation": {
     "unresolved": [],
     "upgrade": {
-      "com.h2database:h2@2.1.214": {
-        "upgradeTo": "com.h2database:h2@2.2.220",
+      "com.mysql:mysql-connector-j@8.0.31": {
+        "upgradeTo": "com.mysql:mysql-connector-j@8.2.0",
         "upgrades": [
-          "com.h2database:h2@2.1.214"
+          "com.mysql:mysql-connector-j@8.0.31",
+          "com.mysql:mysql-connector-j@8.0.31"
         ],
         "vulns": [
-          "SNYK-JAVA-COMH2DATABASE-3146851"
+          "SNYK-JAVA-COMMYSQL-6075938",
+          "SNYK-JAVA-COMMYSQL-5441540"
         ]
       },
       "io.jsonwebtoken:jjwt@0.9.1": {
@@ -25940,6 +27379,11 @@
           "org.apache.tomcat.embed:tomcat-embed-core@9.0.68",
           "org.apache.tomcat.embed:tomcat-embed-core@9.0.68",
           "org.apache.tomcat.embed:tomcat-embed-core@9.0.68",
+          "org.apache.tomcat.embed:tomcat-embed-core@9.0.68",
+          "org.apache.tomcat.embed:tomcat-embed-core@9.0.68",
+          "org.apache.tomcat.embed:tomcat-embed-core@9.0.68",
+          "org.apache.tomcat.embed:tomcat-embed-core@9.0.68",
+          "org.apache.tomcat.embed:tomcat-embed-websocket@9.0.68",
           "org.springframework:spring-beans@5.3.23",
           "org.springframework:spring-web@5.3.23",
           "org.springframework:spring-web@5.3.23",
@@ -26018,6 +27462,8 @@
           "ch.qos.logback:logback-classic@1.2.11",
           "ch.qos.logback:logback-classic@1.2.11",
           "org.apache.tomcat.embed:tomcat-embed-core@9.0.68",
+          "org.apache.tomcat.embed:tomcat-embed-core@9.0.68",
+          "org.apache.tomcat.embed:tomcat-embed-core@9.0.68",
           "org.springframework:spring-core@5.3.23",
           "org.springframework:spring-web@5.3.23",
           "org.springframework:spring-webmvc@5.3.23",
@@ -26059,6 +27505,11 @@
           "SNYK-JAVA-ORGAPACHETOMCATEMBED-17733895",
           "SNYK-JAVA-ORGAPACHETOMCATEMBED-17734715",
           "SNYK-JAVA-ORGAPACHETOMCATEMBED-17734718",
+          "SNYK-JAVA-ORGAPACHETOMCATEMBED-20302843",
+          "SNYK-JAVA-ORGAPACHETOMCATEMBED-20302874",
+          "SNYK-JAVA-ORGAPACHETOMCATEMBED-20302889",
+          "SNYK-JAVA-ORGAPACHETOMCATEMBED-20304748",
+          "SNYK-JAVA-ORGAPACHETOMCATEMBED-20302876",
           "SNYK-JAVA-ORGSPRINGFRAMEWORK-19267072",
           "SNYK-JAVA-ORGSPRINGFRAMEWORK-19267076",
           "SNYK-JAVA-ORGSPRINGFRAMEWORK-19267078",
@@ -26137,6 +27588,8 @@
           "SNYK-JAVA-CHQOSLOGBACK-6094942",
           "SNYK-JAVA-CHQOSLOGBACK-6097492",
           "SNYK-JAVA-ORGAPACHETOMCATEMBED-10676854",
+          "SNYK-JAVA-ORGAPACHETOMCATEMBED-20302842",
+          "SNYK-JAVA-ORGAPACHETOMCATEMBED-20302886",
           "SNYK-JAVA-ORGSPRINGFRAMEWORK-17254051",
           "SNYK-JAVA-ORGSPRINGFRAMEWORK-17255245",
           "SNYK-JAVA-ORGSPRINGFRAMEWORK-17254062",
@@ -26181,7 +27634,7 @@
     "ignore": [],
     "patch": []
   },
-  "uniqueCount": 169,
+  "uniqueCount": 177,
   "projectName": "com.vulnbank:vulnbank",
   "displayTargetFile": "pom.xml",
   "hasUnknownVersions": false,

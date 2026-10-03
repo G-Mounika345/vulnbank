@@ -45,7 +45,7 @@
   <div class="header">
     <div class="kicker">Static Application Security Testing</div>
     <h1>VulnBank &mdash; SAST Report (Semgrep)</h1>
-    <div class="sub">Generated Mon, 28 Sep 2026 08:26:26 GMT &middot; Rulesets: owasp-top-ten, security-audit, java</div>
+    <div class="sub">Generated Sat, 03 Oct 2026 05:11:43 GMT &middot; Rulesets: owasp-top-ten, security-audit, java</div>
   </div>
   <div class="panel">
     <div class="stats">
@@ -82,7 +82,7 @@
     76 |     public Object loginDebug(@RequestParam String username, @RequestParam String password) throws Exception {
 &gt;   77 |         String sql = "SELECT * FROM users WHERE username = '" + username + "'";
     78 |         // Executed via JPA's native query facility using the raw string.
-    79 |         return userRepository.rawLogin(username, md5(password));</pre>
+    79 |         return userRepository.rawLogin(username, md5(password));</pre>
       <div class="rule-id">Rule: <code>java.spring.security.injection.tainted-sql-string.tainted-sql-string</code></div>
       <div class="refs">Ref: <a href="https://docs.oracle.com/javase/7/docs/api/java/sql/PreparedStatement.html">https://docs.oracle.com/javase/7/docs/api/java/sql/PreparedStatement.html</a></div>
     </div>
@@ -106,7 +106,7 @@
     26 |     public String fetchRate(@RequestParam String source) throws Exception {
 &gt;   27 |         URL url = new URL(source); // no scheme/host allow-list at all
     28 |         URLConnection conn = url.openConnection();
-    29 |         conn.setConnectTimeout(3000);</pre>
+    29 |         conn.setConnectTimeout(3000);</pre>
       <div class="rule-id">Rule: <code>java.spring.security.injection.tainted-url-host.tainted-url-host</code></div>
       <div class="refs">Ref: <a href="https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html">https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html</a></div>
     </div>
@@ -130,7 +130,7 @@
     36 | 
 &gt;   37 |         File target = new File(STATEMENT_DIR + filename); // &lt;-- path traversal
     38 |         Resource resource = new FileSystemResource(target);
-    39 |         return ResponseEntity.ok(resource);</pre>
+    39 |         return ResponseEntity.ok(resource);</pre>
       <div class="rule-id">Rule: <code>java.spring.security.injection.tainted-file-path.tainted-file-path</code></div>
       <div class="refs">Ref: <a href="https://owasp.org/www-community/attacks/Path_Traversal">https://owasp.org/www-community/attacks/Path_Traversal</a></div>
     </div>
@@ -154,7 +154,7 @@
     53 |         // separators - another traversal angle, this time on write.
 &gt;   54 |         File dest = new File(UPLOAD_DIR + file.getOriginalFilename());
     55 |         file.transferTo(dest);
-    56 |         return "Uploaded to " + dest.getPath();</pre>
+    56 |         return "Uploaded to " + dest.getPath();</pre>
       <div class="rule-id">Rule: <code>java.spring.security.injection.tainted-file-path.tainted-file-path</code></div>
       <div class="refs">Ref: <a href="https://owasp.org/www-community/attacks/Path_Traversal">https://owasp.org/www-community/attacks/Path_Traversal</a></div>
     </div>
@@ -178,7 +178,7 @@
     41 |         // which is what a fix would add.
 &gt;   42 |         DocumentBuilder builder = factory.newDocumentBuilder();
     43 |         Document doc = builder.parse(new ByteArrayInputStream(xml.getBytes()));
-    44 |         Element root = doc.getDocumentElement();</pre>
+    44 |         Element root = doc.getDocumentElement();</pre>
       <div class="rule-id">Rule: <code>java.lang.security.audit.xxe.documentbuilderfactory-disallow-doctype-decl-missing.documentbuilderfactory-disallow-doctype-decl-missing</code></div>
       <div class="refs">Ref: <a href="https://semgrep.dev/blog/2022/xml-security-in-java">https://semgrep.dev/blog/2022/xml-security-in-java</a>, <a href="https://semgrep.dev/docs/cheat-sheets/java-xxe/">https://semgrep.dev/docs/cheat-sheets/java-xxe/</a>, <a href="https://blog.sonarsource.com/secure-xml-processor">https://blog.sonarsource.com/secure-xml-processor</a>, <a href="https://xerces.apache.org/xerces2-j/features.html">https://xerces.apache.org/xerces2-j/features.html</a></div>
     </div>
@@ -202,7 +202,7 @@
      5 | # secrets and memory contents. Try: http://localhost:8080/actuator
 &gt;    6 | management.endpoints.web.exposure.include=*
      7 | management.endpoint.env.show-values=ALWAYS
-     8 | </pre>
+     8 | </pre>
       <div class="rule-id">Rule: <code>java.spring.security.audit.spring-actuator-fully-enabled.spring-actuator-fully-enabled</code></div>
       <div class="refs">Ref: <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#production-ready-endpoints-exposing-endpoints">https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#production-ready-endpoints-exposing-endpoints</a>, <a href="https://medium.com/walmartglobaltech/perils-of-spring-boot-actuators-misconfiguration-185c43a0f785">https://medium.com/walmartglobaltech/perils-of-spring-boot-actuators-misconfiguration-185c43a0f785</a>, <a href="https://blog.maass.xyz/spring-actuator-security-part-1-stealing-secrets-using-spring-actuators">https://blog.maass.xyz/spring-actuator-security-part-1-stealing-secrets-using-spring-actuators</a></div>
     </div>
@@ -227,7 +227,7 @@
 &gt;   31 |         http
 &gt;   32 |             .csrf().disable()
     33 |             .cors().configurationSource(corsConfigurationSource())
-    34 |             .and()</pre>
+    34 |             .and()</pre>
       <div class="rule-id">Rule: <code>java.spring.security.audit.spring-csrf-disabled.spring-csrf-disabled</code></div>
       <div class="refs">Ref: <a href="https://owasp.org/Top10/A01_2021-Broken_Access_Control">https://owasp.org/Top10/A01_2021-Broken_Access_Control</a></div>
     </div>
@@ -251,7 +251,7 @@
     61 |             // JS (session theft via XSS) and sendable cross-site.
 &gt;   62 |             response.addCookie(cookie);
     63 |             return "redirect:/dashboard?user=" + user.getUsername();
-    64 |         }</pre>
+    64 |         }</pre>
       <div class="rule-id">Rule: <code>java.lang.security.audit.cookie-missing-httponly.cookie-missing-httponly</code></div>
       <div class="refs">Ref: <a href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration">https://owasp.org/Top10/A05_2021-Security_Misconfiguration</a></div>
     </div>
@@ -275,7 +275,7 @@
     61 |             // JS (session theft via XSS) and sendable cross-site.
 &gt;   62 |             response.addCookie(cookie);
     63 |             return "redirect:/dashboard?user=" + user.getUsername();
-    64 |         }</pre>
+    64 |         }</pre>
       <div class="rule-id">Rule: <code>java.lang.security.audit.cookie-missing-secure-flag.cookie-missing-secure-flag</code></div>
       <div class="refs">Ref: <a href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration">https://owasp.org/Top10/A05_2021-Security_Misconfiguration</a></div>
     </div>
@@ -299,7 +299,7 @@
     86 |         cookie.setMaxAge(0);
 &gt;   87 |         response.addCookie(cookie);
     88 |         return "redirect:/login";
-    89 |     }</pre>
+    89 |     }</pre>
       <div class="rule-id">Rule: <code>java.lang.security.audit.cookie-missing-httponly.cookie-missing-httponly</code></div>
       <div class="refs">Ref: <a href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration">https://owasp.org/Top10/A05_2021-Security_Misconfiguration</a></div>
     </div>
@@ -323,7 +323,7 @@
     86 |         cookie.setMaxAge(0);
 &gt;   87 |         response.addCookie(cookie);
     88 |         return "redirect:/login";
-    89 |     }</pre>
+    89 |     }</pre>
       <div class="rule-id">Rule: <code>java.lang.security.audit.cookie-missing-secure-flag.cookie-missing-secure-flag</code></div>
       <div class="refs">Ref: <a href="https://owasp.org/Top10/A05_2021-Security_Misconfiguration">https://owasp.org/Top10/A05_2021-Security_Misconfiguration</a></div>
     </div>
@@ -347,7 +347,7 @@
     91 |     private String md5(String input) throws Exception {
 &gt;   92 |         MessageDigest md = MessageDigest.getInstance("MD5"); // A02: weak/broken hash algorithm
     93 |         byte[] digest = md.digest(input.getBytes());
-    94 |         StringBuilder sb = new StringBuilder();</pre>
+    94 |         StringBuilder sb = new StringBuilder();</pre>
       <div class="rule-id">Rule: <code>java.lang.security.audit.crypto.use-of-md5.use-of-md5</code></div>
       <div class="refs">Ref: <a href="https://owasp.org/Top10/A02_2021-Cryptographic_Failures">https://owasp.org/Top10/A02_2021-Cryptographic_Failures</a></div>
     </div>
