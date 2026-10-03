@@ -68,5 +68,15 @@
     "Finding Count": 1,
     "Severity": "High",
     "Description": "h2. Summary\nAll Spring Boot Actuator endpoints are exposed with no restriction (application.properties, line 6), including endpoints that leak configuration, environment variables, and heap dumps. CWE-200: Exposure of Sensitive Information to an Unauthorized Actor. OWASP 2021 category: A01 Broken Access Control. Detected by Semgrep.\n\nh2. Findings\n||Tool||Rule / Check ID||Line||Severity||\n|Semgrep|java.spring.security.audit.spring-actuator-fully-enabled|6|High (confidence: medium, likelihood: medium, impact: high)|\n\nh2. Notes\n* Restrict `management.endpoints.web.exposure.include` to only the endpoints actually needed (typically just `health`), rather than `*`.\n* Put any remaining exposed management endpoints behind authentication, and consider serving them on a separate internal-only management port (`management.server.port`).\n* Audit `/actuator/env` and `/actuator/heapdump` specifically - these are the two most commonly abused for credential/secret leakage once actuator is left open."
+  },
+  {
+    "Summary": "[SAST] Insecure Hashing Algorithm (MD5) — AccountController.java",
+    "Issue Type": "Bug",
+    "Priority": "Highest",
+    "Component": "AccountController.java",
+    "Labels": "sast,vulnerability,owasp-a02,accountcontroller,pending-rescan",
+    "Finding Count": 1,
+    "Severity": "Critical",
+    "Description": "h2. Summary\nPasswords are re-hashed with MD5 in the new admin \"edit user\" feature (AccountController.java, line 191), the same cryptographically broken algorithm already flagged in AuthController.java. CWE-328: Use of Weak Hash. OWASP 2021 category: A02 Cryptographic Failures. Identified by manual code review matching the exact pattern Semgrep (java.lang.security.audit.crypto.use-of-md5) and SonarQube (java:S4790) already confirmed elsewhere in this codebase; the automated SAST re-scan that would confirm this independently failed this run due to an unrelated Docker/SonarQube infrastructure issue (build #13) and should be re-run to get tool-verified confirmation.\n\nh2. Findings\n||Tool||Rule / Check ID||Line||Severity||\n|Manual review (pending SAST re-scan)|Same pattern as java.lang.security.audit.crypto.use-of-md5 / java:S4790|191|Critical (expected, matching existing AuthController.java finding)|\n\nh2. Notes\n* Replace MD5 with a password-hashing algorithm designed for that purpose - bcrypt, Argon2, or PBKDF2 - via Spring Security's PasswordEncoder abstraction (e.g. BCryptPasswordEncoder).\n* This is the same underlying weakness as the existing AuthController.java MD5 ticket - consider fixing both call sites together via a single shared password-hashing utility instead of patching each in isolation.\n* Re-run the Semgrep/SonarQube SAST stages (with SonarQube already running beforehand this time) to get tool-verified confirmation and remove the 'pending-rescan' label."
   }
 ]

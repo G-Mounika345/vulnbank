@@ -430,5 +430,21 @@
     "Dependency Type": "Transitive",
     "Maven Scope": "compile",
     "Brought In By": "spring-boot-starter-web"
+  },
+  {
+    "Summary": "[SCA] Upgrade mysql-connector-j — 2 known vulnerabilities (High)",
+    "Issue Type": "Bug",
+    "Priority": "High",
+    "Component": "mysql-connector-j",
+    "Labels": "security,dependency-upgrade,mysql-connector-j,direct-dependency,scope-runtime",
+    "Finding Count": 2,
+    "Worst Priority": "P2 - High",
+    "Current Version(s)": "8.0.31",
+    "Recommended Fix Version(s)": "8.2.0",
+    "CVE/ID List": "CVE-2023-22102, CVE-2023-21971",
+    "Description": "h2. Summary\nComponent *mysql-connector-j* has *2* known vulnerabilities identified by Dependency-Check / Snyk scans.\nCurrent version(s) in use: 8.0.31\nRecommended target version(s): 8.2.0\n\nh2. Findings\n||Priority||CVE / ID||Title||CVSS||Exploit Maturity||Fix||\n|P2 - High|CVE-2023-22102|CWE-284 Access Control Bypass (Oracle MySQL Connector/J takeover)|8.3 HIGH|Not Defined|Upgrade com.mysql:mysql-connector-j to version 8.2.0 or higher.|\n|P3 - Medium|CVE-2023-21971|CWE-94 Remote Code Execution (RCE)|5.3 MEDIUM|Not Defined|Upgrade com.mysql:mysql-connector-j to version 8.0.33 or higher.|\n\nh2. Notes\n* Suggested mitigation: upgrade *mysql-connector-j* directly in pom.xml to one of: 8.2.0.\n* This dependency was introduced when the datastore was migrated from in-memory H2 to MySQL; it did not exist in the original dependency tree this backlog was triaged from.\n* Reachability, business criticality and remediation-effort assessment for each finding should be added to the master CSV (vulnbank_vulnerability_triage.csv) on next full triage pass.\n* Filed from automated re-scan after the MySQL migration (Jenkins build #13) — close this ticket once the component is upgraded to the recommended version and a re-scan shows no regressions.",
+    "Dependency Type": "Direct",
+    "Maven Scope": "runtime",
+    "Brought In By": "(direct)"
   }
 ]
