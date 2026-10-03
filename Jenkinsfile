@@ -91,9 +91,14 @@ pipeline {
                         // Jenkins service (running as SYSTEM) can't see - Python's user
                         // site-packages resolution is tied to the calling account's profile.
                         // Running it via the official Docker image sidesteps that entirely.
+                        // -u root: the semgrep/semgrep image's default non-root user has no
+                        // write access to the bind-mounted Windows volume, which was causing
+                        // "[Errno 13] Permission denied" on --output and silently leaving the
+                        // report built from stale results. Running as root in the (disposable,
+                        // --rm'd) container sidesteps that permission mapping issue.
                         def status = bat(
                             returnStatus: true,
-                            script: "docker run --rm -v \"%WORKSPACE%\\vulnbank:/src\" semgrep/semgrep semgrep scan --config=p/owasp-top-ten --config=p/security-audit --config=p/java --json --output=/src/${SAST_DIR}/semgrep/semgrep-results.json /src/src"
+                            script: "docker run --rm -u root -v \"%WORKSPACE%\\vulnbank:/src\" semgrep/semgrep semgrep scan --config=p/owasp-top-ten --config=p/security-audit --config=p/java --json --output=/src/${SAST_DIR}/semgrep/semgrep-results.json /src/src"
                         )
                         if (fileExists("${SAST_DIR}/semgrep/semgrep-results.json")) {
                             bat "node ..\\scripts\\build-semgrep-report.js ${SAST_DIR}\\semgrep\\semgrep-results.json . ${SAST_DIR}\\semgrep\\semgrep-report.html"
@@ -111,16 +116,27 @@ pipeline {
                 dir('vulnbank') {
                     withCredentials([string(credentialsId: 'sonarqube-token', variable: 'SONAR_TOKEN')]) {
                         script {
-                            def status = bat(
+                            def scanStatus = bat(
                                 returnStatus: true,
                                 script: "mvn -q org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.host.url=%SONAR_HOST_URL% -Dsonar.token=%SONAR_TOKEN% -Dsonar.projectKey=vulnbank -Dsonar.projectName=VulnBank"
                             )
-                            bat "node ..\\scripts\\fetch-sonarqube-data.js %SONAR_HOST_URL% %SONAR_TOKEN% vulnbank ${SAST_DIR}\\sonarqube"
-                            if (fileExists("${SAST_DIR}/sonarqube/sonarqube-issues-raw.json")) {
+                            // returnStatus: true here too - previously this was a bare `bat`
+                            // call, so when SonarQube was unreachable (ECONNREFUSED) the node
+                            // script's nonzero exit threw a hard pipeline exception instead of
+                            // degrading gracefully like every other optional scanner stage,
+                            // which is why the whole build ended FAILURE instead of UNSTABLE.
+                            def fetchStatus = bat(
+                                returnStatus: true,
+                                script: "node ..\\scripts\\fetch-sonarqube-data.js %SONAR_HOST_URL% %SONAR_TOKEN% vulnbank ${SAST_DIR}\\sonarqube"
+                            )
+                            if (fetchStatus == 0 && fileExists("${SAST_DIR}/sonarqube/sonarqube-issues-raw.json")) {
                                 bat "node ..\\scripts\\build-sonarqube-report.js ${SAST_DIR}\\sonarqube\\sonarqube-issues-raw.json ${SAST_DIR}\\sonarqube\\sonarqube-rules-raw.json ${SAST_DIR}\\sonarqube\\sonarqube-measures-raw.json vulnbank %SONAR_HOST_URL% ${SAST_DIR}\\sonarqube\\sonarqube-report.html"
                             }
-                            if (status != 0) {
-                                unstable("SonarQube scan exited with status ${status}")
+                            if (scanStatus != 0) {
+                                unstable("SonarQube scan exited with status ${scanStatus}")
+                            }
+                            if (fetchStatus != 0) {
+                                unstable("Fetching SonarQube issue data failed with status ${fetchStatus}")
                             }
                         }
                     }
