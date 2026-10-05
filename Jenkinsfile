@@ -87,18 +87,24 @@ pipeline {
                 dir('vulnbank') {
                     script {
                         bat "if not exist ${SAST_DIR}\\semgrep mkdir ${SAST_DIR}\\semgrep"
+                        // Delete any previous output file before each run. Root cause of the
+                        // recurring "[Errno 13] Permission denied" on --output: the existing
+                        // semgrep-results.json carries a stale Windows ACL (BUILTIN\Users:
+                        // Read+Execute only, no Write) from however it was first created, and
+                        // Docker's bind-mount write is blocked trying to overwrite it in place -
+                        // even running the container as root doesn't help, since that ACL is
+                        // enforced on the Windows host side, outside the container's user
+                        // namespace entirely. The parent directory's ACL *does* grant Users
+                        // write access, so removing the stale file first lets Docker create a
+                        // brand-new one that correctly inherits the directory's permissions.
+                        bat "if exist ${SAST_DIR}\\semgrep\\semgrep-results.json del ${SAST_DIR}\\semgrep\\semgrep-results.json"
                         // Semgrep only exists as a per-user pip install on this host, which the
                         // Jenkins service (running as SYSTEM) can't see - Python's user
                         // site-packages resolution is tied to the calling account's profile.
                         // Running it via the official Docker image sidesteps that entirely.
-                        // -u root: the semgrep/semgrep image's default non-root user has no
-                        // write access to the bind-mounted Windows volume, which was causing
-                        // "[Errno 13] Permission denied" on --output and silently leaving the
-                        // report built from stale results. Running as root in the (disposable,
-                        // --rm'd) container sidesteps that permission mapping issue.
                         def status = bat(
                             returnStatus: true,
-                            script: "docker run --rm -u root -v \"%WORKSPACE%\\vulnbank:/src\" semgrep/semgrep semgrep scan --config=p/owasp-top-ten --config=p/security-audit --config=p/java --json --output=/src/${SAST_DIR}/semgrep/semgrep-results.json /src/src"
+                            script: "docker run --rm -v \"%WORKSPACE%\\vulnbank:/src\" semgrep/semgrep semgrep scan --config=p/owasp-top-ten --config=p/security-audit --config=p/java --json --output=/src/${SAST_DIR}/semgrep/semgrep-results.json /src/src"
                         )
                         if (fileExists("${SAST_DIR}/semgrep/semgrep-results.json")) {
                             bat "node ..\\scripts\\build-semgrep-report.js ${SAST_DIR}\\semgrep\\semgrep-results.json . ${SAST_DIR}\\semgrep\\semgrep-report.html"
