@@ -1498,7 +1498,7 @@
           "severity": "medium",
           "baseScore": 5.9,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-09-24T14:05:22.329952Z"
+          "modificationTime": "2026-10-03T14:04:31.990605Z"
         },
         {
           "type": "secondary",
@@ -1507,7 +1507,7 @@
           "severity": "medium",
           "baseScore": 6.4,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-09-24T14:05:22.329952Z"
+          "modificationTime": "2026-10-03T14:04:31.990605Z"
         },
         {
           "type": "secondary",
@@ -1521,8 +1521,8 @@
       ],
       "description": "## Overview\n[ch.qos.logback:logback-classic](https://mvnrepository.com/artifact/ch.qos.logback/logback-classic) is a reliable, generic, fast and flexible logging library for Java.\n\nAffected versions of this package are vulnerable to Directory Traversal in `MDCBasedDiscriminator`, used by `SiftingAppender`, which takes an MDC value as the discriminating key without removing path separators, so the value reaches the nested `FileAppender` path unsanitized. An attacker can direct log output to a file outside the intended directory by supplying an MDC value containing `/` or `\\` path segments. This requires a configuration whose `SiftingAppender` discriminates on MDC and whose nested `FileAppender` interpolates the discriminating key into its file path, with that MDC value populated from attacker-influenced input.\n\n**Note:** This is a bypass of the fix for the vulnerability described in [CVE-2025-11226](https://security.snyk.io/vuln/SNYK-JAVA-CHQOSLOGBACK-13169722).\n\n## Details\n\nA Directory Traversal attack (also known as path traversal) aims to access files and directories that are stored outside the intended folder. By manipulating files with \"dot-dot-slash (../)\" sequences and its variations, or by using absolute file paths, it may be possible to access arbitrary files and directories stored on file system, including application source code, configuration, and other critical system files.\n\nDirectory Traversal vulnerabilities can be generally divided into two types:\n\n- **Information Disclosure**: Allows the attacker to gain information about the folder structure or read the contents of sensitive files on the system.\n\n`st` is a module for serving static files on web pages, and contains a [vulnerability of this type](https://snyk.io/vuln/npm:st:20140206). In our example, we will serve files from the `public` route.\n\nIf an attacker requests the following URL from our server, it will in turn leak the sensitive private key of the root user.\n\n```\ncurl http://localhost:8080/public/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/root/.ssh/id_rsa\n```\n**Note** `%2e` is the URL encoded version of `.` (dot).\n\n- **Writing arbitrary files**: Allows the attacker to create or replace existing files. This type of vulnerability is also known as `Zip-Slip`. \n\nOne way to achieve this is by using a malicious `zip` archive that holds path traversal filenames. When each filename in the zip archive gets concatenated to the target extraction folder, without validation, the final path ends up outside of the target folder. If an executable or a configuration file is overwritten with a file containing malicious code, the problem can turn into an arbitrary code execution issue quite easily.\n\nThe following is an example of a `zip` archive with one benign file and one malicious file. Extracting the malicious file will result in traversing out of the target folder, ending up in `/root/.ssh/` overwriting the `authorized_keys` file:\n\n```\n2018-04-15 22:04:29 .....           19           19  good.txt\n2018-04-15 22:04:42 .....           20           20  ../../../../../../root/.ssh/authorized_keys\n```\n\n## Remediation\nUpgrade `ch.qos.logback:logback-classic` to version 1.6.3 or higher.\n## References\n- [GitHub Commit](https://github.com/qos-ch/logback/commit/761821bfaacac3a0ad44fa546cfc814429bf9312)\n- [Release Notes](https://logback.qos.ch/news.html#1.6.3)\n",
       "epssDetails": {
-        "percentile": "0.39896",
-        "probability": "0.00496",
+        "percentile": "0.24106",
+        "probability": "0.00332",
         "modelVersion": "v2026.06.15"
       },
       "identifiers": {
@@ -1561,7 +1561,7 @@
       },
       "publicationTime": "2026-09-17T09:20:28.220612Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-09-24T14:05:22.329952Z",
+      "modificationTime": "2026-10-03T14:04:31.990605Z",
       "socialTrendAlert": false,
       "severityWithCritical": "medium",
       "from": [
@@ -2557,7 +2557,7 @@
           "severity": "high",
           "baseScore": 8.7,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-10-02T14:02:52.994399Z"
+          "modificationTime": "2026-10-04T07:21:28.161032Z"
         },
         {
           "type": "secondary",
@@ -2566,7 +2566,7 @@
           "severity": "high",
           "baseScore": 7.5,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-10-02T14:02:52.994399Z"
+          "modificationTime": "2026-10-04T07:21:28.161032Z"
         },
         {
           "type": "secondary",
@@ -2601,6 +2601,7 @@
           "CWE-770"
         ],
         "GHSA": [
+          "GHSA-642r-3gj9-2pj5",
           "GHSA-r7wm-3cxj-wff9"
         ]
       },
@@ -2634,7 +2635,7 @@
       },
       "publicationTime": "2026-08-04T19:29:43.326902Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-10-02T14:02:52.994399Z",
+      "modificationTime": "2026-10-04T07:21:28.161032Z",
       "socialTrendAlert": false,
       "severityWithCritical": "high",
       "from": [
@@ -4266,6 +4267,13 @@
       ],
       "cvssDetails": [
         {
+          "assigner": "Red Hat",
+          "severity": "high",
+          "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "cvssV3BaseScore": 7.5,
+          "modificationTime": "2026-10-03T06:04:31.359098Z"
+        },
+        {
           "assigner": "SUSE",
           "severity": "high",
           "cvssV3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
@@ -4281,7 +4289,7 @@
           "severity": "high",
           "baseScore": 8.7,
           "cvssVersion": "4.0",
-          "modificationTime": "2026-09-30T11:03:49.325663Z"
+          "modificationTime": "2026-10-03T06:04:32.188592Z"
         },
         {
           "type": "secondary",
@@ -4290,7 +4298,16 @@
           "severity": "high",
           "baseScore": 7.5,
           "cvssVersion": "3.1",
-          "modificationTime": "2026-09-30T11:03:49.325663Z"
+          "modificationTime": "2026-10-03T06:04:32.188592Z"
+        },
+        {
+          "type": "secondary",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "assigner": "Red Hat",
+          "severity": "high",
+          "baseScore": 7.5,
+          "cvssVersion": "3.1",
+          "modificationTime": "2026-10-03T06:04:31.359098Z"
         },
         {
           "type": "secondary",
@@ -4347,7 +4364,7 @@
       },
       "publicationTime": "2026-09-23T12:23:18.230681Z",
       "severityBasedOn": "CVSS",
-      "modificationTime": "2026-09-30T11:03:49.325663Z",
+      "modificationTime": "2026-10-03T06:04:32.188592Z",
       "socialTrendAlert": false,
       "severityWithCritical": "high",
       "from": [
