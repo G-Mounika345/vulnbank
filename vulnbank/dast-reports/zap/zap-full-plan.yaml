@@ -1,0 +1,58 @@
+env:
+  contexts:
+    - name: vulnbank
+      urls:
+        - http://host.docker.internal:8080/login
+        - http://host.docker.internal:8080/dashboard?user=alice
+        - http://host.docker.internal:8080/dashboard?user=bob
+        - http://host.docker.internal:8080/dashboard?user=admin
+        - http://host.docker.internal:8080/dashboard?user=chiefadmin
+        - http://host.docker.internal:8080/account/1
+        - http://host.docker.internal:8080/account/2
+        - http://host.docker.internal:8080/account/3
+        - http://host.docker.internal:8080/account/4
+        - http://host.docker.internal:8080/accounts
+        - http://host.docker.internal:8080/messages
+        - http://host.docker.internal:8080/search?q=test
+        - http://host.docker.internal:8080/currency/rate?source=http://example.com
+        - http://host.docker.internal:8080/statements/download?filename=january.txt
+        - http://host.docker.internal:8080/admin/users?key=Sup3rAdmin!2023
+        - http://host.docker.internal:8080/admin/debug/all-data
+        - http://host.docker.internal:8080/admin/users/1/edit
+      includePaths:
+        - "http://host.docker.internal:8080.*"
+      excludePaths:
+        - ".*\\/admin\\/users\\/[0-9]+$"
+  parameters:
+    failOnError: false
+    progressToStdout: true
+jobs:
+  - type: spider
+    parameters:
+      context: vulnbank
+      url: http://host.docker.internal:8080/login
+      maxDuration: 3
+  - type: passiveScan-wait
+    parameters:
+      maxDuration: 3
+  - type: activeScan
+    parameters:
+      context: vulnbank
+      maxRuleDurationInMins: 2
+      maxScanDurationInMins: 15
+  - type: report
+    parameters:
+      template: traditional-html
+      reportDir: /zap/wrk
+      reportFile: zap-full-report
+      reportTitle: VulnBank DAST Full Scan
+  - type: report
+    parameters:
+      template: traditional-json
+      reportDir: /zap/wrk
+      reportFile: zap-full-report
+  - type: report
+    parameters:
+      template: traditional-md
+      reportDir: /zap/wrk
+      reportFile: zap-full-report
