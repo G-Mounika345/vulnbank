@@ -21,15 +21,18 @@ Write-Output "Ensuring CI database '$DbName' exists..."
 
 $dbUrl = "jdbc:mysql://localhost:3306/$DbName`?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC"
 $logFile = Join-Path $fullReportDir "dast-app.log"
+$errFile = Join-Path $fullReportDir "dast-app-err.log"
 
 Write-Output "Starting throwaway app instance on port $Port against '$DbName'..."
-$proc = Start-Process -FilePath "java" `
-    -ArgumentList "-jar", $JarPath, "--server.port=$Port", "--spring.datasource.url=$dbUrl" `
-    -RedirectStandardOutput $logFile -RedirectStandardError $logFile `
-    -PassThru -WindowStyle Hidden
-
+$proc = $null
 $exitCode = 1
 try {
+    # stdout/stderr must be different files - Start-Process throws
+    # "RedirectStandardOutput and RedirectStandardError are same" otherwise.
+    $proc = Start-Process -FilePath "java" `
+        -ArgumentList "-jar", $JarPath, "--server.port=$Port", "--spring.datasource.url=$dbUrl" `
+        -RedirectStandardOutput $logFile -RedirectStandardError $errFile `
+        -PassThru -WindowStyle Hidden
     $ready = $false
     for ($i = 0; $i -lt 30; $i++) {
         try {
@@ -106,8 +109,10 @@ jobs:
         $exitCode = $LASTEXITCODE
     }
 } finally {
-    Write-Output "Stopping DAST target app (PID $($proc.Id))..."
-    Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue
+    if ($proc) {
+        Write-Output "Stopping DAST target app (PID $($proc.Id))..."
+        Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue
+    }
 }
 
 exit $exitCode
