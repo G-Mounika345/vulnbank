@@ -5,6 +5,7 @@ pipeline {
         DC_DATA_DIR    = 'C:/Tools/dependency-check-12.1.0-release/dependency-check/data'
         REPORT_DIR     = 'sca-reports'
         SAST_DIR       = 'sast-reports'
+        DAST_DIR       = 'dast-reports'
         SONAR_HOST_URL = 'http://localhost:9000'
     }
 
@@ -149,12 +150,53 @@ pipeline {
                 }
             }
         }
+
+        stage('DAST - OWASP ZAP') {
+            steps {
+                dir('vulnbank') {
+                    script {
+                        bat "if not exist ${DAST_DIR}\\zap mkdir ${DAST_DIR}\\zap"
+                        // Package (not just compile) so there's a runnable jar - the Build
+                        // stage only compiles, since nothing before this needed a packaged jar.
+                        bat 'mvn -q -DskipTests package'
+                        // run-dast-scan.ps1 starts a throwaway instance of that jar on a
+                        // dedicated port (8090) against a dedicated database (vulnbank_ci) -
+                        // never the manually-run dev instance on 8080 or its `vulnbank` DB -
+                        // runs a ZAP active scan via Docker against it, then always stops the
+                        // instance, even if the scan fails or times out (see the script's
+                        // try/finally). Exit code 2 means the app never became ready (startup
+                        // failure, not a scan finding); anything else nonzero means ZAP found
+                        // issues worth flagging, same as every other scanner stage here.
+                        def status = bat(
+                            returnStatus: true,
+                            script: "powershell -ExecutionPolicy Bypass -File ..\\scripts\\run-dast-scan.ps1 -Port 8090 -DbName vulnbank_ci -ReportDir ${DAST_DIR}\\zap -JarPath target\\vulnbank-1.0.0.jar"
+                        )
+                        if (status == 2) {
+                            unstable("DAST target app failed to start - scan skipped, see ${DAST_DIR}/zap/dast-app.log")
+                        } else if (status != 0) {
+                            unstable("ZAP DAST scan found issues (exit ${status})")
+                        }
+                    }
+                }
+            }
+        }
     }
 
     post {
         always {
-            archiveArtifacts artifacts: 'vulnbank/sca-reports/**,vulnbank/sast-reports/**', fingerprint: true, allowEmptyArchive: true
+            archiveArtifacts artifacts: 'vulnbank/sca-reports/**,vulnbank/sast-reports/**,vulnbank/dast-reports/**', fingerprint: true, allowEmptyArchive: true
             script {
+                if (fileExists('vulnbank/dast-reports/zap/zap-full-report.html')) {
+                    publishHTML(target: [
+                        reportDir: 'vulnbank/dast-reports/zap',
+                        reportFiles: 'zap-full-report.html',
+                        reportName: 'DAST (ZAP) Report',
+                        alwaysLinkToLastBuild: true,
+                        keepAll: true
+                    ])
+                } else {
+                    echo 'No DAST report found - skipping publishHTML.'
+                }
                 if (fileExists('vulnbank/sast-reports/semgrep/semgrep-report.html')) {
                     publishHTML(target: [
                         reportDir: 'vulnbank/sast-reports/semgrep',
