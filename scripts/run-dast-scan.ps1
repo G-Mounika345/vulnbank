@@ -68,7 +68,7 @@ $urlLines
       includePaths:
         - "$base.*"
       excludePaths:
-        - ".*\/admin\/users\/[0-9]+`$"
+        - ".*/admin/users/[0-9]+`$"
   parameters:
     failOnError: false
     progressToStdout: true
