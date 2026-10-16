@@ -105,6 +105,18 @@ jobs:
 "@
         Set-Content -Path $planPath -Value $plan -Encoding ascii
 
+        # Delete any pre-existing report output first. These files are
+        # checked into git (committed from earlier manual scans) and get
+        # checked out fresh by `checkout scm` with a Windows ACL that
+        # blocks Docker's write ("AccessDeniedException") when it tries to
+        # overwrite them in place - same root cause as the Semgrep ACL fix
+        # in the Jenkinsfile. A freshly-created file inherits the
+        # directory's own (write-capable) permissions instead.
+        foreach ($ext in "html", "json", "md") {
+            $f = Join-Path $fullReportDir "zap-full-report.$ext"
+            if (Test-Path $f) { Remove-Item $f -Force -ErrorAction SilentlyContinue }
+        }
+
         docker run --rm -v "${fullReportDir}:/zap/wrk/:rw" zaproxy/zap-stable zap.sh -cmd -autorun /zap/wrk/zap-ci-plan.yaml
         $exitCode = $LASTEXITCODE
     }
